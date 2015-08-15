@@ -84,9 +84,7 @@
 \def\personaldata#1{\hbox to\hsize{%
     \baselineskip = 14truept%
     \vtop{\halign{{\rm##}\hfil&\qquad\qquad\strut##\hfil\cr#1\crcr}}\hfill}}
-\def\personaldataline#1#2{%
-  %\line{\hbox to 45mm{{\it #1\/}:\hss}\hbox{#2}}\cr}
-   \line{\hbox to 45mm{{\it #1\/}\hss}\hbox{#2}}\cr}
+\def\personaldataline#1#2{\line{{\it #1}\hss#2}\cr}
 
 \def\endpoint#1{\vrule height #1pt width #1pt depth 0pt}
 \def\sendpoint{\endpoint{7}}
