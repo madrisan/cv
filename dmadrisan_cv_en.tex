@@ -142,8 +142,9 @@
       \or July\or August\or September\or October\or November\or December\fi%
    \space\number\year}
 
-\def\dateitem#1#2{%
-   \goodbreak\par\hang\noindent\line{\bf#1\hss#2}\vskip 0pt\noindent\ignorespaces}
+\def\dateitem#1#2#3{%
+   \goodbreak\par\hang\noindent%
+       \line{\bf{#1 -- #2}\hss#3}\vskip 0pt\noindent\ignorespaces}
 
 \def\certification#1#2#3{%
    \par\hang\noindent\line{\it#1 -- #2\hss}%
@@ -169,7 +170,6 @@ Data Science, Big~Data, and Machine Learning passionate.}
    \personaldataline{Name}{Davide Madrisan}
    \personaldataline{Email address}{\rm davide\kern-.0pt{.}\kern-.0pt{madrisan}%
             \lower.3ex\hbox{@}gmail\kern-.0pt{.}\kern-.0pt{com}}
-   \personaldataline{Phone number}{\smallplus 33.(0)4.93579201}
    \personaldataline{Nationality}{Italian}
    \personaldataline{Usual Residence}{Nice, France}
    \personaldataline{LinkedIn Profile}{\tt https://www.linkedin.com/in/madrisan}
@@ -203,7 +203,7 @@ any new challenge or opportunity.}
 
 \section{EXPERIENCES}
 
-\dateitem{July~2014 -- current}{Senior DevOps and Linux Engineer at Sopra-Steria}
+\dateitem{July~2014}{current}{Senior DevOps and Linux Engineer at Sopra~Steria}
 I joined Sopra-Steria group as a L3 consulting Linux administrator and DevOps on
 several Red~Hat based new projects.
 
@@ -270,9 +270,7 @@ several Red~Hat based new projects.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \bigskip
-\dateitem{December 2014 -- January 2015}{Networking Architect}
-
-\noindent
+\dateitem{December 2014}{January 2015}{Networking Architect}
 Design and setup of a secure local network for a new advertising agency in Nice.
 
 \subsection{Technologies}
@@ -286,9 +284,7 @@ Design and setup of a secure local network for a new advertising agency in Nice.
 
 \bigskip
 \dateitem{October 2011 -- June 2014}
-{Monitoring Architect and Team Leader at IBM}
-
-\noindent
+   {Monitoring Architect and Team Leader at IBM}
 L3 Nagios and Centreon administrator and developer.
 Technical Leader of the Nagios monitoring team (France and Poland).
 Focal point of the monitoring technologies based on open source solutions and
@@ -335,10 +331,8 @@ Source code available at: {\tt https://github.com/madrisan}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \bigskip
-\dateitem{April 2013 -– September 2013}
+\dateitem{April 2013}{September 2013}
    {System and multimedia development on the RPi}
-
-\noindent
 Porting of the Linux distribution openmamba 
 ({\rm http:/\negthinspace/www.openmamba.org}) to the Raspberry~Pi.
 Integration of the last versions of the opensource projects XBMC 
@@ -364,9 +358,7 @@ and configuring the WiFi interface, running on top of the lighttpd web server.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \bigskip
-\dateitem{November 2008 -– September 2011}{Linux System Administrator at IBM}
-
-\noindent
+\dateitem{November 2008}{September 2011}{Linux System Administrator at IBM}
 Senior Linux system adminitrator and Nagios/Centreon Monitoring expert.
 
 During my work at IBM SSO in France, I was assigned on multiple client Linux support.
@@ -401,10 +393,8 @@ for improving the quality of the delivery.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \bigskip
-\dateitem{July 2008 -– Octobre 2008}
+\dateitem{July 2008}{Octobre 2008}
    {C/C\plusplus{} development on Linux mobile at OpenPlug}
-
-\noindent
 Porting of several MSDN library functions and win32 code, libraries and tools
 developed under Microsoft Visual C/C\plusplus, to the Moblin environment,
 an open source Linux-based operating system and application stack for
@@ -417,7 +407,7 @@ Mobile Internet Devices, netbooks, nettops and embedded devices.
 \item{\bdot} Development languages: Shell scripting, C and C\plusplus.
 
 \bigskip
-\dateitem{January 2007 -– May 2008}
+\dateitem{January 2007}{May 2008}
    {Linux and VMware Certified Engineer at IBM Turin}
 
 \noindent
@@ -448,10 +438,8 @@ Senior Linux system adminitrator and VMware certified engineer.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \bigskip
-\dateitem{September 2003 -– December 2005}
+\dateitem{September 2003}{December 2005}
    {Linux System Development at QiNet S.r.l.}
-
-\noindent
 Developer of the `{\it QiLinux\/}' GNU/Linux distribution for {\it i586} and
 {\it ppc} architectures, the first Italian distribution
 {\it created from scratch}.
@@ -499,10 +487,7 @@ For more details,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \bigskip
-\dateitem{March 2003 -– August 2003}
-   {Cisco Network Specialist at Intesa Sanpaolo}
-
-\noindent
+\dateitem{March 2003}{August 2003}{Cisco Network Specialist at Intesa Sanpaolo}
 Cisco LAN/WAN network administrator expert in one of the most important banks of Italy.
 
 \subsection{Summary of my tasks}
@@ -522,8 +507,7 @@ Cisco LAN/WAN network administrator expert in one of the most important banks of
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \bigskip
-\dateitem{October 2001 -– January 2003}
-   {Cisco Network Expert Engineer at Atlanet}
+%\dateitem{October 2001}{January 2003}{Cisco Network Expert Engineer at Atlanet}
 
 \noindent
 Cisco Engineer at Atlanet (FIAT's TLC venture now part of the BT Telecom group), 
@@ -552,10 +536,8 @@ configurations from a minimal set of specifications given by a network architect
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \bigskip
-\dateitem{October 1999 -– September 2001}
+\dateitem{October 1999}{September 2001}
    {Cisco Network Engineer at Fiat GlobalValue}
-
-\noindent
 Working either on-site or remotely for different Italian customers (Fiat ITS
 and GlobalValue, Sanpaolo, Miroglio Tessile) to develop, troubleshoot and
 manage their Cisco WAN networks.
@@ -572,8 +554,8 @@ SNMP queries on routers not accessible by our team.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \bigskip
-\dateitem{October 1998 -– February 1999}
-   {\TeX\ development at Academy of Sciences}
+%\dateitem{October 1998}{February 1999}
+%   {\TeX\ development at Academy of Sciences}
 
 \noindent
 Development of a collection of TeX macros and document styles written in pure plainTeX
@@ -606,17 +588,15 @@ Professional working proficiency
 
 \section{EDUCATION}
 
-\dateitem{2014--2015}{Coursera, edX and FUN MOOCs}
+\dateitem{2014}{2015}{Coursera, edX and FUN MOOCs}
 Lots of MOOCs on Data Science, parallel/WEB/generic programming and other domains.
 \bigskip
 
-\dateitem{Octobre 1994 -– July 1999}{Universit\`a degli Studi di Torino}
-\noindent
+\dateitem{October 1994}{July 1999}{Universit\`a degli Studi di Torino}
 Bachelor of Applied Science, Mathematics and Computer Science.
 \bigskip
 
-\dateitem{September 1982 -– June 1999}{Conservatorio di Musica G.~Verdi, Torino}
-\noindent
+\dateitem{September 1982}{June 1999}{Conservatorio di Musica G.~Verdi, Torino}
 Bachelor's degree, Music Performance, Piano, Composition.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
