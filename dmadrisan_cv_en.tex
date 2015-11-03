@@ -37,6 +37,7 @@
 \font\sixsy = cmsy6
 \skewchar\sixi = '177\skewchar\sixsy = '60
 %
+\font\eightbf = cmbx8
 \font\eightit = cmti8
 \font\eightrm = cmr8
 %
@@ -147,16 +148,16 @@
        \line{\bf{#1 -- #2}\hss#3}\vskip 0pt\noindent\ignorespaces}
 
 \def\certauthority#1#2{%
-   \par\hang\noindent\line{\it#1 -- #2\hss}}
+   \par\hang\noindent\line{\it#1 on #2\hss}}
 \def\certspecialization#1{%
-   \vskip -3pt\noindent\ignorespaces\hskip\parindent{\bf#1}}
-\def\certitembullet#1{\bitemitemunamed{#1}}
+   \vskip -3pt\noindent\ignorespaces\hskip\parindent{\rm#1}}
+\def\certitembullet#1{{%
+   \bitemitemunamed{\rm#1}}}
 \def\certitem#1{%
-   \vskip -3pt\noindent\ignorespaces\hskip\parindent{\bf#1}}
+   \vskip -3pt\noindent\ignorespaces\hskip\parindent{\rm#1}}
 
 \def\certification#1#2{%
    \par\hang\noindent\line{\rm#1 -- #2\hss}\vskip 0pt\noindent\ignorespaces}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \vglue 1.0truemm
@@ -234,6 +235,11 @@ several Red~Hat based new projects.
 
 \subsection{Certifications}
 
+\certauthority{Berkeley University \& Databricks}{edX}
+   \certspecialization{Big Data XSeries}
+      \certitembullet{Introduction to Big Data with Apache Spark;}
+      \certitembullet{Scalable Machine Learning.}
+
 \certauthority{The Johns Hopkins University}{Coursera}
    \certspecialization{Data Science Specialization}
       \certitembullet{The Data Scientist’s Toolbox;}
@@ -242,39 +248,37 @@ several Red~Hat based new projects.
       \certitembullet{Exploratory Data Analysis;}
       \certitembullet{Reproducible Research.}
 
-%\medskip
-
-\certauthority{Berkeley University \& Databricks}{edX}
-   \certspecialization{Big Data XSeries}
-      \certitembullet{Introduction to Big Data with Apache Spark;}
-      \certitembullet{Scalable Machine Learning.}
-
 \certauthority{Universit\'e de Strasbourg}{FUN}
-   \certitem{Stochastic Evolutionary Optimization.}
+   \certitem{Stochastic Evolutionary Optimization}
 
 \certauthority{Stanford University}{Coursera}
-   \certitem{Machine Learning.}
+   \certitem{Machine Learning}
+
+\certauthority{University of Illinois at Urbana-Champaign}{Coursera}
+   \certitem{Heterogeneous Parallel Programming}
+   \certitem{Cloud Computing Applications}
 
 %\medskip
    
 \certauthority{W3C}{edX}
-   \certitem{Learn HTML5 from W3C.}
+   \certitem{Learn HTML5 from W3C}
 \certauthority{Universidad Carlos III de Madrid}{edX}
-   \certitem{Introduction to Programming with Java.}
+   \certitem{Introduction to Programming with Java}
 \certauthority{The Hong Kong University of Science and Technology}{edX}
-   \certitem{Introduction to Java Programming.}
+   \certitem{Introduction to Java Programming}
 \certauthority{\'Ecole Polytechnique F\'ed\'erale de Lausanne}{Coursera}
    \certitem{Introduction \`a la programmation orient\'ee objet
-             en C\plusplus).}
-\certauthority{University of Illinois at Urbana-Champaign}{Coursera}
-   \certitem{\bf Heterogeneous Parallel Programming;}
-   \certitem{\bf Cloud Computing Applications.}
+             en C\plusplus)}
+\certauthority{University of Michigan}{Coursera}
+   \certitem{Using Python to Access Web Data}
+\certauthority{Universit\'e catholique de Louvain}{edX}
+  \certitem{Paradigms of Computer Programming -- Fundamentals}
 
 %\medskip
 
 \certauthority{University of California, san Diego}{Coursera}
    \certitem{How to Learn:~powerful mental tools to help you master tough
-             subjects.}
+             subjects}
 \certauthority{Ludwig--Maximilians Universit\"at M\"unchen}{Coursera}
    \certitem{Competitive Strategy.}
 
@@ -282,7 +286,7 @@ several Red~Hat based new projects.
 
 \bigskip
 \dateitem{December 2014}{January 2015}{Networking Architect}
-Design and setup of a secure local network for a new advertising agency in Nice.
+Design and setup a secure local network for a new advertising agency in Nice.
 
 \subsection{Technologies}
 
