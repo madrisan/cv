@@ -147,8 +147,12 @@
    \goodbreak\par\hang\noindent%
        \line{\bf{#1 -- #2}\hss#3}\vskip 0pt\noindent\ignorespaces}
 
+\def\certgroup#1{%
+   \par\hang\noindent\line{\subsectionfont#1\hss}%
+   \noindent\ignorespaces\nobreak}
 \def\certauthority#1#2{%
-   \par\hang\noindent\line{\it#1 on #2\hss}}
+   \par\hang\noindent\line{\it#1 on #2\hss}%
+   \noindent\ignorespaces\nobreak}
 \def\certspecialization#1{%
    \vskip -3pt\noindent\ignorespaces\hskip\parindent{\rm#1}}
 \def\certitembullet#1{{%
@@ -237,12 +241,9 @@ several Red~Hat based new projects.
 \item{\bdot} Amazon Web Services (AWS);
 \item{\bdot} Travis CI, Jenkins CI, Git, GitLab.
 
-\subsection{Certifications}
+\subsection{Certifications and Completed MOOCs}
 
-\certauthority{Berkeley University \& Databricks}{edX}
-   \certspecialization{Big Data XSeries}
-      \certitembullet{Introduction to Big Data with Apache Spark;}
-      \certitembullet{Scalable Machine Learning.}
+\certgroup{BIG DATA and MACHINE LEARNING}
 
 \certauthority{The Johns Hopkins University}{Coursera}
    \certspecialization{Data Science Specialization}
@@ -251,40 +252,67 @@ several Red~Hat based new projects.
       \certitembullet{Getting and Cleaning Data;}
       \certitembullet{Exploratory Data Analysis;}
       \certitembullet{Reproducible Research.}
-
+\certauthority{Berkeley University \& Databricks}{edX}
+   \certspecialization{Big Data XSeries}
+      \certitembullet{Introduction to Big Data with Apache Spark;}
+      \certitembullet{Scalable Machine Learning.}
 \certauthority{Universit\'e de Strasbourg}{FUN}
    \certitem{Stochastic Evolutionary Optimization}
-
 \certauthority{Stanford University}{Coursera}
    \certitem{Machine Learning}
+\certauthority{Microsoft}{edX}
+   \certitem{Introduction to R}
+\certauthority{Hardvard University}{edX}
+   \certitem{Statistics and R for Life Sciences}
+\smallskip
+
+\certgroup{BUSINESS}
+
+\certauthority{Ludwig--Maximilians Universit\"at M\"unchen}{Coursera}
+   \certitem{Competitive Strategy}
+\smallskip
+
+\certgroup{CLOUD COMPUTING}
+
+\certauthority{University of Illinois at Urbana-Champaign}{Coursera}
+   \certitem{Cloud Computing Applications}
+   \certitem{Cloud Networking}
+\smallskip
+
+\certgroup{PROGRAMMING}
 
 \certauthority{University of Illinois at Urbana-Champaign}{Coursera}
    \certitem{Heterogeneous Parallel Programming}
-   \certitem{Cloud Computing Applications}
-
-%\medskip
-   
-\certauthority{W3C}{edX}
-   \certitem{Learn HTML5 from W3C}
-\certauthority{Universidad Carlos III de Madrid}{edX}
-   \certitem{Introduction to Programming with Java}
-\certauthority{The Hong Kong University of Science and Technology}{edX}
-   \certitem{Introduction to Java Programming}
 \certauthority{\'Ecole Polytechnique F\'ed\'erale de Lausanne}{Coursera}
    \certitem{Introduction \`a la programmation orient\'ee objet
              en C\plusplus)}
-\certauthority{University of Michigan}{Coursera}
-   \certitem{Using Python to Access Web Data}
+\certauthority{Universidad Carlos III de Madrid}{edX}
+   \certitem{Introduction to Programming with Java -- part~1}
+\certauthority{The Hong Kong University of Science and Technology}{edX}
+   \certitem{Introduction to Java Programming -- part~2}
 \certauthority{Universit\'e catholique de Louvain}{edX}
   \certitem{Paradigms of Computer Programming -- Fundamentals}
+\certauthority{University of Michigan}{Coursera}
+   \certitem{Using Python to Access Web Data}
+\smallskip
 
-%\medskip
+\certgroup{WEB PROGRAMMING}
+
+\certauthority{W3C}{edX}
+   \certitem{Learn HTML5 from W3C}
+\certauthority{University of London}{Coursera}
+   \certitem{Responsive Website Basics: Code with HTML, CSS, and JavaScript}
+\certauthority{University of Michigan}{Coursera}
+   \certitem{Introduction to HTML5}
+%\certauthority{The Hong Kong University of Science}{Coursera}
+%   \certitem{Front-End Web UI Frameworks and Tools
+\smallskip
+
+\certgroup{OTHER DOMAINS}
 
 \certauthority{University of California, san Diego}{Coursera}
    \certitem{How to Learn:~powerful mental tools to help you master tough
              subjects}
-\certauthority{Ludwig--Maximilians Universit\"at M\"unchen}{Coursera}
-   \certitem{Competitive Strategy.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
