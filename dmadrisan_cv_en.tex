@@ -37,9 +37,14 @@
 \font\sixsy = cmsy6
 \skewchar\sixi = '177\skewchar\sixsy = '60
 %
-\font\eightbf = cmbx8
-\font\eightit = cmti8
 \font\eightrm = cmr8
+\font\eightit = cmti8
+\font\eightsl = cmsl8
+\font\eighttt = cmtt8
+\font\eightbf = cmbx8
+\font\eighti  = cmmi8
+\font\eightsy = cmsy8
+\font\eightss = cmss8
 %
 \font\ninei  = cmmi9
 \font\ninesy = cmsy9
@@ -58,26 +63,48 @@
 \font\ninesi = cmssi9
 \skewchar\ninei = '177\skewchar\ninesy = '60
 \hyphenchar\ninett = -1
-\def\ninepoint{%
-    \def\rm{\fam0\ninerm}%
-        \textfont0 = \ninerm\scriptfont0 = \sixrm\scriptscriptfont0 = \fiverm%
-    \textfont1 = \ninei \scriptfont1 = \sixi  \scriptscriptfont1 = \fivei%
-    \textfont2 = \ninesy\scriptfont2 = \sixsy \scriptscriptfont2 = \fivesy%
-    \textfont3 = \nineex\scriptfont3 = \nineex\scriptscriptfont3 = \nineex%
-    \def\it{\fam\itfam\nineit}\textfont\itfam = \nineit%
-    \def\sl{\fam\slfam\ninesl}\textfont\slfam = \ninesl%
-    \def\tt{\fam\ttfam\ninett}\textfont\ttfam = \ninett%
-    \def\tb{\fam\tbfam\ninetb}\textfont\tbfam = \ninetb%
-    \def\bf{\fam\bffam\ninebf}\textfont\bffam = \ninebf%
-    \def\sc{\fam\scfam\ninesc}\textfont\scfam = \ninesc%
-    \def\bs{\fam\bsfam\ninebs}\textfont\bsfam = \ninebs%
-    \def\sf{\fam\sffam\niness}\textfont\sffam = \niness%
-    \def\sfb{\fam\sfbfam\ninesb}\textfont\sfbfam = \ninesb%
-    \def\sfi{\fam\sfifam\ninesi}\textfont\sfifam = \ninesi%
-    \tt\ttglue = .5em plus.25em minus.15em%
-    \normalbaselineskip = 11pt%
-    \setbox\strutbox = \hbox{\vrule height8pt depth3pt width0pt}%
-    \normalbaselines\rm}
+
+\ifx\eightpoint\undefined
+   \def\eightpoint{%
+      \def\rm{\fam0\eightrm}%
+      \textfont0 = \eightrm\scriptfont0 = \sixrm  \scriptscriptfont0 = \fiverm%
+      \textfont1 = \eighti \scriptfont1 = \sixi   \scriptscriptfont1 = \fivei%
+      \textfont2 = \eightsy\scriptfont2 = \sixsy  \scriptscriptfont2 = \fivesy%
+      \textfont3 = \tenex  \scriptfont3 = \tenex  \scriptscriptfont3 = \tenex%
+      \def\it{\fam\itfam\eightit}\textfont\itfam = \eightit%
+      \def\sl{\fam\slfam\eightsl}\textfont\slfam = \eightsl%
+      \def\tt{\fam\ttfam\eighttt}\textfont\ttfam = \eighttt%
+      \textfont\bffam = \eightbf \scriptfont\bffam = \sixbf%
+      \scriptscriptfont\bffam = \fivebf%
+      \def\bf{\fam\bffam\eightbf}%
+      \def\sf{\fam\sffam\eightss}\textfont\sffam = \eightss%
+      \normalbaselineskip = 10pt%
+      \setbox\strutbox = \hbox{\vrule height7.5pt depth2.5pt width0pt}%
+      \normalbaselines\rm}
+\fi
+
+\ifx\ninepoint\undefined
+   \def\ninepoint{%
+      \def\rm{\fam0\ninerm}%
+      \textfont0 = \ninerm\scriptfont0 = \sixrm \scriptscriptfont0 = \fiverm%
+      \textfont1 = \ninei \scriptfont1 = \sixi  \scriptscriptfont1 = \fivei%
+      \textfont2 = \ninesy\scriptfont2 = \sixsy \scriptscriptfont2 = \fivesy%
+      \textfont3 = \nineex\scriptfont3 = \nineex\scriptscriptfont3 = \nineex%
+      \def\it{\fam\itfam\nineit}\textfont\itfam = \nineit%
+      \def\sl{\fam\slfam\ninesl}\textfont\slfam = \ninesl%
+      \def\tt{\fam\ttfam\ninett}\textfont\ttfam = \ninett%
+      \def\tb{\fam\tbfam\ninetb}\textfont\tbfam = \ninetb%
+      \def\bf{\fam\bffam\ninebf}\textfont\bffam = \ninebf%
+      \def\sc{\fam\scfam\ninesc}\textfont\scfam = \ninesc%
+      \def\bs{\fam\bsfam\ninebs}\textfont\bsfam = \ninebs%
+      \def\sf{\fam\sffam\niness}\textfont\sffam = \niness%
+      \def\sfb{\fam\sfbfam\ninesb}\textfont\sfbfam = \ninesb%
+      \def\sfi{\fam\sfifam\ninesi}\textfont\sfifam = \ninesi%
+      \tt\ttglue = .5em plus.25em minus.15em%
+      \normalbaselineskip = 11pt%
+      \setbox\strutbox = \hbox{\vrule height8pt depth3pt width0pt}%
+      \normalbaselines\rm}
+\fi
 \ninepoint % default font size
 %\ithyph
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -90,12 +117,12 @@
 \def\endpoint#1{\vrule height #1pt width #1pt depth 0pt}
 \def\sendpoint{\endpoint{7}}
 \def\section#1{%
-    \penalty-600\vskip 10truemm plus2truemm minus2truemm%
+    \goodbreak\vskip 10truemm plus2truemm minus2truemm%
     \leftline{\sendpoint\quad\sectionfont#1}%
     \nobreak\vskip 3truemm plus 1truemm minus 1truemm}
 \def\subsection#1{%
-    \penalty-600\vskip 5truemm plus1truemm minus1truemm%
-    \leftline{\subsectionfont#1}%
+    \vskip 5truemm plus1truemm minus1truemm%
+    \leftline{\sf#1}%
     \nobreak\vskip 1truemm plus 1truemm minus 1truemm}
 \font\smallsy = cmsy6
 \def\bitem#1{%
@@ -134,7 +161,6 @@
 %
 \font\titlefont = cmss12 % cmbx12 at14pt
 \font\sectionfont = cmssbx10 % cmbx10
-\font\subsectionfont = cmss9
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\today{%
@@ -144,11 +170,11 @@
    \space\number\year}
 
 \def\dateitem#1#2#3{%
-   \goodbreak\par\hang\noindent%
+   \par\hang\noindent%
        \line{\bf{#1 -- #2}\hss#3}\vskip 0pt\noindent\ignorespaces}
 
 \def\certgroup#1{%
-   \par\hang\noindent\line{\subsectionfont#1\hss}%
+   \par\hang\noindent\line{\sf#1\hss}%
    \noindent\ignorespaces\nobreak}
 \def\certauthority#1#2{%
    \par\hang\noindent\line{\it#1 on #2\hss}%
@@ -159,7 +185,6 @@
    \bitemitemunamed{\rm#1}}}
 \def\certitem#1{%
    \vskip -3pt\noindent\ignorespaces\hskip\parindent{\rm#1}}
-
 \def\certification#1#2{%
    \par\hang\noindent\line{\rm#1 -- #2\hss}\vskip 0pt\noindent\ignorespaces}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -243,19 +268,20 @@ several Red~Hat based new projects.
 
 \subsection{Certifications and Completed MOOCs}
 
+\bgroup\eightpoint
 \certgroup{BIG DATA and MACHINE LEARNING}
 
 \certauthority{The Johns Hopkins University}{Coursera}
    \certspecialization{Data Science Specialization}
-      \certitembullet{The Data Scientist’s Toolbox;}
-      \certitembullet{R Programming;}
-      \certitembullet{Getting and Cleaning Data;}
-      \certitembullet{Exploratory Data Analysis;}
-      \certitembullet{Reproducible Research.}
+      \certitembullet{The Data Scientist’s Toolbox}
+      \certitembullet{R Programming}
+      \certitembullet{Getting and Cleaning Data}
+      \certitembullet{Exploratory Data Analysis}
+      \certitembullet{Reproducible Research}
 \certauthority{Berkeley University \& Databricks}{edX}
    \certspecialization{Big Data XSeries}
-      \certitembullet{Introduction to Big Data with Apache Spark;}
-      \certitembullet{Scalable Machine Learning.}
+      \certitembullet{Introduction to Big Data with Apache Spark}
+      \certitembullet{Scalable Machine Learning}
 \certauthority{Universit\'e de Strasbourg}{FUN}
    \certitem{Stochastic Evolutionary Optimization}
 \certauthority{Stanford University}{Coursera}
@@ -292,6 +318,7 @@ several Red~Hat based new projects.
    \certitem{Introduction to Java Programming -- part~2}
 \certauthority{Universit\'e catholique de Louvain}{edX}
   \certitem{Paradigms of Computer Programming -- Fundamentals}
+\goodbreak
 \certauthority{University of Michigan}{Coursera}
    \certitem{Using Python to Access Web Data}
 \smallskip
@@ -313,6 +340,7 @@ several Red~Hat based new projects.
 \certauthority{University of California, san Diego}{Coursera}
    \certitem{How to Learn:~powerful mental tools to help you master tough
              subjects}
+\egroup
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -323,9 +351,8 @@ Design and setup a secure local network for a new advertising agency in Nice.
 \subsection{Technologies}
 
 \item{\bdot} Cisco Adaptive Security Appliance (ASA) Firewall;
-\item{\bdot} DELL LAN Switches;
-\item{\bdot} Synology NAS;
-\item{\bdot} Ethernet, Wi-Fi, VLANs, VoIP, VPN.
+\item{\bdot} Ethernet, Wi-Fi, VLANs, VoIP, VPN, DELL LAN switches;
+\item{\bdot} Synology NAS.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
