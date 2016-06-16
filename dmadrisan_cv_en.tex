@@ -170,13 +170,13 @@
    \space\number\year}
 
 \def\dateitem#1#2#3{%
-   \par\hang\noindent%
+   \goodbreak\par\hang\noindent%
        \line{\bf{#1 -- #2}\hss#3}\vskip 0pt\noindent\ignorespaces}
 
 \def\OS2{OS\lower.4ex\hbox{2}}
 
 \def\certgroup#1{%
-   \par\hang\noindent\line{\sf#1\hss}%
+   \par\hang\noindent\line{\bf#1\hss}%
    \noindent\ignorespaces\nobreak}
 \def\certauthority#1#2{%
    \par\hang\noindent\line{\it#1 on #2\hss}%
@@ -186,7 +186,7 @@
 \def\certitembullet#1{{%
    \bitemitemunamed{\rm#1}}}
 \def\certitem#1{%
-   \vskip -3pt\noindent\ignorespaces\hskip\parindent{\rm#1}}
+   \vskip -3pt\noindent\ignorespaces\nobreak\hskip\parindent{\rm#1}}
 \def\certification#1#2{%
    \par\hang\noindent\line{\rm#1 -- #2\hss}\vskip -6pt\noindent\ignorespaces}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -234,8 +234,9 @@ bring to any new challenge or opportunity.}
 \vskip -2mm
 \subsection{Areas of Interest}
 
-\item{\bdot} Full Stack Web Development and responsive Web Design, Hybrid Mobile
-             App Development (CSS3, Bootstrap, JavaScript, jQuery, AngularJS,
+\item{\bdot} Full Stack Web Development and responsive Web Design
+             %, Hybrid Mobile App Development
+             (CSS3, Bootstrap, JavaScript, jQuery, AngularJS,
              Ionic, Cordova, NodeJS, Express, MongoDB, and a bunch of other tools in the
              background like Gulp, Bower, nmp, less, $\dots$);
 \item{\bdot} Machine Learning, Big Data Analysis and Technologies~(Spark, Hadoop, R,
@@ -259,94 +260,6 @@ activity as Auto Entrepreneur, mainly focused on Open Source and Linux--based (n
 \item{\bdot} Linux Embedded system, multimedia, Python and web development on RaspberryPi;
 \item{\bdot} LAN networking design and setup (Cisco, DELL, Synology NAS);
 \item{\bdot} Cloud services based on the AWS Technologies.
-
-\subsection{Online Courses and Certifications}
-
-\bgroup\eightpoint
-\certgroup{BIG DATA and MACHINE LEARNING}
-
-\certauthority{The Johns Hopkins University}{Coursera}
-   \certspecialization{Data Science Specialization}
-      \certitembullet{The Data Scientist’s Toolbox \&
-                      R Programming}
-      \certitembullet{Getting and Cleaning Data;
-                      Exploratory Data Analysis \&
-                      Reproducible Research}
-\certauthority{Berkeley University \& Databricks}{edX}
-   \certspecialization{Big Data XSeries}
-      \certitembullet{Introduction to Big Data with Apache Spark}
-      \certitembullet{Scalable Machine Learning}
-\certauthority{Universit\'e de Strasbourg}{FUN}
-   \certitem{Stochastic Evolutionary Optimization}
-\certauthority{Stanford University}{Coursera}
-   \certitem{Machine Learning}
-\certauthority{Microsoft}{edX}
-   \certitem{Introduction to R}
-\certauthority{Hardvard University}{edX}
-   \certitem{Statistics and R for Life Sciences}
-\smallskip
-
-\certgroup{BUSINESS}
-
-\certauthority{Ludwig--Maximilians Universit\"at M\"unchen}{Coursera}
-   \certitem{Competitive Strategy}
-\smallskip
-
-\certgroup{CLOUD COMPUTING}
-
-\certauthority{University of Illinois at Urbana-Champaign}{Coursera}
-   \certitem{Cloud Computing Applications \& Cloud Networking}
-\smallskip
-
-\certgroup{PROGRAMMING}
-
-\certauthority{University of Illinois at Urbana-Champaign}{Coursera}
-   \certitem{Heterogeneous Parallel Programming}
-\certauthority{\'Ecole Polytechnique F\'ed\'erale de Lausanne}{Coursera}
-   \certitem{Introduction \`a la programmation orient\'ee objet
-             en C\plusplus)}
-\certauthority{Universidad Carlos III de Madrid}{edX}
-   \certitem{Introduction to Programming with Java -- part~1}
-\certauthority{The Hong Kong University of Science and Technology}{edX}
-   \certitem{Introduction to Java Programming -- part~2}
-\certauthority{Universit\'e catholique de Louvain}{edX}
-  \certitem{Paradigms of Computer Programming -- Fundamentals \& Abstraction and Concurrency}
-\goodbreak
-\certauthority{University of Michigan}{Coursera}
-   \certitem{Using Python to Access Web Data}
-\smallskip
-
-\certgroup{WEB PROGRAMMING}
-
-\certauthority{W3C}{edX}
-   \certitem{Learn HTML5 from W3C}
-\certauthority{University of London}{Coursera}
-   \certitem{Responsive Website Basics: Code with HTML, CSS, and JavaScript}
-\certauthority{University of Michigan}{Coursera}
-   \certitem{Introduction to HTML5}
-\certauthority{The Hong Kong University of Science}{Coursera}
-   \certspecialization{Full Stack Web Development Specialization}
-      \certitembullet{HTML, CSS and JavaScript}
-      \certitembullet{Front-End Web UI Frameworks and Tools}
-      \certitembullet{Front-End JavaScript Frameworks: AngularJS}
-      \certitembullet{Multiplatform Mobile App Development with Web Technologies}
-\certauthority{Pluralsight}{Code School}
-   \certitem{Shaping up with Angular.js}
-\certauthority{Microsoft}{edX}
-   \certitem{Introduction to JQuery}
-   \certitem{Introduction to TypeScript}
-\certauthority{MongoDB}{MongoDB University}
-   \certitem{M101JS: MongoDB for Node.js Developers}
-
-\smallskip
-
-\certgroup{OTHER DOMAINS}
-
-\certauthority{University of California, san Diego}{Coursera}
-   \certitem{How to Learn:~powerful mental tools to help you master tough
-             subjects}
-\egroup
-\bigskip
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -704,20 +617,22 @@ Professional working proficiency
 \dateitem{September 2014}{}{Coursera, edX, Udacity, and FUN MOOCs}
 Lifelong learning for professional development and fun:
 several MOOCs completed, mainly on Data Science, Big~Data, Cloud Computing,
-and parallel/WEB/generic programming.
-\bigskip
+and parallel/generic/functional/web programming.
+\medskip
 
 \dateitem{October 1994}{July 1999}{Universit\`a degli Studi di Torino}
 Master's degree in Applied Science, Mathematics and Computer Science.
-\bigskip
+\medskip
 
 \dateitem{September 1982}{June 1993}{Conservatorio di Musica G.~Verdi, Torino}
 Bachelor's degree, Music Performance, Piano, Composition.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{CERTIFICATIONS}
+\section{CERTIFICATIONS \& ONLINE SPECIALIZATIONS}
 
+\certification{2016}
+  {Full Stack Web Development Specialization -- {\it The Hong Kong University}.}
 \certification{2016}
   {Paradigms of Computer Programming -- {\it Universit\'e catholique de Louvain}.}
 \certification{2015}{Big Data XSeries Certificate -- {\it Berkeley University \& Databricks}.}
@@ -727,6 +642,97 @@ Bachelor's degree, Music Performance, Piano, Composition.
 \certification{2002}{CSPFA (Cisco Secure PIX Firewall Advanced).}
 \certification{2001}{BSCN (Building Scalable Cisco Networks).}
 \certification{2000}{CLSC (Cisco LAN Switch Configuration) Certified.}
+
+\section{MOOCS}
+
+\bgroup\eightpoint
+\certgroup{BIG DATA and MACHINE LEARNING}
+
+\certauthority{The Johns Hopkins University}{Coursera}
+   \certspecialization{Data Science Specialization}
+      \certitembullet{The Data Scientist’s Toolbox}
+      \certitembullet{R Programming}
+      \certitembullet{Getting and Cleaning Data}
+      \certitembullet{Exploratory Data Analysis}
+      \certitembullet{Reproducible Research}
+\certauthority{Berkeley University \& Databricks}{edX}
+   \certspecialization{Big Data XSeries}
+      \certitembullet{Introduction to Big Data with Apache Spark}
+      \certitembullet{Scalable Machine Learning}
+\certauthority{Universit\'e de Strasbourg}{FUN}
+   \certitem{Stochastic Evolutionary Optimization}
+\certauthority{Stanford University}{Coursera}
+   \certitem{Machine Learning}
+\certauthority{Microsoft}{edX}
+   \certitem{Introduction to R}
+\certauthority{Hardvard University}{edX}
+   \certitem{Statistics and R for Life Sciences}
+\smallskip
+
+\certgroup{BUSINESS}
+
+\certauthority{Ludwig--Maximilians Universit\"at M\"unchen}{Coursera}
+   \certitem{Competitive Strategy}
+\smallskip
+
+\certgroup{CLOUD COMPUTING}
+
+\certauthority{University of Illinois at Urbana-Champaign}{Coursera}
+   \certitembullet{Cloud Computing Applications}
+   \certitembullet{Cloud Networking}
+\smallskip
+
+\certgroup{PROGRAMMING}
+
+\certauthority{University of Illinois at Urbana-Champaign}{Coursera}
+   \certitem{Heterogeneous Parallel Programming}
+\certauthority{\'Ecole Polytechnique F\'ed\'erale de Lausanne}{Coursera}
+   \certitem{Introduction \`a la programmation orient\'ee objet
+             en C\plusplus)}
+\certauthority{Universidad Carlos III de Madrid}{edX}
+   \certitem{Introduction to Programming with Java -- part~1}
+\certauthority{The Hong Kong University of Science and Technology}{edX}
+   \certitem{Introduction to Java Programming -- part~2}
+\certauthority{Universit\'e catholique de Louvain}{edX}
+  \certitembullet{Paradigms of Computer Programming -- Fundamentals}
+  \certitembullet{Abstraction and Concurrency}
+\goodbreak
+\certauthority{University of Michigan}{Coursera}
+   \certitem{Using Python to Access Web Data}
+\smallskip
+
+\certgroup{WEB PROGRAMMING}
+
+\certauthority{W3C}{edX}
+   \certitem{Learn HTML5 from W3C}
+\certauthority{University of London}{Coursera}
+   \certitem{Responsive Website Basics: Code with HTML, CSS, and JavaScript}
+\certauthority{University of Michigan}{Coursera}
+   \certitem{Introduction to HTML5}
+\certauthority{The Hong Kong University of Science}{Coursera}
+   \certspecialization{Full Stack Web Development Specialization}
+      \certitembullet{HTML, CSS and JavaScript}
+      \certitembullet{Front-End Web UI Frameworks and Tools}
+      \certitembullet{Front-End JavaScript Frameworks: AngularJS}
+      \certitembullet{Multiplatform Mobile App Development with Web Technologies}
+      \certitembullet{Server-side Development with NodeJS}
+      \certitembullet{Full Stack Web Development Specialization Capstone Project}
+\certauthority{Pluralsight}{Code School}
+   \certitem{Shaping up with Angular.js}
+\certauthority{Microsoft}{edX}
+   \certitem{Introduction to JQuery}
+   \certitem{Introduction to TypeScript}
+\certauthority{MongoDB}{MongoDB University}
+   \certitem{M101JS: MongoDB for Node.js Developers}
+
+\smallskip
+
+\certgroup{OTHER DOMAINS}
+
+\certauthority{University of California, san Diego}{Coursera}
+   \certitem{How to Learn:~powerful mental tools to help you master tough
+             subjects}
+\egroup
 
 \vfill
 \supereject\end
