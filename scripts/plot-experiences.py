@@ -40,6 +40,8 @@ jobs = [
    # Atlanet - Skeleton
    { 'year_start': [2001, 11], 'year_end': [2002,  8], 'type': 'Development - Shell Scripts' },
    { 'year_start': [2002,  2], 'year_end': [2002,  3], 'type': 'Development - C/C++/Java' },
+   # Atlanet - Cisco like documentation
+   { 'year_start': [2002,  4], 'year_end': [2002,  5], 'type': 'Development - TeX' },
    { 'year_start': [2003,  3], 'year_end': [2003,  8], 'type': 'Monitoring' },
    # QiLinux
    { 'year_start': [2004,  9], 'year_end': [2006, 12], 'type': 'Development - Linux System' },
@@ -62,6 +64,8 @@ jobs = [
    { 'year_start': [2007,  1], 'year_end': [2008,  5], 'type': 'Linux System - Administration' },
    { 'year_start': [2008,  7], 'year_end': [2008, 10], 'type': 'Development - C/C++/Java' },
    { 'year_start': [2008, 11], 'year_end': [2011,  9], 'type': 'Linux System - Administration' },
+   # Refont cv in TeX
+   { 'year_start': [2010,  3], 'year_end': [2010,  3], 'type': 'Development - TeX' },
    { 'year_start': [2011, 10], 'year_end': [2014,  6], 'type': 'Monitoring' },
    # script PHP IBM
    { 'year_start': [2011, 10], 'year_end': [2012,  2], 'type': 'Development - Web' },
