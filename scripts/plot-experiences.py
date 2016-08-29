@@ -145,6 +145,7 @@ ax.text(1995.7, 10.5, 'monitoring', style='italic',
 
 # Add a legend
 handles = [mpatches.Patch(color=c(job), label=job, alpha=0.8) for job in job_list]
-lgd = ax.legend(handles, job_list, loc='upper right', bbox_to_anchor=(1.65, 0.8))
+lgd = ax.legend(handles, job_list, loc='upper right', bbox_to_anchor=(1.55, 0.8),
+                prop={'size': 12})
 
 fig.savefig('../images/experiences.png', bbox_extra_artists=(lgd,), bbox_inches='tight')
