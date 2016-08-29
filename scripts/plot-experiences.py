@@ -29,6 +29,8 @@ jobs = [
    { 'year_start': [1998, 10], 'year_end': [1999,  2], 'type': 'Development - TeX' },
    # Jobs as Networking Engineer
    { 'year_start': [1999, 10], 'year_end': [2004,  8], 'type': 'Networking Engineer' },
+   # Atlanet - Skeleton
+   { 'year_start': [2001, 11], 'year_end': [2002,  8], 'type': 'Development - Shell Scripts' },
    { 'year_start': [2002,  2], 'year_end': [2002,  3], 'type': 'Development - C/C++/Java' },
    { 'year_start': [2003,  3], 'year_end': [2003,  8], 'type': 'Monitoring' },
    { 'year_start': [2004,  9], 'year_end': [2006, 12], 'type': 'Development - Linux System' },
