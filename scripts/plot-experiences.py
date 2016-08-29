@@ -142,9 +142,9 @@ ax.text(1995.7, -1.3, 'development', style='italic',
         bbox={'facecolor':'red', 'alpha':0.5, 'pad':6})
 ax.text(1995.7, 7.2, 'system', style='italic',
         bbox={'facecolor':'red', 'alpha':0.5, 'pad':6})
-ax.text(1995.7, 8.9, 'networking', style='italic',
+ax.text(1995.7, 8.9, 'monitoring', style='italic',
         bbox={'facecolor':'red', 'alpha':0.5, 'pad':6})
-ax.text(1995.7, 10.5, 'monitoring', style='italic',
+ax.text(1995.7, 10.5, 'networking', style='italic',
         bbox={'facecolor':'red', 'alpha':0.5, 'pad':6})
 
 # Add a legend
