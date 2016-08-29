@@ -41,8 +41,12 @@ jobs = [
    { 'year_start': [2001, 11], 'year_end': [2002,  8], 'type': 'Development - Shell Scripts' },
    { 'year_start': [2002,  2], 'year_end': [2002,  3], 'type': 'Development - C/C++/Java' },
    { 'year_start': [2003,  3], 'year_end': [2003,  8], 'type': 'Monitoring' },
+   # QiLinux
    { 'year_start': [2004,  9], 'year_end': [2006, 12], 'type': 'Development - Linux System' },
-   # autospec - start
+   { 'year_start': [2006,  9], 'year_end': [2006, 10], 'type': 'Development - C/C++/Java' },
+   # QiLinux web site
+   { 'year_start': [2006,  9], 'year_end': [2006, 10], 'type': 'Development - Web' },
+   # QiLinux autospec - start
    { 'year_start': [2004,  8], 'year_end': [2006,  6], 'type': 'Development - Shell Scripts' },
    { 'year_start': [2006, 11], 'year_end': [2007,  6], 'type': 'Development - Shell Scripts' },
    { 'year_start': [2007,  9], 'year_end': [2008,  1], 'type': 'Development - Shell Scripts' },
@@ -52,7 +56,7 @@ jobs = [
    { 'year_start': [2010, 10], 'year_end': [2011,  4], 'type': 'Development - Shell Scripts' },
    { 'year_start': [2011, 12], 'year_end': [2012, 12], 'type': 'Development - Shell Scripts' },
    { 'year_start': [2014, 11], 'year_end': [2014, 12], 'type': 'Development - Shell Scripts' },
-   # autospec - end
+   # QiLinux autospec - end
    # QiLinux - disk partitioner
    { 'year_start': [2005,  3], 'year_end': [2005,  4], 'type': 'Development - Python' },
    { 'year_start': [2007,  1], 'year_end': [2008,  5], 'type': 'Linux System - Administration' },
