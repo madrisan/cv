@@ -23,10 +23,18 @@ def t(job):
 
 jobs = [
    { 'year_start': [1995,  9], 'year_end': [1996,  6], 'type': 'Development - Math' },
+   # University - Teoria delle Macchine Calcolatrici
+   { 'year_start': [1996,  4], 'year_end': [1996, 11], 'type': 'Development - C/C++/Java' },
    { 'year_start': [1996,  6], 'year_end': [1999,  6], 'type': 'Development - TeX' },
+   # University - Courses
+   { 'year_start': [1997,  2], 'year_end': [1997,  7], 'type': 'Development - Math' },
+   { 'year_start': [1997,  2], 'year_end': [1997,  9], 'type': 'Development - Math' },
    # University - Thesis
    { 'year_start': [1998,  6], 'year_end': [1999,  6], 'type': 'Development - Math' },
+   # Accademia delle Scienze Torino
    { 'year_start': [1998, 10], 'year_end': [1999,  2], 'type': 'Development - TeX' },
+   # University - Algebra Computazionale
+   { 'year_start': [1998,  4], 'year_end': [1998,  5], 'type': 'Development - Math' },
    # Jobs as Networking Engineer
    { 'year_start': [1999, 10], 'year_end': [2004,  8], 'type': 'Networking Engineer' },
    # Atlanet - Skeleton
@@ -45,6 +53,8 @@ jobs = [
    { 'year_start': [2011, 12], 'year_end': [2012, 12], 'type': 'Development - Shell Scripts' },
    { 'year_start': [2014, 11], 'year_end': [2014, 12], 'type': 'Development - Shell Scripts' },
    # autospec - end
+   # QiLinux - disk partitioner
+   { 'year_start': [2005,  3], 'year_end': [2005,  4], 'type': 'Development - Python' },
    { 'year_start': [2007,  1], 'year_end': [2008,  5], 'type': 'Linux System - Administration' },
    { 'year_start': [2008,  7], 'year_end': [2008, 10], 'type': 'Development - C/C++/Java' },
    { 'year_start': [2008, 11], 'year_end': [2011,  9], 'type': 'Linux System - Administration' },
