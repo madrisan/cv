@@ -15,7 +15,7 @@ job_list = [
    'Linux System - Administration',
    'Linux System - DevOps',
    'Monitoring',
-   'Networking Engineer'
+   'LAN/WAN Networking'
 ]
 
 def t(job):
@@ -36,7 +36,7 @@ jobs = [
    # University - Algebra Computazionale
    { 'year_start': [1998,  4], 'year_end': [1998,  5], 'type': 'Development - Math' },
    # Jobs as Networking Engineer
-   { 'year_start': [1999, 10], 'year_end': [2004,  8], 'type': 'Networking Engineer' },
+   { 'year_start': [1999, 10], 'year_end': [2004,  8], 'type': 'LAN/WAN Networking' },
    # Atlanet - Skeleton
    { 'year_start': [2001, 11], 'year_end': [2002,  8], 'type': 'Development - Shell Scripts' },
    { 'year_start': [2002,  2], 'year_end': [2002,  3], 'type': 'Development - C/C++/Java' },
@@ -75,7 +75,7 @@ jobs = [
    # Sopra-Steria
    { 'year_start': [2014,  9], 'year_end': [2015, 10], 'type': 'Development - Shell Scripts' },
    # Base SUD Networking
-   { 'year_start': [2014, 11], 'year_end': [2015,  2], 'type': 'Networking Engineer' },
+   { 'year_start': [2014, 11], 'year_end': [2015,  2], 'type': 'LAN/WAN Networking' },
    { 'year_start': [2015,  1], 'year_end': [2015,  4], 'type': 'Monitoring' },
    # MOOC C++
    { 'year_start': [2015,  4], 'year_end': [2015,  5], 'type': 'Development - C/C++/Java' },
