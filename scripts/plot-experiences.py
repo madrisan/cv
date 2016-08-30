@@ -67,9 +67,13 @@ jobs = [
    # Refont cv in TeX
    { 'year_start': [2010,  3], 'year_end': [2010,  3], 'type': 'Development - TeX' },
    { 'year_start': [2011, 10], 'year_end': [2014,  6], 'type': 'Monitoring' },
-   # script PHP IBM
+   # Scripts PHP IBM
    { 'year_start': [2011, 10], 'year_end': [2012,  2], 'type': 'Development - Web' },
-   { 'year_start': [2013,  3], 'year_end': [2013,  8], 'type': 'Development - Linux System' },
+   # Development on Rasberry Pi - System
+   { 'year_start': [2013,  3], 'year_end': [2013,  6], 'type': 'Development - Linux System' },
+   # Development on Rasberry Pi - XBMC pilot
+   { 'year_start': [2013,  4], 'year_end': [2013,  7], 'type': 'Development - Python' },
+   # Nagios PLugins for Linux
    { 'year_start': [2014,  2], 'year_end': [2015, 12], 'type': 'Development - C/C++/Java' },
    { 'year_start': [2014,  7], 'year_end': [2016,  8], 'type': 'Linux System - DevOps' },
    # Sopra-Steria
@@ -87,6 +91,8 @@ jobs = [
    { 'year_start': [2015,  9], 'year_end': [2016,  1], 'type': 'Development - Python' },
    # System tools
    { 'year_start': [2015, 10], 'year_end': [2015, 11], 'type': 'Development - Python' },
+   # OpenMamba - Data Analisys tools
+   { 'year_start': [2015, 11], 'year_end': [2015, 12], 'type': 'Development - Linux System' },
    # Full Stack Web Specialization
    { 'year_start': [2015, 12], 'year_end': [2016,  6], 'type': 'Development - Web' },
    # jQuery, TypeScript, Angular.js
@@ -134,9 +140,9 @@ ax.set_title('Job History')
 ax.set_xlim([1995, 2020])
 
 # Add grid
-#ax.set_yticks([6.5, 8.2, 9.9])
-ax.set_yticks([])
-#ax.set_yticklabels(['', '', ''])
+yticks = range(0, len(job_list), 2)
+ax.set_yticks(yticks)
+ax.set_yticklabels([''] * len(yticks))
 ax.grid('on')
 
 def textlabel(x, y, text):
@@ -144,9 +150,9 @@ def textlabel(x, y, text):
             #, bbox={'facecolor':'red', 'alpha':0.5, 'pad':6})
 
 textlabel(1995.4,  3.1, 'Development')
-textlabel(1995.4,  7.2, 'Linux system')
+textlabel(1995.4,  7.4, 'Linux system')
 textlabel(1995.4,  8.9, 'Monitoring')
-textlabel(1995.4, 10.5, 'Networking')
+textlabel(1995.4, 10.3, 'Networking')
 
 # Add a legend
 handles = [mpatches.Patch(color=c(job), label=job, alpha=0.8) for job in job_list]
