@@ -48,7 +48,7 @@ jobs = [
    { 'year_start': [2006,  9], 'year_end': [2006, 10], 'type': 'Development - C/C++/Java' },
    # QiLinux web site
    { 'year_start': [2006,  9], 'year_end': [2006, 10], 'type': 'Development - Web' },
-   # QiLinux autospec - start
+   # QiLinux/Openmamba autospec - start
    { 'year_start': [2004,  8], 'year_end': [2006,  6], 'type': 'Development - Shell Scripts' },
    { 'year_start': [2006, 11], 'year_end': [2007,  6], 'type': 'Development - Shell Scripts' },
    { 'year_start': [2007,  9], 'year_end': [2008,  1], 'type': 'Development - Shell Scripts' },
@@ -58,10 +58,27 @@ jobs = [
    { 'year_start': [2010, 10], 'year_end': [2011,  4], 'type': 'Development - Shell Scripts' },
    { 'year_start': [2011, 12], 'year_end': [2012, 12], 'type': 'Development - Shell Scripts' },
    { 'year_start': [2014, 11], 'year_end': [2014, 12], 'type': 'Development - Shell Scripts' },
-   # QiLinux autospec - end
+   # QiLinux/Openmamba autospec - end
    # QiLinux - disk partitioner
    { 'year_start': [2005,  3], 'year_end': [2005,  4], 'type': 'Development - Python' },
+   # IBM Italy - Turin
    { 'year_start': [2007,  1], 'year_end': [2008,  5], 'type': 'Linux System - Administration' },
+   # Openmamba dev
+   { 'year_start': [2007,  3], 'year_end': [2007,  4], 'type': 'Development - Linux System' },
+   { 'year_start': [2007,  8], 'year_end': [2007,  9], 'type': 'Development - Linux System' },
+   { 'year_start': [2008,  1], 'year_end': [2008,  2], 'type': 'Development - Linux System' },
+   { 'year_start': [2008,  6], 'year_end': [2008,  7], 'type': 'Development - Linux System' },
+   { 'year_start': [2008, 11], 'year_end': [2008, 12], 'type': 'Development - Linux System' },
+   { 'year_start': [2009,  4], 'year_end': [2009,  5], 'type': 'Development - Linux System' },
+   { 'year_start': [2009,  9], 'year_end': [2009, 10], 'type': 'Development - Linux System' },
+   { 'year_start': [2010,  3], 'year_end': [2010,  4], 'type': 'Development - Linux System' },
+   { 'year_start': [2010,  8], 'year_end': [2010,  9], 'type': 'Development - Linux System' },
+   { 'year_start': [2011,  1], 'year_end': [2011,  2], 'type': 'Development - Linux System' },
+   { 'year_start': [2011,  6], 'year_end': [2011,  7], 'type': 'Development - Linux System' },
+   { 'year_start': [2011, 11], 'year_end': [2011, 12], 'type': 'Development - Linux System' },
+   { 'year_start': [2012,  4], 'year_end': [2012,  5], 'type': 'Development - Linux System' },
+   { 'year_start': [2012,  9], 'year_end': [2012, 10], 'type': 'Development - Linux System' },
+   #
    { 'year_start': [2008,  7], 'year_end': [2008, 10], 'type': 'Development - C/C++/Java' },
    { 'year_start': [2008, 11], 'year_end': [2011,  9], 'type': 'Linux System - Administration' },
    # Refont cv in TeX
