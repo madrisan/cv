@@ -134,18 +134,19 @@ ax.set_title('Job History')
 ax.set_xlim([1995, 2020])
 
 # Add grid
-ax.set_yticks([6.5, 8.2, 9.9])
-ax.set_yticklabels(['', '', ''])
+#ax.set_yticks([6.5, 8.2, 9.9])
+ax.set_yticks([])
+#ax.set_yticklabels(['', '', ''])
 ax.grid('on')
 
-ax.text(1995.7, -1.3, 'development', style='italic',
-        bbox={'facecolor':'red', 'alpha':0.5, 'pad':6})
-ax.text(1995.7, 7.2, 'system', style='italic',
-        bbox={'facecolor':'red', 'alpha':0.5, 'pad':6})
-ax.text(1995.7, 8.9, 'monitoring', style='italic',
-        bbox={'facecolor':'red', 'alpha':0.5, 'pad':6})
-ax.text(1995.7, 10.5, 'networking', style='italic',
-        bbox={'facecolor':'red', 'alpha':0.5, 'pad':6})
+def textlabel(x, y, text):
+    ax.text(x, y, text, style='italic', color='gray', fontsize=10)
+            #, bbox={'facecolor':'red', 'alpha':0.5, 'pad':6})
+
+textlabel(1995.4,  3.1, 'Development')
+textlabel(1995.4,  7.2, 'Linux system')
+textlabel(1995.4,  8.9, 'Monitoring')
+textlabel(1995.4, 10.5, 'Networking')
 
 # Add a legend
 handles = [mpatches.Patch(color=c(job), label=job, alpha=0.8) for job in job_list]
