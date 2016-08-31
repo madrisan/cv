@@ -4,6 +4,7 @@ from matplotlib.font_manager import FontProperties
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 import numpy as np
+import datetime
 
 # Jobs:
 job_list = [
@@ -125,6 +126,10 @@ color_list = plt.cm.Paired(np.linspace(0, 1, len(job_list)))
 def c(job):
    return color_list[t(job)]
 
+# normalize the month
+def mnorm(month):
+   return (month - 1) / 12.0
+
 year = []
 months = []
 shape = []
@@ -134,8 +139,8 @@ colors = []
 bullet_factor = 2.2
 
 for job in jobs:
-    ystart = job['year_start'][0] + (job['year_start'][1] - 1) / 12.0
-    yend = job['year_end'][0] + (job['year_end'][1] - 1) / 12.0
+    ystart = job['year_start'][0] + mnorm(job['year_start'][1])
+    yend = job['year_end'][0] + mnorm(job['year_end'][1])
     delta = yend - ystart
     assert(delta >= 0)
 
@@ -166,6 +171,11 @@ yticks = range(0, len(job_list), 2)
 ax.set_yticks(yticks)
 ax.set_yticklabels([''] * len(yticks))
 ax.grid('on')
+
+# Add a vertical line to show ithe current date
+now = datetime.datetime.now()
+xtime = now.year + mnorm(now.month) 
+ax.axvline(x=xtime, ymin=0.01, ymax=0.98, linewidth=1, color='0.75')
 
 def textlabel(x, y, text):
     ax.text(x, y, text, style='italic', color='gray', fontsize=10)
