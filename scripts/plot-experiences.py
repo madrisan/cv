@@ -174,17 +174,19 @@ ax.grid('on')
 
 # Add a vertical line to show ithe current date
 now = datetime.datetime.now()
-xtime = now.year + mnorm(now.month) 
-ax.axvline(x=xtime, ymin=0.01, ymax=0.98, linewidth=1, color='0.75')
+xnow = now.year + mnorm(now.month) 
+ax.axvline(x=xnow, ymin=0.02, ymax=0.98, linewidth=1, color='0.75')
 
 def textlabel(x, y, text):
     ax.text(x, y, text, style='italic', color='gray', fontsize=10)
             #, bbox={'facecolor':'red', 'alpha':0.5, 'pad':6})
 
+# Add some text labels to improve the plot readability
 textlabel(1995.4,  3.1, 'Development')
 textlabel(1995.4,  7.4, 'Linux system')
 textlabel(1995.4,  8.9, 'Monitoring')
 textlabel(1995.4, 10.3, 'Networking')
+textlabel(xnow, -1, "%s.%s" % (now.year, now.month))
 
 # Add a legend
 handles = [mpatches.Patch(color=c(job),
