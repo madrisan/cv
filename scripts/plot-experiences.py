@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from matplotlib.font_manager import FontProperties
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
@@ -47,7 +49,7 @@ jobs = [
    { 'year_start': [2004,  9], 'year_end': [2006, 12], 'type': 'Development - Linux System' },
    { 'year_start': [2006,  9], 'year_end': [2006, 10], 'type': 'Development - C/C++/Java' },
    # QiLinux web site
-   { 'year_start': [2006,  9], 'year_end': [2006, 10], 'type': 'Development - Web' },
+   { 'year_start': [2006,  3], 'year_end': [2006, 12], 'type': 'Development - Web' },
    # QiLinux/Openmamba autospec - start
    { 'year_start': [2004,  8], 'year_end': [2006,  6], 'type': 'Development - Shell Scripts' },
    { 'year_start': [2006, 11], 'year_end': [2007,  6], 'type': 'Development - Shell Scripts' },
@@ -60,24 +62,25 @@ jobs = [
    { 'year_start': [2014, 11], 'year_end': [2014, 12], 'type': 'Development - Shell Scripts' },
    # QiLinux/Openmamba autospec - end
    # QiLinux - disk partitioner
-   { 'year_start': [2005,  3], 'year_end': [2005,  4], 'type': 'Development - Python' },
+   { 'year_start': [2005,  3], 'year_end': [2005,  6], 'type': 'Development - Python' },
    # IBM Italy - Turin
    { 'year_start': [2007,  1], 'year_end': [2008,  5], 'type': 'Linux System - Administration' },
    # Openmamba dev
-   { 'year_start': [2007,  3], 'year_end': [2007,  4], 'type': 'Development - Linux System' },
-   { 'year_start': [2007,  8], 'year_end': [2007,  9], 'type': 'Development - Linux System' },
-   { 'year_start': [2008,  1], 'year_end': [2008,  2], 'type': 'Development - Linux System' },
-   { 'year_start': [2008,  6], 'year_end': [2008,  7], 'type': 'Development - Linux System' },
-   { 'year_start': [2008, 11], 'year_end': [2008, 12], 'type': 'Development - Linux System' },
-   { 'year_start': [2009,  4], 'year_end': [2009,  5], 'type': 'Development - Linux System' },
-   { 'year_start': [2009,  9], 'year_end': [2009, 10], 'type': 'Development - Linux System' },
-   { 'year_start': [2010,  3], 'year_end': [2010,  4], 'type': 'Development - Linux System' },
-   { 'year_start': [2010,  8], 'year_end': [2010,  9], 'type': 'Development - Linux System' },
-   { 'year_start': [2011,  1], 'year_end': [2011,  2], 'type': 'Development - Linux System' },
-   { 'year_start': [2011,  6], 'year_end': [2011,  7], 'type': 'Development - Linux System' },
-   { 'year_start': [2011, 11], 'year_end': [2011, 12], 'type': 'Development - Linux System' },
-   { 'year_start': [2012,  4], 'year_end': [2012,  5], 'type': 'Development - Linux System' },
-   { 'year_start': [2012,  9], 'year_end': [2012, 10], 'type': 'Development - Linux System' },
+   { 'year_start': [2007,  1], 'year_end': [2007, 12], 'type': 'Development - Linux System' },
+   { 'year_start': [2008,  1], 'year_end': [2008,  6], 'type': 'Development - Linux System' },
+   { 'year_start': [2008,  7], 'year_end': [2008, 12], 'type': 'Development - Linux System' },
+   { 'year_start': [2009,  1], 'year_end': [2009,  4], 'type': 'Development - Linux System' },
+   { 'year_start': [2009,  5], 'year_end': [2009,  8], 'type': 'Development - Linux System' },
+   { 'year_start': [2009,  9], 'year_end': [2009, 12], 'type': 'Development - Linux System' },
+   { 'year_start': [2010,  1], 'year_end': [2010,  4], 'type': 'Development - Linux System' },
+   { 'year_start': [2010,  5], 'year_end': [2010,  8], 'type': 'Development - Linux System' },
+   { 'year_start': [2010,  9], 'year_end': [2010, 12], 'type': 'Development - Linux System' },
+   { 'year_start': [2011,  1], 'year_end': [2011,  4], 'type': 'Development - Linux System' },
+   { 'year_start': [2011,  5], 'year_end': [2011,  8], 'type': 'Development - Linux System' },
+   { 'year_start': [2011,  9], 'year_end': [2011, 12], 'type': 'Development - Linux System' },
+   { 'year_start': [2012,  1], 'year_end': [2012,  4], 'type': 'Development - Linux System' },
+   { 'year_start': [2012,  5], 'year_end': [2012,  8], 'type': 'Development - Linux System' },
+   { 'year_start': [2012,  9], 'year_end': [2012, 12], 'type': 'Development - Linux System' },
    #
    { 'year_start': [2008,  7], 'year_end': [2008, 10], 'type': 'Development - C/C++/Java' },
    { 'year_start': [2008, 11], 'year_end': [2011,  9], 'type': 'Linux System - Administration' },
@@ -89,7 +92,7 @@ jobs = [
    # Development on Rasberry Pi - System
    { 'year_start': [2013,  3], 'year_end': [2013,  6], 'type': 'Development - Linux System' },
    # Development on Rasberry Pi - XBMC pilot
-   { 'year_start': [2013,  4], 'year_end': [2013,  7], 'type': 'Development - Python' },
+   { 'year_start': [2013,  4], 'year_end': [2013,  8], 'type': 'Development - Python' },
    # Nagios PLugins for Linux
    { 'year_start': [2014,  2], 'year_end': [2015, 12], 'type': 'Development - C/C++/Java' },
    { 'year_start': [2014,  7], 'year_end': [2016,  8], 'type': 'Linux System - DevOps' },
@@ -108,46 +111,48 @@ jobs = [
    { 'year_start': [2015,  9], 'year_end': [2016,  1], 'type': 'Development - Python' },
    # System tools
    { 'year_start': [2015, 10], 'year_end': [2015, 11], 'type': 'Development - Python' },
-   # OpenMamba - Data Analisys tools
+   # openmamba - Data Analisys tools
    { 'year_start': [2015, 11], 'year_end': [2015, 12], 'type': 'Development - Linux System' },
    # Full Stack Web Specialization
    { 'year_start': [2015, 12], 'year_end': [2016,  6], 'type': 'Development - Web' },
-   # jQuery, TypeScript, Angular.js
-   { 'year_start': [2016,  2], 'year_end': [2016,  3], 'type': 'Development - Web' },
-   { 'year_start': [2016,  5], 'year_end': [2016,  6], 'type': 'Development - Web' },
+   # jQuery, TypeScript, Angular.js, JavaScript, MongoDB
+   { 'year_start': [2016,  2], 'year_end': [2016,  8], 'type': 'Development - Web' },
    # MOOC Dynamic Systems and Chaos
    { 'year_start': [2016,  7], 'year_end': [2016,  8], 'type': 'Development - Math' },
-   # MOOCs JavaScripts
-   { 'year_start': [2016,  7], 'year_end': [2016,  8], 'type': 'Development - Web' }
 ]
 
 color_list = plt.cm.Paired(np.linspace(0, 1, len(job_list)))
 def c(job):
    return color_list[t(job)]
 
-bullet_factor = 90
-
-months = []
-jobtype = []
 year = []
+months = []
+shape = []
+jobtype = []
 colors = []
 
+bullet_factor = 2.2
+
 for job in jobs:
-    ystart = job['year_start'][0] + job['year_start'][1] / 12.0
-    yend = job['year_end'][0] + job['year_end'][1] / 12.0
-
+    ystart = job['year_start'][0] + (job['year_start'][1] - 1) / 12.0
+    yend = job['year_end'][0] + (job['year_end'][1] - 1) / 12.0
     delta = yend - ystart
-    yhalf = ystart + delta / 2.0
+    assert(delta >= 0)
 
+    yhalf = ystart + delta / 2.0
     year.append(yhalf)
-    months.append(12*delta + 1);
+
+    job_months = 12.0 * delta + 1
+    months.append(job_months)
+
+    shape.append(bullet_factor * job_months ** 2)
     jobtype.append(t(job['type']))
     colors.append(c(job['type']))
 
 fig = plt.figure(1)
 
 ax = fig.add_subplot(111)
-ax.scatter(x=year, y=jobtype, s=[m * bullet_factor for m in months],
+ax.scatter(x=year, y=jobtype, s=shape,
            c=colors, alpha=0.5)
 
 # Add axis labels
