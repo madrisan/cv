@@ -16,6 +16,7 @@ job_list = [
    'Development - TeX',
    'Development - Web',
    'Linux System - Administration',
+   'Linux System - Containers',
    'Linux System - DevOps',
    'Monitoring',
    'LAN/WAN Networking'
@@ -96,7 +97,7 @@ jobs = [
    { 'year_start': [2013,  4], 'year_end': [2013,  8], 'type': 'Development - Python' },
    # Nagios PLugins for Linux
    { 'year_start': [2014,  2], 'year_end': [2015, 12], 'type': 'Development - C/C++/Java' },
-   { 'year_start': [2014,  7], 'year_end': [2016,  8], 'type': 'Linux System - DevOps' },
+   { 'year_start': [2014,  7], 'year_end': [2016,  9], 'type': 'Linux System - DevOps' },
    # Sopra-Steria
    { 'year_start': [2014,  9], 'year_end': [2015, 10], 'type': 'Development - Shell Scripts' },
    # Base SUD Networking
@@ -117,9 +118,11 @@ jobs = [
    # Full Stack Web Specialization
    { 'year_start': [2015, 12], 'year_end': [2016,  6], 'type': 'Development - Web' },
    # jQuery, TypeScript, Angular.js, JavaScript, MongoDB
-   { 'year_start': [2016,  2], 'year_end': [2016,  8], 'type': 'Development - Web' },
+   { 'year_start': [2016,  2], 'year_end': [2016,  9], 'type': 'Development - Web' },
    # MOOC Dynamic Systems and Chaos
    { 'year_start': [2016,  7], 'year_end': [2016,  8], 'type': 'Development - Math' },
+   # Steria - poc: build infrastructure using GitLab and Docker)
+   { 'year_start': [2016,  7], 'year_end': [2016,  9], 'type': 'Linux System - Containers' },
 ]
 
 color_list = plt.cm.Paired(np.linspace(0, 1, len(job_list)))
@@ -160,20 +163,24 @@ ax = fig.add_subplot(111)
 ax.scatter(x=year, y=jobtype, s=shape,
            c=colors, alpha=0.5)
 
+# Get the current date
+now = datetime.datetime.now()
+print now.year
+
 # Add axis labels
 ax.set_xlabel('Year')
 ax.set_ylabel('Job Typology')
 ax.set_title('Job History')
-ax.set_xlim([1995, 2020])
+ax.set_xlim([1995, now.year + 3])
+ax.set_ylim([-1, len(job_list) + 1])
 
 # Add grid
-yticks = range(0, len(job_list), 2)
+yticks = [6.5, 10, 11]
 ax.set_yticks(yticks)
-ax.set_yticklabels([''] * len(yticks))
+ax.set_yticklabels([''])
 ax.grid('on')
 
 # Add a vertical line to show ithe current date
-now = datetime.datetime.now()
 xnow = now.year + mnorm(now.month) 
 ax.axvline(x=xnow, ymin=0.02, ymax=0.98, linewidth=1, color='0.75')
 
@@ -183,10 +190,10 @@ def textlabel(x, y, text):
 
 # Add some text labels to improve the plot readability
 textlabel(1995.4,  3.1, 'Development')
-textlabel(1995.4,  7.4, 'Linux system')
-textlabel(1995.4,  8.9, 'Monitoring')
-textlabel(1995.4, 10.3, 'Networking')
-textlabel(xnow, -1, "%s.%s" % (now.year, now.month))
+textlabel(1995.4,  8.0, 'Linux system')
+textlabel(1995.4, 10.2, 'Monitoring')
+textlabel(1995.4, 11.2, 'Networking')
+textlabel(xnow + 0.1, 0.2, "%s.%s" % (now.year, now.month))
 
 # Add a legend
 handles = [mpatches.Patch(color=c(job),
