@@ -1,12 +1,18 @@
 #!/usr/bin/python
 
+# My Job History
+# Create a scatter plot for visualizing all my job experences and
+# programming activities
+#
+# Copyright (C) 2016 Davide Madrisan <davide.madrisan.gmail.com>
+
 from matplotlib.font_manager import FontProperties
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 import numpy as np
 import datetime
 
-# Jobs:
+# List of job categories
 job_list = [
    'Development - C/C++/Java',
    'Development - Linux System',
@@ -86,7 +92,7 @@ jobs = [
    #
    { 'year_start': [2008,  7], 'year_end': [2008, 10], 'type': 'Development - C/C++/Java' },
    { 'year_start': [2008, 11], 'year_end': [2011,  9], 'type': 'Linux System - Administration' },
-   # Refont cv in TeX
+   # Rework cv in TeX
    { 'year_start': [2010,  3], 'year_end': [2010,  3], 'type': 'Development - TeX' },
    { 'year_start': [2011, 10], 'year_end': [2014,  6], 'type': 'Monitoring' },
    # Scripts PHP IBM
@@ -129,7 +135,7 @@ color_list = plt.cm.Paired(np.linspace(0, 1, len(job_list)))
 def c(job):
    return color_list[t(job)]
 
-# normalize the month
+# Normalize the month number
 def mnorm(month):
    return (month - 1) / 12.0
 
@@ -174,21 +180,23 @@ ax.set_title('Job History')
 ax.set_xlim([1995, now.year + 3])
 ax.set_ylim([-1, len(job_list) + 1])
 
-# Add grid
+# Add grid - fixme: yticks[] has to be manually adjusted
 yticks = [6.5, 10, 11]
 ax.set_yticks(yticks)
 ax.set_yticklabels([''])
 ax.grid('on')
 
-# Add a vertical line to show ithe current date
+# Add a vertical line to show the current date
 xnow = now.year + mnorm(now.month) 
 ax.axvline(x=xnow, ymin=0.02, ymax=0.98, linewidth=1, color='0.75')
 
+# Add a floating text
 def textlabel(x, y, text):
     ax.text(x, y, text, style='italic', color='gray', fontsize=10)
             #, bbox={'facecolor':'red', 'alpha':0.5, 'pad':6})
 
-# Add some text labels to improve the plot readability
+# Add some text labels to hopefully improve the plot readability
+# fixme: the y coordinate has to be set manually
 textlabel(1995.4,  3.1, 'Development')
 textlabel(1995.4,  8.0, 'Linux system')
 textlabel(1995.4, 10.2, 'Monitoring')
@@ -202,4 +210,5 @@ lgd = ax.legend(reversed(handles), reversed(job_list),
                 loc='upper right', bbox_to_anchor=(1.55, 0.8),
                 prop={'size': 12})
 
+# Save the plot on a png file
 fig.savefig('../images/experiences.png', bbox_extra_artists=(lgd,), bbox_inches='tight')
