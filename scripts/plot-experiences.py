@@ -15,6 +15,7 @@ import datetime
 # List of job categories
 job_list = [
    'Development - C/C++/Java',
+   'Development - Data Analysis',
    'Development - Linux System',
    'Development - Math',
    'Development - Python',
@@ -89,6 +90,7 @@ jobs = [
    { 'year_start': [2012,  1], 'year_end': [2012,  4], 'type': 'Development - Linux System' },
    { 'year_start': [2012,  5], 'year_end': [2012,  8], 'type': 'Development - Linux System' },
    { 'year_start': [2012,  9], 'year_end': [2012, 12], 'type': 'Development - Linux System' },
+   { 'year_start': [2015,  3], 'year_end': [2015,  5], 'type': 'Development - Linux System' },
    #
    { 'year_start': [2008,  7], 'year_end': [2008, 10], 'type': 'Development - C/C++/Java' },
    { 'year_start': [2008, 11], 'year_end': [2011,  9], 'type': 'Linux System - Administration' },
@@ -109,6 +111,10 @@ jobs = [
    # Base SUD Networking
    { 'year_start': [2014, 11], 'year_end': [2015,  2], 'type': 'LAN/WAN Networking' },
    { 'year_start': [2015,  1], 'year_end': [2015,  4], 'type': 'Monitoring' },
+   # MOOCs Data Analysis
+   { 'year_start': [2014, 10], 'year_end': [2015,  5], 'type': 'Development - Data Analysis' },
+   { 'year_start': [2015,  7], 'year_end': [2015,  9], 'type': 'Development - Data Analysis' },
+   { 'year_start': [2016,  6], 'year_end': [2016,  7], 'type': 'Development - Data Analysis' },
    # MOOC C++
    { 'year_start': [2015,  4], 'year_end': [2015,  5], 'type': 'Development - C/C++/Java' },
    # MOOCs Java
@@ -119,14 +125,15 @@ jobs = [
    { 'year_start': [2015,  9], 'year_end': [2016,  1], 'type': 'Development - Python' },
    # System tools
    { 'year_start': [2015, 10], 'year_end': [2015, 11], 'type': 'Development - Python' },
-   # openmamba - Data Analisys tools
-   { 'year_start': [2015, 11], 'year_end': [2015, 12], 'type': 'Development - Linux System' },
+   # openmamba - Data Analysis tools
+   { 'year_start': [2014, 11], 'year_end': [2015,  3], 'type': 'Development - Linux System' },
    # Full Stack Web Specialization
    { 'year_start': [2015, 12], 'year_end': [2016,  6], 'type': 'Development - Web' },
    # jQuery, TypeScript, Angular.js, JavaScript, MongoDB
    { 'year_start': [2016,  2], 'year_end': [2016,  9], 'type': 'Development - Web' },
    # MOOC Dynamic Systems and Chaos
    { 'year_start': [2016,  7], 'year_end': [2016,  8], 'type': 'Development - Math' },
+   { 'year_start': [2016,  7], 'year_end': [2016,  8], 'type': 'Development - Python' },
    # Steria - poc: build infrastructure using GitLab and Docker)
    { 'year_start': [2016,  7], 'year_end': [2016,  9], 'type': 'Linux System - Containers' },
 ]
@@ -171,7 +178,6 @@ ax.scatter(x=year, y=jobtype, s=shape,
 
 # Get the current date
 now = datetime.datetime.now()
-print now.year
 
 # Add axis labels
 ax.set_xlabel('Year')
@@ -181,7 +187,7 @@ ax.set_xlim([1995, now.year + 3])
 ax.set_ylim([-1, len(job_list) + 1])
 
 # Add grid - fixme: yticks[] has to be manually adjusted
-yticks = [6.5, 10, 11]
+yticks = [8, 11, 12]
 ax.set_yticks(yticks)
 ax.set_yticklabels([''])
 ax.grid('on')
@@ -197,10 +203,10 @@ def textlabel(x, y, text):
 
 # Add some text labels to hopefully improve the plot readability
 # fixme: the y coordinate has to be set manually
-textlabel(1995.4,  3.1, 'Development')
-textlabel(1995.4,  8.0, 'Linux system')
-textlabel(1995.4, 10.2, 'Monitoring')
-textlabel(1995.4, 11.2, 'Networking')
+textlabel(1995.4,  3.7, 'Development')
+textlabel(1995.4,  8.2, 'Linux system')
+textlabel(1995.4, 11.2, 'Monitoring')
+textlabel(1995.4, 12.2, 'Networking')
 textlabel(xnow + 0.1, 0.2, "%s.%s" % (now.year, now.month))
 
 # Add a legend
