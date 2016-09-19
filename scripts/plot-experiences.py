@@ -15,10 +15,12 @@ import numpy as np
 
 from experiences import jobs, job_list
 
+# Return the index of a 'job' in the vector 'job_list'
 def t(job):
     return job_list.index(job)
 
 color_list = plt.cm.Paired(np.linspace(0, 1, len(job_list)))
+# Return the plotter color associated to a 'job'
 def c(job):
    return color_list[t(job)]
 
@@ -26,14 +28,11 @@ def c(job):
 def mnorm(month):
    return (month - 1) / 12.0
 
-year = []
-months = []
-shape = []
-jobtype = []
-colors = []
-
+# Magnification factor
 bullet_factor = 2.2
 
+# Initialize the date, shape, jobtype, and color variables
+year, months, shape, jobtype, colors = ([] for _ in xrange(5))
 for job in jobs:
     ystart = job['year_start'][0] + mnorm(job['year_start'][1])
     yend = job['year_end'][0] + mnorm(job['year_end'][1])
@@ -53,8 +52,7 @@ for job in jobs:
 fig = plt.figure(1)
 
 ax = fig.add_subplot(111)
-ax.scatter(x=year, y=jobtype, s=shape,
-           c=colors, alpha=0.5)
+ax.scatter(x=year, y=jobtype, s=shape, c=colors, alpha=0.5)
 
 # Get the current date
 now = datetime.datetime.now()
