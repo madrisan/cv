@@ -85,7 +85,7 @@ textlabel(1995.4,  3.7, 'Development')
 textlabel(1995.4,  8.2, 'Linux system')
 textlabel(1995.4, 11.2, 'Monitoring')
 textlabel(1995.4, 12.2, 'Networking')
-textlabel(xnow + 0.1, 0.2, "%s.%s" % (now.year, now.month))
+textlabel(xnow+0.01, 0.2, "%s.%s" % (now.year, now.month))
 
 # Add a legend
 handles = [mpatches.Patch(color=c(job),
