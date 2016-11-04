@@ -75,8 +75,9 @@ xnow = now.year + mnorm(now.month)
 ax.axvline(x=xnow, ymin=0.02, ymax=0.98, linewidth=1, color='0.75')
 
 # Add a floating text
-def textlabel(x, y, text):
-    ax.text(x, y, text, style='italic', color='gray', fontsize=10)
+def textlabel(x, y, text, rotation='horizontal'):
+    ax.text(x, y, text, style='italic', color='gray', fontsize=10,
+            rotation=rotation)
             #, bbox={'facecolor':'red', 'alpha':0.5, 'pad':6})
 
 # Add some text labels to hopefully improve the plot readability
@@ -85,7 +86,7 @@ textlabel(1995.4,  3.7, 'Development')
 textlabel(1995.4,  8.2, 'Linux system')
 textlabel(1995.4, 11.2, 'Monitoring')
 textlabel(1995.4, 12.2, 'Networking')
-textlabel(xnow+0.01, 0.2, "%s.%s" % (now.year, now.month))
+textlabel(xnow+0.05, 0.5, "%s.%s" % (now.year, now.month), rotation=45)
 
 # Add a legend
 handles = [mpatches.Patch(color=c(job),
@@ -95,4 +96,5 @@ lgd = ax.legend(reversed(handles), reversed(job_list),
                 prop={'size': 12})
 
 # Save the plot on a png file
-fig.savefig('../images/experiences.png', bbox_extra_artists=(lgd,), bbox_inches='tight')
+fig.savefig('../images/experiences.png',
+            bbox_extra_artists=(lgd,), bbox_inches='tight')
