@@ -83,7 +83,7 @@ def textlabel(x, y, text, rotation='horizontal'):
 # Add some text labels to hopefully improve the plot readability
 # fixme: the y coordinate has to be set manually
 textlabel(1995.4,  3.7, 'Development')
-textlabel(1995.4,  8.2, 'Linux system')
+textlabel(1995.4,  8.6, 'Linux system')
 textlabel(1995.4, 11.2, 'Monitoring')
 textlabel(1995.4, 12.2, 'Networking')
 textlabel(xnow+0.05, 0.5, "%s.%s" % (now.year, now.month), rotation=45)
