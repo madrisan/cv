@@ -89,7 +89,8 @@ jobs = [
    { 'year_start': [2013,  4], 'year_end': [2013,  8], 'type': 'Development - Python' },
    # Nagios PLugins for Linux
    { 'year_start': [2014,  2], 'year_end': [2015, 12], 'type': 'Development - C/C++/Java' },
-   { 'year_start': [2014,  7], 'year_end': [2016, 11], 'type': 'Linux System - DevOps' },
+   # SopraSteria DevOps activities (Docker, SaltStack, Python, rpm/deb packaging: Spacewalk)
+   { 'year_start': [2014,  7], 'year_end': [2016, 12], 'type': 'Linux System - DevOps' },
    # Sopra-Steria
    { 'year_start': [2014,  9], 'year_end': [2015, 10], 'type': 'Development - Shell Scripts' },
    # Base SUD Networking
@@ -118,15 +119,15 @@ jobs = [
    # MOOC Dynamic Systems and Chaos
    { 'year_start': [2016,  7], 'year_end': [2016,  8], 'type': 'Development - Math' },
    # SopraSteria - Python scripts and AWS boto3
-   { 'year_start': [2016,  7], 'year_end': [2016, 10], 'type': 'Development - Python' },
+   { 'year_start': [2016,  7], 'year_end': [2016, 12], 'type': 'Development - Python' },
    # SopraSteria - build infrastructure using GitLab and Docker)
-   { 'year_start': [2016,  7], 'year_end': [2016, 11], 'type': 'Linux System - Containers' },
-   # SopraSteria - postinstall framework + GitLab script refont
-   { 'year_start': [2016,  6], 'year_end': [2016, 11], 'type': 'Development - Shell Scripts' },
+   { 'year_start': [2016,  7], 'year_end': [2016, 12], 'type': 'Linux System - Containers' },
+   # SopraSteria - postinstall framework (SaltStack-based) + GitLab script refont
+   { 'year_start': [2016,  6], 'year_end': [2016, 12], 'type': 'Development - Shell Scripts' },
    # Nagios Plugins for Linux v19 + test framework
    { 'year_start': [2016,  9], 'year_end': [2016, 11], 'type': 'Development - C/C++/Java' },
    # MOOCS Paradigms of Computer Programming  (functional programming)
    { 'year_start': [2015,  10], 'year_end': [2016, 1], 'type': 'Development - Scala' },
-   # MOOCs Functional Programming Principles in Scala - Coursera
-   { 'year_start': [2016,  10], 'year_end': [2016, 11], 'type': 'Development - Scala' },
+   # MOOCs Functional Programming in Scala Specialization - Coursera
+   { 'year_start': [2016,  10], 'year_end': [2016, 12], 'type': 'Development - Scala' },
 ]
