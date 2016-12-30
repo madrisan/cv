@@ -8,8 +8,6 @@
 
 import matplotlib
 matplotlib.use('Agg')
-
-from matplotlib.font_manager import FontProperties
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
