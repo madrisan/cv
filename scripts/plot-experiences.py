@@ -17,10 +17,12 @@ from experiences import jobs
 
 def mnorm(month):
     """Normalize the month number."""
+    assert(month in range(13))
     return (month - 1) / 12.0
 
 def jcolor(index, upper):
     """Return the plotter color associated to a job."""
+    assert(index in range(upper))
     return plt.cm.Paired(np.linspace(0, 1, upper))[index]
 
 def jindex(job):
