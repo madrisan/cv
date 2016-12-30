@@ -1,5 +1,5 @@
 # List of job categories
-job_list = [
+jobs = [
    'Development - C/C++/Java',
    'Development - Data Analysis',
    'Development - Linux System',
@@ -16,7 +16,7 @@ job_list = [
    'LAN/WAN Networking'
 ]
 
-jobs = [
+history = [
    { 'year_start': [1995,  9], 'year_end': [1996,  6], 'type': 'Development - Math' },
    # University - Teoria delle Macchine Calcolatrici
    { 'year_start': [1996,  4], 'year_end': [1996, 11], 'type': 'Development - C/C++/Java' },

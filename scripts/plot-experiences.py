@@ -13,13 +13,13 @@ import matplotlib.pyplot as plt
 import datetime
 import numpy as np
 
-from experiences import jobs, job_list
+from experiences import history, jobs
 
-# Return the index of a 'job' in the vector 'job_list'
+# Return the index of a 'job' in the vector 'jobs'
 def t(job):
-    return job_list.index(job)
+    return jobs.index(job)
 
-color_list = plt.cm.Paired(np.linspace(0, 1, len(job_list)))
+color_list = plt.cm.Paired(np.linspace(0, 1, len(jobs)))
 # Return the plotter color associated to a 'job'
 def c(job):
    return color_list[t(job)]
@@ -33,7 +33,7 @@ bullet_factor = 2.2
 
 # Initialize the date, shape, jobtype, and color variables
 year, months, shape, jobtype, colors = ([] for _ in xrange(5))
-for job in jobs:
+for job in history:
     ystart = job['year_start'][0] + mnorm(job['year_start'][1])
     yend = job['year_end'][0] + mnorm(job['year_end'][1])
     delta = yend - ystart
@@ -62,7 +62,7 @@ ax.set_xlabel('Year')
 ax.set_ylabel('Job Typology')
 ax.set_title('Job History')
 ax.set_xlim([1995, now.year + 3])
-ax.set_ylim([-1, len(job_list) + 1])
+ax.set_ylim([-1, len(jobs) + 1])
 
 # Add grid - fixme: yticks[] has to be manually adjusted
 yticks = [8, 11, 12]
@@ -90,8 +90,8 @@ textlabel(xnow+0.05, 0.5, "%s.%s" % (now.year, now.month), rotation=45)
 
 # Add a legend
 handles = [mpatches.Patch(color=c(job),
-                          label=job, alpha=0.8) for job in job_list]
-lgd = ax.legend(reversed(handles), reversed(job_list),
+                          label=job, alpha=0.8) for job in jobs]
+lgd = ax.legend(reversed(handles), reversed(jobs),
                 loc='upper right', bbox_to_anchor=(1.55, 0.8),
                 prop={'size': 12})
 
