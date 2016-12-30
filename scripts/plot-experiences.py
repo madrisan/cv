@@ -6,6 +6,9 @@
 #
 # Copyright (C) 2016 Davide Madrisan <davide.madrisan.gmail.com>
 
+import matplotlib
+matplotlib.use('Agg')
+
 from matplotlib.font_manager import FontProperties
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
