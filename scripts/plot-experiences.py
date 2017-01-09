@@ -13,12 +13,12 @@ import matplotlib.pyplot as plt
 import datetime
 import numpy as np
 
-def mnorm(month):
+def normalize(month):
     """Normalize the month number."""
     assert(month in range(13))
     return (month - 1) / 12.0
 
-def ecolor(index, upper):
+def getcolor(index, upper):
     """Return the plotter color associated to an experience."""
     assert(index in range(upper))
     return plt.cm.Paired(np.linspace(0, 1, upper))[index]
@@ -29,7 +29,7 @@ def parser(source):
 
     skip_line = lambda line: line.startswith('#') or not line.strip()
     date = lambda sy, sm, ey, em: \
-        (int(ey) + mnorm(int(em)) + int(sy) + mnorm(int(sm))) / 2.0
+        (int(ey) + normalize(int(em)) + int(sy) + normalize(int(sm))) / 2.0
     months = lambda sy, sm, ey, em: \
         12*(int(ey) - int(sy)) + int(em) - int(sm)
 
@@ -47,7 +47,7 @@ def parser(source):
         expr_types = sorted(set([expr[2] for expr in history]))
 
         index = lambda e: expr_types.index(e)
-        color = lambda e: ecolor(index(e), len(expr_types))
+        color = lambda e: getcolor(index(e), len(expr_types))
         expr_map = map(lambda e:
             (e[0], e[1], index(e[2]), color(e[2])), history)
 
@@ -92,7 +92,7 @@ def make_jobs_plot(experiences, area_adj=0.84):
     ax.grid('on')
 
     # Add a vertical line to show the current date
-    xnow = now.year + mnorm(now.month) 
+    xnow = now.year + normalize(now.month)
     ax.axvline(x=xnow, ymin=0.02, ymax=0.98, linewidth=1, color='0.75')
 
     # Add some text labels to hopefully improve the plot readability
@@ -105,7 +105,7 @@ def make_jobs_plot(experiences, area_adj=0.84):
 
     # Add a legend
     handles = \
-        list(mpatches.Patch(color=ecolor(expr_types.index(e), len(expr_types)),
+        list(mpatches.Patch(color=getcolor(expr_types.index(e), len(expr_types)),
              label=e, alpha=0.8) for e in expr_types)
     lgd = ax.legend(reversed(handles), reversed(expr_types),
                     loc='upper right', bbox_to_anchor=(1.55, 0.8),
@@ -119,6 +119,7 @@ def main():
 
     fig, legend = make_jobs_plot(parser(source))
     fig.savefig(picture, bbox_extra_artists=(legend,), bbox_inches='tight')
+    print('The picture has been saved as', picture)
 
 if __name__ == '__main__':
     main()
