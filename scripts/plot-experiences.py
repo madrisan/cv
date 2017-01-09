@@ -10,6 +10,7 @@ matplotlib.use('Agg')
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
+from collections import namedtuple
 import datetime
 import numpy as np
 
@@ -23,9 +24,11 @@ def getcolor(index, upper):
     assert(index in range(upper))
     return plt.cm.Paired(np.linspace(0, 1, upper))[index]
 
+Experience = namedtuple('Experience', ['date', 'period', 'type', 'color'])
+
 def parser(source):
     """Parse the history file and returns a list containing the
-       experiences type and map of all the experiences."""
+       experience labels and a map of all the Experience's."""
 
     skip_line = lambda line: line.startswith('#') or not line.strip()
     date = lambda sy, sm, ey, em: \
@@ -49,7 +52,7 @@ def parser(source):
         index = lambda e: expr_types.index(e)
         color = lambda e: getcolor(index(e), len(expr_types))
         expr_map = map(lambda e:
-            (e[0], e[1], index(e[2]), color(e[2])), history)
+            Experience(e[0], e[1], index(e[2]), color(e[2])), history)
 
     return expr_types, expr_map
 
@@ -62,18 +65,18 @@ def make_jobs_plot(experiences, area_adj=0.84):
                 rotation=rotation)
 
     expr_types, expr_map = experiences
-    years, area, experiences, colors = ([] for _ in range(4))
+    years, areas, experiences, colors = ([] for _ in range(4))
 
     for e in expr_map:
-        years.append(e[0])
-        area.append(np.pi * (area_adj * e[1])**2)
-        experiences.append(e[2])
-        colors.append(e[3])
+        years.append(e.date)
+        areas.append(np.pi * (area_adj * e.period)**2)
+        experiences.append(e.type)
+        colors.append(e.color)
 
     fig = plt.figure(1)
 
     ax = fig.add_subplot(111)
-    ax.scatter(x=years, y=experiences, s=area, c=colors, alpha=0.5)
+    ax.scatter(x=years, y=experiences, s=areas, c=colors, alpha=0.5)
 
     # Get the current date
     now = datetime.datetime.now()
@@ -85,7 +88,7 @@ def make_jobs_plot(experiences, area_adj=0.84):
     ax.set_xlim([1995, now.year + 3])
     ax.set_ylim([-1, len(expr_types) + 1])
 
-    # Add grid - fixme: yticks[] has to be manually adjusted
+    # Add grid - fixme: yticks[] if set must to be manually adjusted
     yticks = []
     ax.set_yticks(yticks)
     ax.set_yticklabels([''])
@@ -96,7 +99,7 @@ def make_jobs_plot(experiences, area_adj=0.84):
     ax.axvline(x=xnow, ymin=0.02, ymax=0.98, linewidth=1, color='0.75')
 
     # Add some text labels to hopefully improve the plot readability
-    # fixme: the y coordinate has to be set manually
+    # fixme: the y coordinates must to be manually set
     textlabel(ax, 1995.4,  2.6, 'Development')
     textlabel(ax, 1995.4,  9.0, 'Networking')
     textlabel(ax, 1995.4, 11.2, 'Linux system')
