@@ -80,13 +80,13 @@ def make_jobs_plot(experiences, area_adj=0.84):
 
     # Add axis labels
     ax.set_xlabel('Year')
-    ax.set_ylabel('Job Typology')
+    ax.set_ylabel('Experiences')
     ax.set_title('Job History')
     ax.set_xlim([1995, now.year + 3])
     ax.set_ylim([-1, len(expr_types) + 1])
 
     # Add grid - fixme: yticks[] has to be manually adjusted
-    yticks = [8, 11, 12]
+    yticks = []
     ax.set_yticks(yticks)
     ax.set_yticklabels([''])
     ax.grid('on')
@@ -97,10 +97,10 @@ def make_jobs_plot(experiences, area_adj=0.84):
 
     # Add some text labels to hopefully improve the plot readability
     # fixme: the y coordinate has to be set manually
-    textlabel(ax, 1995.4,  3.7, 'Development')
-    textlabel(ax, 1995.4,  8.6, 'Linux system')
-    textlabel(ax, 1995.4, 11.2, 'Monitoring')
-    textlabel(ax, 1995.4, 12.2, 'Networking')
+    textlabel(ax, 1995.4,  2.6, 'Development')
+    textlabel(ax, 1995.4,  9.0, 'Networking')
+    textlabel(ax, 1995.4, 11.2, 'Linux system')
+    textlabel(ax, 1995.4, 13.0, 'Monitoring')
     textlabel(ax, xnow+0.05, 0.5, "%s.%s" % (now.year, now.month), rotation=45)
 
     # Add a legend
@@ -109,7 +109,7 @@ def make_jobs_plot(experiences, area_adj=0.84):
              label=e, alpha=0.8) for e in expr_types)
     lgd = ax.legend(reversed(handles), reversed(expr_types),
                     loc='upper right', bbox_to_anchor=(1.55, 0.8),
-                    prop={'size': 12})
+                    prop={'size': 10})
 
     return fig, lgd
 

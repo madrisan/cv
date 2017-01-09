@@ -5,12 +5,12 @@
 #  - Development - Linux System
 #  - Development - Math
 #  - Development - Python
-#  - Development - Scala
+#  - Development - Functional Programming
 #  - Development - Shell Scripts
 #  - Development - TeX
 #  - Development - Web
 #  - Linux System - Administration
-#  - Linux System - Containers
+#  - Linux System - Docker Containers
 #  - Linux System - DevOps
 #  - Monitoring
 #  - LAN/WAN Networking
@@ -91,7 +91,7 @@
 # Nagios PLugins for Linux
 2014,  2, 2015, 12,  Development - C/C++/Java
 # SopraSteria DevOps activities (Docker, SaltStack, Python, rpm/deb packaging: Spacewalk)
-2014,  7, 2016, 12,  Linux System - DevOps
+2014,  7, 2017,  1,  Linux System - DevOps
 # Sopra-Steria
 2014,  9, 2015, 10,  Development - Shell Scripts
 # Base SUD Networking
@@ -119,15 +119,16 @@
 2016,  2, 2016, 11,  Development - Web
 # MOOC Dynamic Systems and Chaos
 2016,  7, 2016,  8,  Development - Math
-# SopraSteria - Python scripts and AWS boto3
-2016,  7, 2016, 12,  Development - Python
+# SopraSteria - Python scripts, AWS boto3, Linux inventory
+2016,  7, 2017,  1,  Development - Python
 # SopraSteria - build infrastructure using GitLab and Docker)
-2016,  7, 2016, 12,  Linux System - Containers
+2016,  7, 2017,  1,  Linux System - Docker Containers
 # SopraSteria - postinstall framework (SaltStack-based) + GitLab script refont
-2016,  6, 2016, 12,  Development - Shell Scripts
+2016,  6, 2017,  1,  Development - Shell Scripts
 # Nagios Plugins for Linux v19 + test framework
 2016,  9, 2016, 11,  Development - C/C++/Java
 # MOOCS Paradigms of Computer Programming  (functional programming)
-2015, 10, 2016, 1,  Development - Scala
+2015, 10, 2016,  1,  Development - Functional Programming
 # MOOCs Functional Programming in Scala Specialization - Coursera
-2016, 10, 2016, 12, Development - Scala
+# Book: Functional Python Programming - Packt
+2016, 10, 2017,  1,  Development - Functional Programming
