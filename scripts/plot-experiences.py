@@ -13,6 +13,12 @@ import matplotlib.pyplot as plt
 from collections import namedtuple
 import datetime
 import numpy as np
+import sys
+
+def die(message):
+    progname = sys.argv[0]
+    sys.stderr.write('%s: error: %s\n' % (progname, message))
+    sys.exit(2)
 
 def normalize(month):
     """Normalize the month number."""
@@ -45,14 +51,17 @@ def parser(source):
             date(sy, sm, ey, em), months(sy, sm, ey, em), e.strip())
             for sy, sm, ey, em, e in experience_iter)
 
-    with open(source, "r") as data:
-        history = my_experiences(row_iter(data))
-        expr_types = sorted(set([expr[2] for expr in history]))
+    try:
+        with open(source, "r") as data:
+            history = my_experiences(row_iter(data))
+            expr_types = sorted(set([expr[2] for expr in history]))
 
-        index = lambda e: expr_types.index(e)
-        color = lambda e: getcolor(index(e), len(expr_types))
-        expr_map = map(lambda e:
-            Experience(e[0], e[1], index(e[2]), color(e[2])), history)
+            index = lambda e: expr_types.index(e)
+            color = lambda e: getcolor(index(e), len(expr_types))
+            expr_map = map(lambda e:
+                Experience(e[0], e[1], index(e[2]), color(e[2])), history)
+    except FileNotFoundError:
+        die('No such file: ' + source)
 
     return expr_types, expr_map
 
@@ -121,8 +130,11 @@ def main():
     picture = '../images/experiences.png'
 
     fig, legend = make_jobs_plot(parser(source))
-    fig.savefig(picture, bbox_extra_artists=(legend,), bbox_inches='tight')
-    print('The picture has been saved as', picture)
+    try:
+        fig.savefig(picture, bbox_extra_artists=(legend,), bbox_inches='tight')
+        print('The picture has been saved as', picture)
+    except OSError as err:
+        die('An error occurred while creating the plot: %s' % err)
 
 if __name__ == '__main__':
     main()
