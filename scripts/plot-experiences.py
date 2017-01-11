@@ -2,8 +2,9 @@
 
 # Create a scatter plot for visualizing all my job experences and
 # programming activities.
+# Note that Python 3 is required.
 #
-# Copyright (C) 2016 Davide Madrisan <davide.madrisan.gmail.com>
+# Copyright (C) 2016-2017 Davide Madrisan <davide.madrisan.gmail.com>
 
 import matplotlib
 matplotlib.use('Agg')
@@ -13,24 +14,22 @@ import matplotlib.pyplot as plt
 from collections import namedtuple
 import datetime
 import numpy as np
-import sys
+from sys import exit, stderr
+
+Experience = namedtuple('Experience', ['date', 'period', 'type', 'color'])
 
 def die(message):
-    progname = sys.argv[0]
-    sys.stderr.write('%s: error: %s\n' % (progname, message))
-    sys.exit(2)
+    exit('{}: {}'.format(__file__, message))
+
+def getcolor(index, upper):
+    """Return a progressive color for an index in range(upper)."""
+    assert(index in range(upper))
+    return plt.cm.Paired(np.linspace(0, 1, upper))[index]
 
 def normalize(month):
     """Normalize the month number."""
     assert(month in range(13))
     return (month - 1) / 12.0
-
-def getcolor(index, upper):
-    """Return the plotter color associated to an experience."""
-    assert(index in range(upper))
-    return plt.cm.Paired(np.linspace(0, 1, upper))[index]
-
-Experience = namedtuple('Experience', ['date', 'period', 'type', 'color'])
 
 def parser(source):
     """Parse the history file and returns a list containing the
@@ -40,16 +39,15 @@ def parser(source):
     date = lambda sy, sm, ey, em: \
         (int(ey) + normalize(int(em)) + int(sy) + normalize(int(sm))) / 2.0
     months = lambda sy, sm, ey, em: \
-        12*(int(ey) - int(sy)) + int(em) - int(sm)
+        12 * (int(ey) - int(sy)) + int(em) - int(sm)
 
     def row_iter(file_obj):
         return (nextline.strip().split(',')
             for nextline in file_obj if not skip_line(nextline))
 
     def my_experiences(experience_iter):
-        return tuple((
-            date(sy, sm, ey, em), months(sy, sm, ey, em), e.strip())
-            for sy, sm, ey, em, e in experience_iter)
+        return tuple((date(*date_start_end), months(*date_start_end), e.strip())
+            for *date_start_end, e in experience_iter)
 
     try:
         with open(source, "r") as data:
@@ -60,8 +58,8 @@ def parser(source):
             color = lambda e: getcolor(index(e), len(expr_types))
             expr_map = map(lambda e:
                 Experience(e[0], e[1], index(e[2]), color(e[2])), history)
-    except FileNotFoundError:
-        die('No such file: ' + source)
+    except FileNotFoundError as err:
+        die(err)
 
     return expr_types, expr_map
 
@@ -113,7 +111,8 @@ def make_jobs_plot(experiences, area_adj=0.84):
     textlabel(ax, 1995.4,  9.0, 'Networking')
     textlabel(ax, 1995.4, 11.2, 'Linux system')
     textlabel(ax, 1995.4, 13.0, 'Monitoring')
-    textlabel(ax, xnow+0.05, 0.5, "%s.%s" % (now.year, now.month), rotation=45)
+    textlabel(ax, xnow + 0.05, 0.5,
+              "{0}.{1}".format(now.year, now.month), rotation=45)
 
     # Add a legend
     handles = \
@@ -134,7 +133,7 @@ def main():
         fig.savefig(picture, bbox_extra_artists=(legend,), bbox_inches='tight')
         print('The picture has been saved as', picture)
     except OSError as err:
-        die('An error occurred while creating the plot: %s' % err)
+        die('Cannot create the plot: {}'.format(err))
 
 if __name__ == '__main__':
     main()
