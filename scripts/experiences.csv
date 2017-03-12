@@ -91,7 +91,7 @@
 # Nagios PLugins for Linux
 2014,  2, 2015, 12,  Development - C/C++/Java
 # SopraSteria DevOps activities (Docker, SaltStack, Python, rpm/deb packaging: Spacewalk)
-2014,  7, 2017,  2,  Linux System - DevOps
+2014,  7, 2017,  3,  Linux System - DevOps
 # Sopra-Steria
 2014,  9, 2015, 10,  Development - Shell Scripts
 # Base SUD Networking
@@ -115,14 +115,14 @@
 2014, 11, 2015,  3,  Development - Linux System
 # Full Stack Web Specialization
 2015, 12, 2016,  6,  Development - Web
-# jQuery, TypeScript, Angular.js, JavaScript, MongoDB, Angular2
-2016,  2, 2016, 11,  Development - Web
+# jQuery, TypeScript, Angular.js, JavaScript, MongoDB, Angular, REST-api
+2016,  2, 2017,  3,  Development - Web
 # MOOC Dynamic Systems and Chaos
 2016,  7, 2016,  8,  Development - Math
-# SopraSteria - Python scripts, AWS boto3, Linux inventory
-2016,  7, 2017,  2,  Development - Python
+# SopraSteria - Python scripts, AWS boto3, Linux inventory, PyXymon
+2016,  7, 2017,  3,  Development - Python
 # SopraSteria - build infrastructure using GitLab and Docker)
-2016,  7, 2017,  2,  Linux System - Docker Containers
+2016,  7, 2017,  3,  Linux System - Docker Containers
 # SopraSteria - postinstall framework (SaltStack-based) + GitLab script refont
 2016,  6, 2017,  2,  Development - Shell Scripts
 # Nagios Plugins for Linux v19 + test framework
@@ -131,8 +131,8 @@
 2015, 10, 2016,  1,  Development - Functional Programming
 # MOOCs Functional Programming in Scala Specialization - Coursera
 # Book: Functional Python Programming - Packt
-2016, 10, 2017,  2,  Development - Functional Programming
-# Xymon Monitoring NetBackup and Pacemaker, ...
-2016, 12, 2017,  2,  Monitoring
+2016, 10, 2017,  3,  Development - Functional Programming
+# Xymon Monitoring NetBackup and Pacemaker, pyxymon, ...
+2016, 12, 2017,  3,  Monitoring
 # MOOC Data Analysis - HarvardX: PH526x Using Python for Research
-2016, 12, 2017,  2,  Development - Data Analysis
+2016, 12, 2017,  3,  Development - Data Analysis
