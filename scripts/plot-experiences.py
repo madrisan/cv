@@ -91,7 +91,7 @@ def make_jobs_plot(experiences, area_adj=0.84):
     # Add axis labels
     ax.set_xlabel('Year')
     ax.set_ylabel('Experiences')
-    ax.set_title('Job History')
+    ax.set_title('Job & Lifelong Learning History')
     ax.set_xlim([1995, now.year + 3])
     ax.set_ylim([-1, len(expr_types) + 1])
 
@@ -99,20 +99,71 @@ def make_jobs_plot(experiences, area_adj=0.84):
     yticks = []
     ax.set_yticks(yticks)
     ax.set_yticklabels([''])
-    ax.grid('on')
+    ax.grid('off')
+
+    vlinestyle = 'dashdot'
+
+    # Start of Job
+    ax.axvline(x=1999.6, ymin=0.02, ymax=0.98,
+               linewidth=1, linestyle=vlinestyle, color='0.75')
+
+    # Mark the move to France
+    ax.axvline(x=2008.6, ymin=0.02, ymax=0.98,
+               linewidth=1, linestyle=vlinestyle, color='0.75')
+    textlabel(ax, 2007.4, -0.7, '$\u2190$ it')
+    textlabel(ax, 2008.8, -0.7, 'fr $\u2192$')
+
+    # Mark the start of the OS2 Micro-Entrepreneur activity
+    ax.axvline(x=2013.4, ymin=0.02, ymax=0.98,
+               linewidth=1, linestyle=vlinestyle, color='0.75')
+    textlabel(ax, 2013.4, 14.4, '$\u2192$ OS2')
+
+    # Mark the start of the amazing MOOCs experience
+    ax.axvline(x=2014.10, ymin=0.02, ymax=0.98,
+               linewidth=1, linestyle=vlinestyle, color='0.75')
+    textlabel(ax, 2014.10, 13.9, '$\u2192$ MOOC addict')
 
     # Add a vertical line to show the current date
     xnow = now.year + normalize(now.month)
-    ax.axvline(x=xnow, ymin=0.02, ymax=0.98, linewidth=1, color='0.75')
+    ax.axvline(x=xnow, ymin=0.02, ymax=0.98,
+               linewidth=1, linestyle=vlinestyle, color='0.75')
+    textlabel(ax, xnow + 0.05, 0.2,
+              "{0}.{1}".format(now.year, now.month), rotation=45)
 
     # Add some text labels to hopefully improve the plot readability
     # fixme: the y coordinates must to be manually set
-    textlabel(ax, 1995.4,  2.6, 'Development')
-    textlabel(ax, 1995.4,  9.0, 'Networking')
-    textlabel(ax, 1995.4, 11.2, 'Linux system')
-    textlabel(ax, 1995.4, 13.0, 'Monitoring')
-    textlabel(ax, xnow + 0.05, 0.5,
-              "{0}.{1}".format(now.year, now.month), rotation=45)
+    textlabel(ax, 1995.4,   3.2, 'Maths')
+    textlabel(ax, 1995.4,   2.6, 'Cryptography, AI')
+    textlabel(ax, 1995.4,   2.0, 'C/C++/MatLab Programming')
+    textlabel(ax, 1997.0,   6.8, 'TeX')
+    textlabel(ax, 1997.0,   6.2, 'Development')
+    #textlabel(ax, 1998.6,  -0.6, 'C/C++/Java Programming')
+    textlabel(ax, 2000.3,   9.6, 'Cisco WAN')
+    textlabel(ax, 2000.3,   9.0, 'Networking')
+    textlabel(ax, 2000.3,   8.4, '@FIAT/IBM, BT')
+    textlabel(ax, 2003.0,  12.4, 'Nagios')
+    textlabel(ax, 2005.0,   2.0, 'Linux system Development')
+    textlabel(ax, 2006.0,   1.4, 'QiLinux & openmamba')
+    textlabel(ax, 2006.4,   5.2, 'Shell scripting')
+    textlabel(ax, 2007.1,   9.9, 'Linux SysAdmin')
+    textlabel(ax, 2007.1,   9.3, '@IBM')
+    textlabel(ax, 2011.10, 13.3, 'System, Applications')
+    textlabel(ax, 2011.10, 12.7, 'Monitoring')
+    textlabel(ax, 2014.8,  11.4, 'DevOps')
+    textlabel(ax, 2015.0,  10.8, 'IaC')
+    textlabel(ax, 2015.0,  10.2, '@Sopra-Steria')
+    #textlabel(ax, 2013.0,  8.4,  'Angular')
+    #textlabel(ax, 2013.0,  7.8,  'Node.js')
+    textlabel(ax, 2013.0,  7.2,  'MEAN Stack')
+    textlabel(ax, 2006.0,  7.2,  'PHP')
+    #textlabel(ax, 2013.0,  6.6,  'Web Full Stack')
+    textlabel(ax, 2013.4,  4.4,  'Python')
+    textlabel(ax, 2014.4,  0.0,  'C')
+    textlabel(ax, 2014.12, 1.4,  'BigData/ML')
+    textlabel(ax, 2015.11, 2.2,  'Scala')
+    textlabel(ax, 2015.3, -0.4,  'CUDA')
+    textlabel(ax, 2016.0,  3.5,  'Math')
+    textlabel(ax, 2016.2,  4.3,  'Salt')
 
     # Add a legend
     handles = \
