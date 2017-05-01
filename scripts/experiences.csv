@@ -87,7 +87,7 @@
 # Nagios PLugins for Linux
 2014,  2, 2015, 12,  Development - C/C++/Java
 # SopraSteria DevOps activities (Docker, SaltStack, Python, rpm/deb packaging: Spacewalk)
-2014,  7, 2017,  4,  Linux System - DevOps
+2014,  7, 2017,  5,  Linux System - DevOps
 # Sopra-Steria
 2014,  9, 2015, 10,  Development - Shell Scripts
 # Base SUD Networking
@@ -112,14 +112,14 @@
 # Full Stack Web Specialization
 2015, 12, 2016,  6,  Development - Web
 # jQuery, TypeScript, Angular.js, JavaScript, MongoDB, Angular, freecodecamp
-2016,  2, 2017,  4,  Development - Web
-# MOOC Dynamic Systems and Chaos, Fractals
+2016,  2, 2017,  5,  Development - Web
+# MOOC Dynamic Systems and Chaos, Fractals, Renormalization
 2016,  7, 2016,  9,  Development - Math
-2017,  2, 2017,  4,  Development - Math
+2017,  2, 2017,  5,  Development - Math
 # SopraSteria - Python scripts, AWS boto3, Linux inventory, PyXymon, Salt backend
-2016,  7, 2017,  4,  Development - Python
+2016,  7, 2017,  5,  Development - Python
 # SopraSteria - build infrastructure using GitLab and Docker)
-2016,  7, 2017,  4,  Linux System - Docker Containers
+2016,  7, 2017,  5,  Linux System - Docker Containers
 # SopraSteria - postinstall framework (SaltStack-based) + GitLab script refont
 2016,  6, 2017,  2,  Development - Shell Scripts
 # Nagios Plugins for Linux v19/v20 + test framework
