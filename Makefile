@@ -18,3 +18,6 @@ plot:
 pdf: plot
 	@echo "Generating the cv in pdf format..."
 	/usr/bin/pdftex $(srcdir)/$(CV)
+
+clean:
+	rm -f *.log *.pdf
