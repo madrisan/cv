@@ -87,7 +87,7 @@
 # Nagios PLugins for Linux
 2014,  2, 2015, 12,  Development - C/C++/Java
 # SopraSteria DevOps activities (Docker, SaltStack, Python, rpm/deb packaging: Spacewalk)
-2014,  7, 2017,  7,  Linux System - DevOps
+2014,  7, 2017,  8,  Linux System - DevOps
 # Sopra-Steria
 2014,  9, 2015, 10,  Development - Shell Scripts
 # Base SUD Networking
@@ -116,10 +116,12 @@
 # MOOC Dynamic Systems and Chaos, Fractals, Renormalization
 2016,  7, 2016,  9,  Development - Math
 2017,  2, 2017,  5,  Development - Math
+# MOOC Dynamic Systems and Chaos, Fractals, Renormalization - porting Py3
+2017,  7, 2017,  8,  Development - Math
 # SopraSteria - Python scripts, AWS boto3, Linux inventory, PyXymon, Salt backend
-2016,  7, 2017,  7,  Development - Python
+2016,  7, 2017,  8,  Development - Python
 # SopraSteria - build infrastructure using GitLab and Docker)
-2016,  7, 2017,  7,  Linux System - Docker Containers
+2016,  7, 2017,  8,  Linux System - Docker Containers
 # SopraSteria - postinstall framework (SaltStack-based) + GitLab script refont
 2016,  6, 2017,  2,  Development - Shell Scripts
 # Nagios Plugins for Linux v19/v20 + test framework
@@ -130,10 +132,10 @@
 # Functional Python Programming, SaltStack Code Snippets
 2016, 10, 2017,  4,  Development - Functional Programming
 # Xymon Monitoring NetBackup and Pacemaker, ...
-2016, 12, 2017,  7,  Monitoring
+2016, 12, 2017,  8,  Monitoring
 # MOOC Data Analysis - HarvardX: PH526x Using Python for Research
 2016, 12, 2017,  3,  Development - Data Analysis
 # openmamba - #restart
 2017,  5, 2017,  6,  Development - Linux System
-# nagios plugins linux - unit test framework
-2017,  6, 2017,  7,  Development - C/C++/Java
+# nagios plugins linux - unit test framework, procps
+2017,  6, 2017,  8,  Development - C/C++/Java

@@ -4,7 +4,7 @@
 srcdir = .
 
 CV = dmadrisan_cv_en.tex
-EXPERIENCES = scripts/experiences.csv
+EXPERIENCES = experiences.csv
 PLOT = images/experiences.png
 
 all: plot pdf
