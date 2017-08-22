@@ -14,12 +14,13 @@ import matplotlib.pyplot as plt
 from collections import namedtuple
 import datetime
 import numpy as np
-from sys import exit, stderr
+import getopt
+import sys
 
 Experience = namedtuple('Experience', ['date', 'period', 'type', 'color'])
 
 def die(message):
-    exit('{}: {}'.format(__file__, message))
+    sys.exit('{}: {}'.format(__file__, message))
 
 def getcolor(index, upper):
     """Return a progressive color for an index in range(upper)."""
@@ -182,14 +183,31 @@ def make_jobs_plot(experiences, area_adj=0.84):
 
     return fig, lgd
 
+def usage():
+    progname = sys.argv[0]
+    print('Usage: {0} csv=<input-file> image=<out-file>'.format(progname))
+
 def main():
-    source = 'experiences.csv'
-    picture = '../images/experiences.png'
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], 'c:i:h',
+            ["csv=", "image=", "help"])
+    except getopt.GetoptError:
+        usage()
+        sys.exit(2)
+
+    for o, a in opts:
+        if o in ('-h', '--help'):
+            usage()
+            sys.exit()
+        elif o in ('-c', '--csv'):
+            source = a
+        elif o in ('-i', '--image'):
+            image = a
 
     fig, legend = make_jobs_plot(parser(source))
     try:
-        fig.savefig(picture, bbox_extra_artists=(legend,), bbox_inches='tight')
-        print('The picture has been saved as', picture)
+        fig.savefig(image, bbox_extra_artists=(legend,), bbox_inches='tight')
+        print('The image has been saved as', image)
     except OSError as err:
         die('Cannot create the plot: {}'.format(err))
 
