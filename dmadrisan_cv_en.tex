@@ -179,14 +179,17 @@
    \par\hang\noindent\line{\bf#1\hss}%
    \noindent\ignorespaces\nobreak}
 \def\certauthority#1#2{%
-   \par\hang\noindent\line{\it#1 on #2\hss}%
+   %\par\hang\noindent\line{\it#1 on #2\hss}%
+   \par\hang\noindent\line{\it#1\hss}%
    \noindent\ignorespaces\nobreak}
 \def\certspecialization#1{%
    \vskip -3pt\noindent\ignorespaces\hskip\parindent{\rm#1}}
 \def\certitembullet#1{{%
    \bitemitemunamed{\rm#1}}}
-\def\certitem#1{%
-   \vskip -3pt\noindent\ignorespaces\nobreak\hskip\parindent{\rm#1}}
+
+\def\certitemoneline#1#2#3{%
+   \par\hang\noindent\line{\hbox{\it#1 on #2} -- {\rm#3}\hfill}}
+
 \def\certification#1#2{%
    \par\hang\noindent\line{\rm#1 -- #2\hss}\vskip -6pt\noindent\ignorespaces}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -662,11 +665,11 @@ Professional working proficiency
 Lifelong learning for professional development and fun:
 several MOOCs completed, mainly on Data Science, Big~Data, Cloud Computing,
 and parallel/generic/functional/web programming.
-\medskip
+\smallskip
 
 \dateitem{October 1994}{July 1999}{Universit\`a degli Studi di Torino}
 Master's degree in Applied Science, Mathematics and Computer Science.
-\medskip
+\smallskip
 
 \dateitem{September 1982}{June 1993}{Conservatorio di Musica G.~Verdi, Torino}
 Bachelor's degree, Music Performance, Piano, Composition.
@@ -702,22 +705,18 @@ Bachelor's degree, Music Performance, Piano, Composition.
    \certspecialization{Big Data XSeries}
       \certitembullet{Introduction to Big Data with Apache Spark}
       \certitembullet{Scalable Machine Learning}
-\certauthority{Universit\'e de Strasbourg}{FUN}
-   \certitembullet{Stochastic Evolutionary Optimization}
-\goodbreak
-\certauthority{Stanford University}{Coursera}
-   \certitembullet{Machine Learning}
-\certauthority{Microsoft}{edX}
-   \certitembullet{Introduction to R}
-
-\certauthority{Hardvard University}{edX}
-   \certitembullet{Statistics and R for Life Sciences}
+\certitemoneline{Universit\'e de Strasbourg}{FUN}
+   {Stochastic Evolutionary Optimization}
+\certitemoneline{Stanford University}{Coursera}{Machine Learning}
+\certitemoneline{Microsoft}{edX}{Introduction to R}
+\certitemoneline{Hardvard University}{edX}
+   {Statistics and R for Life Sciences}
 
 \smallskip
 \certgroup{BUSINESS}
 
-\certauthority{Ludwig--Maximilians Universit\"at M\"unchen}{Coursera}
-   \certitembullet{Competitive Strategy}
+\certitemoneline{Ludwig--Maximilians Universit\"at M\"unchen}{Coursera}
+   {Competitive Strategy}
 
 \smallskip
 \certgroup{CLOUD COMPUTING}
@@ -725,8 +724,8 @@ Bachelor's degree, Music Performance, Piano, Composition.
 \certauthority{University of Illinois at Urbana-Champaign}{Coursera}
    \certitembullet{Cloud Computing Applications}
    \certitembullet{Cloud Networking}
-\certauthority{AWS Training}{Amazon Web Services}
-   \certitembullet{AWS Technical Essentials (version August 2016)}
+\certitemoneline{AWS Training}{Amazon Web Services}
+   {AWS Technical Essentials (version August 2016)}
 
 \smallskip
 \certgroup{MATHEMATICS}
@@ -739,31 +738,29 @@ Bachelor's degree, Music Performance, Piano, Composition.
 \smallskip
 \certgroup{PROGRAMMING}
 
-\certauthority{University of Illinois at Urbana-Champaign}{Coursera}
-   \certitembullet{Heterogeneous Parallel Programming}
+\certitemoneline{University of Illinois at Urbana-Champaign}{Coursera}
+   {Heterogeneous Parallel Programming}
 \certauthority{\'Ecole Polytechnique F\'ed\'erale de Lausanne}{Coursera}
    \certitembullet{Introduction \`a la programmation orient\'ee objet
-             en C\plusplus)}
-\certauthority{Universidad Carlos III de Madrid}{edX}
-   \certitembullet{Introduction to Programming with Java -- part~1}
+             en C\plusplus}
+\certitemoneline{Universidad Carlos III de Madrid}{edX}
+   {Introduction to Programming with Java (part~1)}
 \certauthority{The Hong Kong University of Science and Technology}{edX}
-   \certitembullet{Introduction to Java Programming -- part~2}
+   \certitembullet{Introduction to Java Programming (part~2)}
 \certauthority{Universit\'e catholique de Louvain}{edX}
   \certitembullet{Paradigms of Computer Programming -- Fundamentals}
   \certitembullet{Abstraction and Concurrency}
-\certauthority{University of Michigan}{Coursera}
-   \certitembullet{Using Python to Access Web Data}
+\certitemoneline{University of Michigan}{Coursera}
+   {Using Python to Access Web Data}
 \certauthority{\'Ecole Polytechnique F\'ed\'erale de Lausanne}{Coursera}
    \certitembullet{Functional Programming Principles in Scala}
 
 \smallskip
 \certgroup{WEB PROGRAMMING}
 
-\certauthority{W3C}{edX}
-   \certitembullet{Learn HTML5 from W3C}
+\certitemoneline{W3C}{edX}{Learn HTML5 from W3C}
 \certauthority{University of London}{Coursera}
    \certitembullet{Responsive Website Basics: Code with HTML, CSS, and JavaScript}
-\vfill\break
 \certauthority{University of Michigan}{Coursera}
    \certitembullet{Introduction to HTML5}
    \certitembullet{Advanced Styling with Responsive Design}
@@ -775,14 +772,14 @@ Bachelor's degree, Music Performance, Piano, Composition.
       \certitembullet{Multiplatform Mobile App Development with Web Technologies}
       \certitembullet{Server-side Development with NodeJS}
       \certitembullet{Full Stack Web Development Specialization Capstone Project}
-\certauthority{Pluralsight}{Code School}
-   \certitembullet{Shaping up with Angular.js}
+\certitemoneline{Pluralsight}{Code School}{Shaping up with Angular.js}
+\vfill\eject
 \certauthority{Microsoft}{edX}
    \certitembullet{Introduction to JQuery}
    \certitembullet{Introduction to TypeScript}
 \certauthority{MongoDB}{MongoDB University}
    \certitembullet{M101JS: MongoDB for Node.js Developers}
-\certauthority{MongoDB}{edX}
+%\certauthority{MongoDB}{edX}
    \certitembullet{M101x: Introduction to MongoDB using the MEAN Stack}
 \certauthority{at\&t, Google, GitHub, Hack Reactor}{Udacity}
    \certspecialization{Front-End Web Developer Nanodegree}
