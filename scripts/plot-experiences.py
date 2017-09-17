@@ -8,6 +8,8 @@
 
 import matplotlib
 matplotlib.use('Agg')
+matplotlib.rc('font', family='sans-serif')
+matplotlib.rc('text', usetex=True)
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
@@ -92,7 +94,7 @@ def make_jobs_plot(experiences, area_adj=0.84):
     # Add axis labels
     ax.set_xlabel('Year')
     ax.set_ylabel('Experiences')
-    ax.set_title('Job & Lifelong Learning History')
+    ax.set_title('Job and Lifelong Learning History')
     ax.set_xlim([1995, now.year + 3])
     ax.set_ylim([-1, len(expr_types) + 1])
 
@@ -111,18 +113,18 @@ def make_jobs_plot(experiences, area_adj=0.84):
     # Mark the move to France
     ax.axvline(x=2008.6, ymin=0.02, ymax=0.98,
                linewidth=1, linestyle=vlinestyle, color='0.75')
-    textlabel(ax, 2007.4, -0.7, '$\u2190$ it')
-    textlabel(ax, 2008.8, -0.7, 'fr $\u2192$')
+    textlabel(ax, 2007.9, -0.7, 'it')
+    textlabel(ax, 2008.9, -0.7, 'fr')
 
     # Mark the start of the OS2 Micro-Entrepreneur activity
     ax.axvline(x=2013.4, ymin=0.02, ymax=0.98,
                linewidth=1, linestyle=vlinestyle, color='0.75')
-    textlabel(ax, 2013.4, 14.4, '$\u2192$ OS2')
+    textlabel(ax, 2013.5, 14.4, 'OS2')
 
     # Mark the start of the amazing MOOCs experience
     ax.axvline(x=2014.10, ymin=0.02, ymax=0.98,
                linewidth=1, linestyle=vlinestyle, color='0.75')
-    textlabel(ax, 2014.10, 13.9, '$\u2192$ MOOC addict')
+    textlabel(ax, 2014.3, 13.9, 'MOOCs')
 
     # Add a vertical line to show the current date
     xnow = now.year + normalize(now.month)
@@ -146,13 +148,13 @@ def make_jobs_plot(experiences, area_adj=0.84):
 
     textlabel(ax, 2003.0,  12.4, 'Nagios')
     textlabel(ax, 2005.0,   2.0, 'Linux system Development')
-    textlabel(ax, 2006.0,   1.4, 'QiLinux & openmamba')
+    textlabel(ax, 2006.0,   1.4, 'QiLinux / openmamba')
     textlabel(ax, 2006.4,   5.2, 'Shell scripting')
 
     textlabel(ax, 2007.2,   9.9, 'Linux SysAdmin')
    #textlabel(ax, 2007.2,   9.3, '@IBM')
 
-    textlabel(ax, 2011.10, 13.3, 'System & Applications')
+    textlabel(ax, 2011.10, 13.3, 'System and Applications')
     textlabel(ax, 2011.10, 12.7, 'Monitoring')
    #textlabel(ax, 2011.10, 12.1, '@IBM')
 
@@ -162,16 +164,16 @@ def make_jobs_plot(experiences, area_adj=0.84):
 
    #textlabel(ax, 2013.0,  8.4,  'Angular')
    #textlabel(ax, 2013.0,  7.8,  'Node.js')
-    textlabel(ax, 2013.0,  7.2,  'MEAN Stack')
+    textlabel(ax, 2013.9,  7.1,  'MEAN Stack')
     textlabel(ax, 2006.0,  7.2,  'PHP')
    #textlabel(ax, 2013.0,  6.6,  'Web Full Stack')
-    textlabel(ax, 2013.4,  4.4,  'Python')
+    textlabel(ax, 2013.1,  4.4,  'Python')
     textlabel(ax, 2014.4,  0.0,  'C')
     textlabel(ax, 2014.12, 1.4,  'BigData/ML')
     textlabel(ax, 2015.11, 2.2,  'Scala')
-    textlabel(ax, 2015.3, -0.4,  'CUDA')
+    textlabel(ax, 2015.3, -0.6,  'CUDA')
     textlabel(ax, 2016.0,  3.5,  'Math')
-    textlabel(ax, 2016.2,  4.3,  'Salt')
+    textlabel(ax, 2016.2,  4.3,  'SaltStack')
 
     # Add a legend
     handles = \

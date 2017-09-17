@@ -15,9 +15,11 @@ plot:
 	    --csv=$(srcdir)/$(EXPERIENCES) \
 	    --image=$(srcdir)/$(PLOT)
 
-pdf: plot
+pdf-only:
 	@echo "Generating the cv in pdf format..."
 	/usr/bin/pdftex $(srcdir)/$(CV)
+
+pdf: plot pdf-only
 
 clean:
 	rm -f *.log *.pdf
