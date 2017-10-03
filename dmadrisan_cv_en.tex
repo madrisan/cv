@@ -116,14 +116,21 @@
 
 \def\endpoint#1{\vrule height #1pt width #1pt depth 0pt}
 \def\sendpoint{\endpoint{7}}
-\def\section#1{%
-    \goodbreak\vskip 10truemm plus2truemm minus2truemm%
+
+\def\dateitem#1#2#3 \par {%
+    \goodbreak\bigskip%
+    \line{\bf{#1 -- #2}\hss#3}%
+    \penalty-200%
+    \nobreak\vskip 0pt\noindent\ignorespaces}
+\long\def\section#1 \par {%
+    \goodbreak\bigskip%
     \leftline{\sendpoint\quad\sectionfont#1}%
-    \nobreak\vskip 3truemm plus 1truemm minus 1truemm}
-\def\subsection#1{%
-    \vskip 5truemm plus1truemm minus1truemm%
-    \leftline{\sf#1}%
-    \nobreak\vskip 1truemm plus 1truemm minus 1truemm}
+    \penalty-200%
+    \nobreak\vskip 0pt plus 1pt\noindent\ignorespaces}
+\long\def\subsection#1 \par {%
+    \medskip%
+    \leftline{\it#1}%
+    \nobreak\vskip -2pt\noindent\ignorespaces}
 \font\smallsy = cmsy6
 \def\bitem#1{%
     \item{\raise1.2pt\hbox{$\textfont2 = \smallsy\bullet$}}{%
@@ -169,14 +176,10 @@
       \or July\or August\or September\or October\or November\or December\fi%
    \space\number\year}
 
-\def\dateitem#1#2#3{%
-   \goodbreak\par\hang\noindent%
-       \line{\bf{#1 -- #2}\hss#3}\vskip 0pt\noindent\ignorespaces}
-
 \def\OS2{OS\lower.4ex\hbox{2}}
 
 \def\certgroup#1{%
-   \par\hang\noindent\line{\bf#1\hss}%
+   \goodbreak\par\hang\noindent\line{\bf#1\hss}%
    \noindent\ignorespaces\nobreak}
 \def\certauthority#1#2{%
    %\par\hang\noindent\line{\it#1 on #2\hss}%
@@ -234,10 +237,9 @@ Embedded System, Full~Stack Web Development, and Linux DevOps technologies,
 I think I have a wealth of background knowledge, maturity, and ability to learn to
 bring to any new challenge or opportunity.}
 
-\vskip -2mm
 \subsection{Areas of Interest}
 
-\noindent I'm currently busy playing with SaltStack, Docker, Angular/Node.js and
+I'm currently busy playing with SaltStack, Docker, Angular/Node.js and
 Web technologies in general, and improving my knowledge of the Scala language
 and functional programming, but my interests in technology and maths fields cover
 the following areas:
@@ -270,12 +272,10 @@ the following areas:
 See below the list of the $\sim$50 MOOCs I've completed so far.
 \vfill\eject
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{EXPERIENCES}
 
-\noindent
 An annotated scatter plot that should help visualizing my job and programming activities.
 
 \bigskip
@@ -286,16 +286,28 @@ An annotated scatter plot that should help visualizing my job and programming ac
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \dateitem{September~2017}{current}{Infra Data and IT DevOps @ Qwant}
+
 Infra Data and IT Senior DevOps at Qwant ({\tt http://www.qwant.com}), the
 French company that develops the eponymous web search engine that respects the
 users' privacy.
 
+\subsection{Summary of my tasks}
+
+\vskip 0pt\noindent
+Extend SaltStack ({\it execution} and {\it states} modules) for a better integration with
+the GitLab~CI framework and HashiCorp~Vault. Python development.
+
+\subsection{Technologies}
+
+\vskip 0pt\noindent
+Docker, Docker Compose, Git, GitLab, GitLab~Runner, SaltStack, HashiCorp Vault,
+Python, Debian Linux.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\bigskip
 \dateitem{April~2013}{current}{\OS2--Open Source Solutions (micro-entreprise)}
 
-\noindent In parallel of my current job, I have decided to develop an additional professional
+In parallel of my current job, I have decided to develop an additional professional
 activity as Auto Entrepreneur, mainly focused on Open Source and Linux--based (new) technologies:
 
 \item{\bdot} Web development (JavaScript/JQuery, MEAN Stack, Web Sites);
@@ -305,19 +317,18 @@ activity as Auto Entrepreneur, mainly focused on Open Source and Linux--based (n
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\bigskip
 \dateitem{July~2014}{August~2017}{Senior DevOps and Linux Engineer at Sopra~Steria}
+
 I joined Sopra~Steria group as a L3 consulting Linux administrator and DevOps on
 several Red~Hat based new projects.
 
-\vskip -2mm
 \subsection{Summary of my tasks}
 
 \item{\bdot} Lead the switch to SaltStack as primary tool for IT automation and Linux
    system configuration management;
 \item{\bdot} Build, validate and improve High Availability solutions,
    for hosting web applications and Oracle databases, by using the Red~Hat cluster suite
-   (cman, pacemaker/corosync);
+n   (cman, pacemaker/corosync);
 \item{\bdot} Develop an open source framework (back--end in Python and JSON, front--end in
    Bootstrap and AngularJS) for ensuring the quality of the build process and report
    a list of deviations from the company policies
@@ -340,22 +351,9 @@ several Red~Hat based new projects.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\bigskip
-%\dateitem{December 2014}{January 2015}{Networking Architect}
-%Design and setup a secure local network for a new advertising agency in Nice,
-%with a data archiving on Amazon S3 and Glacier.
-%
-%\subsection{Technologies}
-%
-%\item{\bdot} Cisco Adaptive Security Appliance (ASA) Firewall;
-%\item{\bdot} Ethernet, Wi-Fi, VLANs, VoIP, VPN, DELL LAN switches;
-%\item{\bdot} Synology NAS.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\bigskip
 \dateitem{October 2011}{June 2014}
    {Monitoring Architect and Team Leader at IBM}
+
 L3 Nagios and Centreon administrator and developer.
 Technical Leader of the Nagios monitoring team (France and Poland).
 Focal point of the monitoring technologies based on open source solutions and
@@ -392,7 +390,6 @@ appliances by using a wide range of opensource technologies.
 
 \subsection{Open Source development}
 
-\noindent
 Open source extensions to the Nagios Plugins official software for monitoring
 Linux servers.
 Porting of some of these plugins to other Unixes
@@ -429,8 +426,10 @@ Source code:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\bigskip
+\vfill\eject
+
 \dateitem{November 2008}{September 2011}{Linux System Administrator at IBM}
+
 Senior Linux system adminitrator and Nagios/Centreon Monitoring expert.
 
 During my work at IBM SSO in France, I was assigned on multiple client Linux support.
@@ -464,9 +463,9 @@ for improving the quality of the delivery.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\goodbreak\bigskip
 \dateitem{July 2008}{Octobre 2008}
    {C/C\plusplus{} development on Linux mobile at OpenPlug}
+
 Porting of several MSDN library functions and win32 code, libraries and tools
 developed under Microsoft Visual C/C\plusplus, to the Moblin environment,
 an open source Linux-based operating system and application stack for
@@ -478,11 +477,9 @@ Mobile Internet Devices, netbooks, nettops and embedded devices.
 \item{\bdot} GNU gcc compiler, linker, and GNU autotools; SVN repositories;
 \item{\bdot} Development languages: Shell scripting, C and C\plusplus.
 
-\bigskip
 \dateitem{January 2007}{May 2008}
    {Linux and VMware Certified Engineer at IBM Turin}
 
-\noindent
 Senior Linux system adminitrator and VMware certified engineer.
 
 \subsection{Summary of my tasks}
@@ -509,14 +506,13 @@ Senior Linux system adminitrator and VMware certified engineer.
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\bigskip
 \dateitem{September 2003}{December 2006}
    {Linux System Development at QiNet S.r.l.}
+
 Developer of the `{\it QiLinux\/}' GNU/Linux distribution for {\it i586} and
 {\it ppc} architectures, the first Italian distribution
 {\it created from scratch}.
 
-\noindent
 April 2006 -- December 2006 (9 months). 
 Leader of the team that has developed QiLinux~2.0, the derived commercial 
 products `{\it Tuga Desktop\/}', and the educational live~CD 
@@ -547,7 +543,7 @@ the compliance with the available standards.
 
 \subsection{Technologies}
 
-\noindent
+\vskip 0pt\noindent
 All the Linux technologies ranging from the Linux kernel plus user-space 
 related software (devfs, udev, hal, D--Bus, $\dots$) to the system tools, the local,
 printing, and network services up to the development (autotools, GNU/gcc suite, 
@@ -559,8 +555,8 @@ For more details,
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\bigskip
 \dateitem{March 2003}{August 2003}{Cisco Network Specialist at Intesa Sanpaolo}
+
 Working as a Cisco LAN/WAN network administrator expert in one of the most
 important banks of Italy.
 
@@ -579,10 +575,8 @@ important banks of Italy.
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\bigskip
 \dateitem{October 2001}{January 2003}{Cisco Network Expert Engineer at Atlanet}
 
-\noindent
 Cisco Engineer at Atlanet (FIAT's TLC venture now part of the BT Telecom group), 
 working in a highly business and production critical environment.
 
@@ -608,9 +602,9 @@ configurations from a minimal set of specifications given by a network architect
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\bigskip
 \dateitem{October 1999}{September 2001}
    {Cisco Network Engineer at Fiat GlobalValue}
+
 Working either on-site or remotely for different Italian customers (Fiat ITS
 and GlobalValue, Sanpaolo, Miroglio Tessile) to develop, troubleshoot and
 manage their Cisco WAN networks.
@@ -626,11 +620,9 @@ SNMP queries on routers not accessible by our team.
    
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\bigskip
 \dateitem{October 1998}{February 1999}
    {\TeX\ development at Academy of Sciences}
 
-\noindent
 Development of a collection of TeX macros and document styles written in pure plainTeX
 for the Royal cademy of Sciences of Turin.
 
@@ -662,16 +654,17 @@ Professional working proficiency
 \section{EDUCATION}
 
 \dateitem{September 2014}{}{Coursera, edX, Udacity, FUN, Complexity Explorer MOOCs}
+
 Lifelong learning for professional development and fun:
 several MOOCs completed, mainly on Data Science, Big~Data, Cloud Computing,
 and parallel/generic/functional/web programming.
-\smallskip
 
 \dateitem{October 1994}{July 1999}{Universit\`a degli Studi di Torino}
+
 Master's degree in Applied Science, Mathematics and Computer Science.
-\smallskip
 
 \dateitem{September 1982}{June 1993}{Conservatorio di Musica G.~Verdi, Torino}
+
 Bachelor's degree, Music Performance, Piano, Composition.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -773,7 +766,6 @@ Bachelor's degree, Music Performance, Piano, Composition.
       \certitembullet{Server-side Development with NodeJS}
       \certitembullet{Full Stack Web Development Specialization Capstone Project}
 \certitemoneline{Pluralsight}{Code School}{Shaping up with Angular.js}
-\vfill\eject
 \certauthority{Microsoft}{edX}
    \certitembullet{Introduction to JQuery}
    \certitembullet{Introduction to TypeScript}
@@ -790,7 +782,6 @@ Bachelor's degree, Music Performance, Piano, Composition.
       \certitembullet{Object-Oriented JavaScript}
 
 \smallskip
-
 \certgroup{OTHER DOMAINS}
 
 \certauthority{University of California, san Diego}{Coursera}
