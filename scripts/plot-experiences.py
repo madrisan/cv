@@ -158,8 +158,8 @@ def make_jobs_plot(experiences, area_adj=0.84):
     textlabel(ax, 2011.10, 12.7, 'Monitoring')
    #textlabel(ax, 2011.10, 12.1, '@IBM')
 
-    textlabel(ax, 2014.8,  11.3, 'DevOps')
-    textlabel(ax, 2015.0,  10.7, 'IaC')
+    textlabel(ax, 2015.0,  11.1, 'DevOps')
+    textlabel(ax, 2015.6,  10.5, 'IaC')
    #textlabel(ax, 2015.0,  10.1, '@Sopra-Steria')
 
    #textlabel(ax, 2013.0,  8.4,  'Angular')
