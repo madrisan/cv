@@ -104,34 +104,21 @@ def make_jobs_plot(experiences, area_adj=0.84):
     ax.set_yticklabels([''])
     ax.grid('off')
 
-    vlinestyle = 'dashdot'
-
-    # Start of Job
-    ax.axvline(x=1999.6, ymin=0.02, ymax=0.98,
-               linewidth=1, linestyle=vlinestyle, color='0.75')
-
-    # Mark the move to France
-    ax.axvline(x=2008.6, ymin=0.02, ymax=0.98,
-               linewidth=1, linestyle=vlinestyle, color='0.75')
-    textlabel(ax, 2007.9, -0.7, 'it')
-    textlabel(ax, 2008.9, -0.7, 'fr')
-
-    # Mark the start of the OS2 Micro-Entrepreneur activity
-    ax.axvline(x=2013.4, ymin=0.02, ymax=0.98,
-               linewidth=1, linestyle=vlinestyle, color='0.75')
-    textlabel(ax, 2013.5, 14.4, 'OS2')
-
-    # Mark the start of the amazing MOOCs experience
-    ax.axvline(x=2014.10, ymin=0.02, ymax=0.98,
-               linewidth=1, linestyle=vlinestyle, color='0.75')
-    textlabel(ax, 2014.3, 13.9, 'MOOCs')
-
-    # Add a vertical line to show the current date
     xnow = now.year + normalize(now.month)
-    ax.axvline(x=xnow, ymin=0.02, ymax=0.98,
-               linewidth=1, linestyle=vlinestyle, color='0.75')
-    textlabel(ax, xnow + 0.05, 0.2,
-              "{0}.{1}".format(now.year, now.month), rotation=45)
+    vdotlines = [
+        (1999.6, 'work:it', 14.5, 'horizontal'),  # Start of the working life
+        (2008.6, 'work:fr', 14.5, 'horizontal'),  # Move to South of France
+        # OS2 Micro-Entrepreneur activity
+        (2013.4, 'OS2', 14.5, 'horizontal'),
+        # Start of the amazing MOOCs experience :)
+        (2014.10, 'MOOCs', 14.0, 'horizontal'),
+        (xnow, '{0}.{1}'.format(now.year, now.month), .2, 45)]
+    ymin, ymax, linewidth, linecolor = 0.02, 0.98, 1, '0.75'
+
+    for (x, label, ylabel, label_rotation) in vdotlines:
+        ax.axvline(x=x, ymin=ymin, ymax=ymax,
+                   linewidth=linewidth, linestyle='dashdot', color=linecolor)
+        textlabel(ax, x+.1, ylabel, label, rotation=label_rotation)
 
     # Add some text labels to hopefully improve the plot readability
     # fixme: the y coordinates must to be manually set
