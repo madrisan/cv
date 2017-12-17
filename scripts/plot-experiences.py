@@ -74,9 +74,12 @@ def make_jobs_plot(experiences, area_adj=0.84):
         sp.text(x, y, text, style='italic', color='gray', fontsize=10,
                 rotation=rotation)
 
+    # Get the current date
+    now = datetime.datetime.now()
+
+    # Consolidate the data about job experiences
     expr_types, expr_map = experiences
     years, areas, experiences, colors = ([] for _ in range(4))
-
     for e in expr_map:
         years.append(e.date)
         areas.append(np.pi * (area_adj * e.period)**2)
@@ -84,12 +87,10 @@ def make_jobs_plot(experiences, area_adj=0.84):
         colors.append(e.color)
 
     fig = plt.figure(1)
-
     ax = fig.add_subplot(111)
-    ax.scatter(x=years, y=experiences, s=areas, c=colors, alpha=0.5)
 
-    # Get the current date
-    now = datetime.datetime.now()
+    # Create a scatter plot with the job experiences
+    ax.scatter(x=years, y=experiences, s=areas, c=colors, alpha=0.5)
 
     # Add axis labels
     ax.set_xlabel('Year')
@@ -104,14 +105,16 @@ def make_jobs_plot(experiences, area_adj=0.84):
     ax.set_yticklabels([''])
     ax.grid('off')
 
+    # Add vertical dotted lines at the major steps of my working life
     xnow = now.year + normalize(now.month)
+    ytop = 14.5
     vdotlines = [
-        (1999.6, 'work:it', 14.5, 'horizontal'),  # Start of the working life
-        (2008.6, 'work:fr', 14.5, 'horizontal'),  # Move to South of France
+        (1999.6, 'work.IT', ytop, 'horizontal'),  # Start of the working life
+        (2008.6, 'work.FR', ytop, 'horizontal'),  # Move to South of France
         # OS2 Micro-Entrepreneur activity
-        (2013.4, 'OS2', 14.5, 'horizontal'),
+        (2013.4, 'OS2', ytop, 'horizontal'),
         # Start of the amazing MOOCs experience :)
-        (2014.10, 'MOOCs', 14.0, 'horizontal'),
+        (2014.10, 'MOOCs', ytop-.5, 'horizontal'),
         (xnow, '{0}.{1}'.format(now.year, now.month), .2, 45)]
     ymin, ymax, linewidth, linecolor = 0.02, 0.98, 1, '0.75'
 
