@@ -86,17 +86,17 @@ def make_jobs_plot(experiences, area_adj=0.84):
         experiences.append(e.type)
         colors.append(e.color)
 
-    fig = plt.figure(1)
-    ax = fig.add_subplot(111)
+    fig, ax = plt.subplots()
 
     # Create a scatter plot with the job experiences
     ax.scatter(x=years, y=experiences, s=areas, c=colors, alpha=0.5)
 
     # Add axis labels
+    xmin, xmax = 1995, now.year + 3
     ax.set_xlabel('Year')
     ax.set_ylabel('Experiences')
     ax.set_title('Job and Lifelong Learning History')
-    ax.set_xlim([1995, now.year + 3])
+    ax.set_xlim([xmin, xmax])
     ax.set_ylim([-1, len(expr_types) + 1])
 
     # Add grid - fixme: yticks[] if set must to be manually adjusted
@@ -169,6 +169,17 @@ def make_jobs_plot(experiences, area_adj=0.84):
     lgd = ax.legend(reversed(handles), reversed(expr_types),
                     loc='upper right', bbox_to_anchor=(1.55, 0.8),
                     prop={'size': 10})
+
+    ax2 = ax.twinx()
+    years = np.arange(2000-.35, now.year+.35, 1)
+    courses = [
+        1, 1, 1, 2, 0, 0, 0, 1,
+        # 2008: Moving to France... 'formation continue' :P
+        0, 0, 0, 0, 0, 0,
+        # 2014: MOOCs start here, for me at least
+        3, 23, 20, 9]
+    ax2.bar(years, courses, width=.7, color='lightblue', alpha=0.1)
+    fig.tight_layout()
 
     return fig, lgd
 
