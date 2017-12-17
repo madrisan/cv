@@ -168,7 +168,7 @@ def make_jobs_plot(experiences, area_adj=0.84):
              label=e, alpha=0.8) for e in expr_types)
     lgd = ax.legend(reversed(handles), reversed(expr_types),
                     loc='upper right', bbox_to_anchor=(1.55, 0.8),
-                    prop={'size': 10})
+                    prop={'size': 10}, frameon=False)
 
     ax2 = ax.twinx()
     years = np.arange(2000-.35, now.year+.35, 1)
