@@ -167,20 +167,34 @@ def make_jobs_plot(experiences, area_adj=0.84):
         list(mpatches.Patch(color=getcolor(expr_types.index(e), len(expr_types)),
              label=e, alpha=0.8) for e in expr_types)
     lgd = ax.legend(reversed(handles), reversed(expr_types),
-                    loc='upper right', bbox_to_anchor=(1.55, 0.8),
+                    bbox_to_anchor=(1.5, 0.8),
+                    fontsize='small',
                     prop={'size': 10}, frameon=False)
 
+    # Add a bar plot for displaying courses and completed MOOCs
     ax2 = ax.twinx()
-    years = np.arange(2000-.35, now.year+.35, 1)
+    bar_width = .7
+    years = np.arange(2000-(bar_width/2), now.year+(bar_width/2), 1)
     courses = [
         1, 1, 1, 2, 0, 0, 0, 1,
         # 2008: Moving to France... 'formation continue' :P
         0, 0, 0, 0, 0, 0,
         # 2014: MOOCs start here, for me at least
+        #       web data programming db cloud compscience math other
+        # 2014        3
+        # 2015   6    8      5        -   2       -         -    2
+        # 2016  12    -      2        2   1       2         -    1
+        # 2017   -    -      -        -   3       -         2    4
         3, 23, 20, 9]
-    ax2.bar(years, courses, width=.7, color='lightblue', alpha=0.1)
-    fig.tight_layout()
+    ax2.bar(years, courses, width=bar_width, color='lightblue', alpha=0.1)
+    lgd2 = ax2.legend(
+        ['Courses / MOOCs'],
+        loc='upper left',
+        bbox_to_anchor=(1.071, 0.2), # FIXME: fix this crappy fixed anchor
+        fontsize='small',
+        frameon=False)
 
+    fig.tight_layout()
     return fig, lgd
 
 def usage():
