@@ -12,6 +12,7 @@ matplotlib.rc('font', family='sans-serif')
 matplotlib.rc('text', usetex=True)
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
+from scipy.interpolate import spline
 
 from collections import namedtuple
 import datetime
@@ -174,10 +175,13 @@ def make_jobs_plot(experiences, area_adj=0.84):
 
     # Add a bar plot for displaying courses and completed MOOCs
     ax2 = ax.twinx()
+    bar_color = 'lightblue'
     bar_width = .7
-    years = np.arange(2000-(bar_width/2), now.year+(bar_width/2), 1)
+    years = np.arange(1996-(bar_width/2), now.year+(bar_width/2), 1)
     courses = [
-        1, 1, 1, 2, 0, 0, 0, 1,
+        5, 5, 5,
+        # 1999: start of work life
+        0, 1, 1, 1, 2, 0, 0, 0, 1,
         # 2008: Moving to France... 'formation continue' :P
         0, 0, 0, 0, 0, 0,
         # 2014: MOOCs start here, for me at least
@@ -187,13 +191,21 @@ def make_jobs_plot(experiences, area_adj=0.84):
         # 2016  12    -      2        2   1       2         -    1
         # 2017   -    -      -        -   3       -         2    4
         3, 23, 20, 9]
-    ax2.bar(years, courses, width=bar_width, color='lightblue', alpha=0.1)
+    ax2.bar(years, courses, width=bar_width, color=bar_color, alpha=0.1)
+    ax2.set_yticks([])
     lgd2 = ax2.legend(
         ['Certifications / Courses / MOOCs'],
         loc='upper left',
         bbox_to_anchor=(1.071, 0.2), # FIXME: fix this crappy fixed anchor
         fontsize='small',
         frameon=False)
+
+    # Add a spline that interpolates the number of completed courses
+    xnew = np.linspace(years.min(), years.max(), 100)
+    ysmooth = spline(years, courses, xnew)
+    ax3 = ax2.twinx()
+    ax3.set_yticks([-2, 5, 10, 15, 20], False)
+    ax3.plot(xnew, ysmooth, color=bar_color, alpha=0.6)
 
     fig.tight_layout()
     return fig, lgd
