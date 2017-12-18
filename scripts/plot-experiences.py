@@ -108,10 +108,10 @@ def make_jobs_plot(experiences, area_adj=0.84):
 
     # Add vertical dotted lines at the major steps of my working life
     xnow = now.year + normalize(now.month)
-    ytop = 14.5
+    ytop = 14.4
     vdotlines = [
-        (1999.6, 'work.IT', ytop, 'horizontal'),  # Start of the working life
-        (2008.6, 'work.FR', ytop, 'horizontal'),  # Move to South of France
+        (1999.6, '$\\rightarrow$ work@it', ytop, 'horizontal'),  # Start of the working life
+        (2008.6, '$\\rightarrow$ work@fr', ytop, 'horizontal'),  # Move to South of France
         # OS2 Micro-Entrepreneur activity
         (2013.4, 'OS2', ytop, 'horizontal'),
         # Start of the amazing MOOCs experience :)
@@ -179,7 +179,7 @@ def make_jobs_plot(experiences, area_adj=0.84):
     bar_width = .7
     years = np.arange(1996-(bar_width/2), now.year+(bar_width/2), 1)
     courses = [
-        5, 5, 5,
+        10, 10, 4,
         # 1999: start of work life
         0, 1, 1, 1, 2, 0, 0, 0, 1,
         # 2008: Moving to France... 'formation continue' :P
