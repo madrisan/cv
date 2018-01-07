@@ -9,9 +9,11 @@ PLOT = images/experiences.png
 
 all: plot pdf
 
-plot:
+plot: /usr/bin/python3
 	@echo "Generating the plot png image..."
-	./scripts/plot-experiences.py      \
+	/usr/bin/python3 -m venv ./pyvenv && \
+	./pyvenv/bin/pip3 install matplotlib numpy scipy && \
+	./pyvenv/bin/python3 ./scripts/plot-experiences.py \
 	    --csv=$(srcdir)/$(EXPERIENCES) \
 	    --image=$(srcdir)/$(PLOT)
 
