@@ -17,7 +17,7 @@ plot: /usr/bin/python3
 	    --csv=$(srcdir)/$(EXPERIENCES) \
 	    --image=$(srcdir)/$(PLOT)
 
-pdf-only:
+pdf-only: /usr/bin/pdftex
 	@echo "Generating the cv in pdf format..."
 	/usr/bin/pdftex $(srcdir)/$(CV)
 
