@@ -168,7 +168,7 @@ def make_jobs_plot(experiences, area_adj=0.84):
     handles = \
         list(mpatches.Patch(color=getcolor(expr_types.index(e), len(expr_types)),
              label=e, alpha=0.8) for e in expr_types)
-    lgd = ax.legend(reversed(handles), reversed(expr_types),
+    lgd = ax.legend(handles[::-1], expr_types[::-1],
                     bbox_to_anchor=(1.5, 0.8),
                     fontsize='small',
                     prop={'size': 10}, frameon=False)
