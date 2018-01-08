@@ -9,7 +9,7 @@ PLOT = images/experiences.png
 
 all: plot pdf
 
-plot: /usr/bin/python3
+plot: /usr/bin/python3 /usr/bin/latex
 	@echo "Generating the plot png image..."
 	/usr/bin/python3 -m venv ./pyvenv && \
 	./pyvenv/bin/pip3 install matplotlib numpy scipy && \
