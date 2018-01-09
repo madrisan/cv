@@ -177,9 +177,9 @@ def make_jobs_plot(experiences, area_adj=0.84):
     ax2 = ax.twinx()
     bar_color = 'lightblue'
     bar_width = .7
-    years = np.arange(1996-(bar_width/2), now.year+(bar_width/2), 1)
+    years = np.arange(1995-(bar_width/2), now.year+(bar_width/2), 1)
     courses = [
-        10, 10, 4,
+        10, 10, 10, 4,
         # 1999: start of work life
         0, 1, 1, 1, 2, 0, 0, 0, 1,
         # 2008: Moving to France... 'formation continue' :P
@@ -190,8 +190,10 @@ def make_jobs_plot(experiences, area_adj=0.84):
         # 2015   6    8      5        -   2       -         -    2
         # 2016  12    -      2        2   1       2         -    1
         # 2017   -    -      -        -   3       -         2    4
-        3, 23, 20, 9]
-    ax2.bar(years, courses, width=bar_width, color=bar_color, alpha=0.1)
+        3, 23, 20, 9,
+        # 2018
+        0]
+    ax2.bar(years, courses, width=bar_width, color=bar_color, alpha=0.2)
     ax2.set_yticks([])
     lgd2 = ax2.legend(
         ['Certifications / Courses / MOOCs'],
