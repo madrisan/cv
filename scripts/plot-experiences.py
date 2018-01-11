@@ -67,12 +67,12 @@ def parser(source):
 
     return expr_types, expr_map
 
-def make_jobs_plot(experiences, area_adj=0.84):
+def make_jobs_plot(experiences, area_adj=0.7):
     """Create the jobs history plot and legend"""
 
     def textlabel(sp, x, y, text, rotation='horizontal'):
         """Add a floating text to a subplot 'sp'"""
-        sp.text(x, y, text, style='italic', color='gray', fontsize=10,
+        sp.text(x, y, text, style='italic', color='gray', fontsize=9,
                 rotation=rotation)
 
     # Get the current date
@@ -90,7 +90,7 @@ def make_jobs_plot(experiences, area_adj=0.84):
     fig, ax = plt.subplots()
 
     # Create a scatter plot with the job experiences
-    ax.scatter(x=years, y=experiences, s=areas, c=colors, alpha=0.5)
+    ax.scatter(x=years, y=experiences, s=areas, c=colors, alpha=0.6)
 
     # Add axis labels
     xmin, xmax = 1995, now.year + 3
@@ -116,12 +116,12 @@ def make_jobs_plot(experiences, area_adj=0.84):
         (2013.4, 'OS2', ytop, 'horizontal'),
         # Start of the amazing MOOCs experience :)
         (2014.10, 'MOOCs', ytop-.5, 'horizontal'),
-        (xnow, '{0}.{1}'.format(now.year, now.month), .2, 45)]
-    ymin, ymax, linewidth, linecolor = 0.02, 0.98, 1, '0.75'
+        (xnow, '{0}.{1}'.format(now.year, now.month), .4, 75)]
+    ymin, ymax, linewidth, linecolor = 0.02, 0.98, 0.8, '0.75'
 
     for (x, label, ylabel, label_rotation) in vdotlines:
         ax.axvline(x=x, ymin=ymin, ymax=ymax,
-                   linewidth=linewidth, linestyle='dashdot', color=linecolor)
+                   linewidth=linewidth, linestyle='dotted', color=linecolor)
         textlabel(ax, x+.1, ylabel, label, rotation=label_rotation)
 
     # Add some text labels to hopefully improve the plot readability
@@ -171,7 +171,7 @@ def make_jobs_plot(experiences, area_adj=0.84):
     lgd = ax.legend(handles[::-1], expr_types[::-1],
                     bbox_to_anchor=(1.5, 0.8),
                     fontsize='small',
-                    prop={'size': 10}, frameon=False)
+                    prop={'size': 8}, frameon=False)
 
     # Add a bar plot for displaying courses and completed MOOCs
     ax2 = ax.twinx()
@@ -198,7 +198,7 @@ def make_jobs_plot(experiences, area_adj=0.84):
     lgd2 = ax2.legend(
         ['Certifications / Courses / MOOCs'],
         loc='upper left',
-        bbox_to_anchor=(1.071, 0.2), # FIXME: fix this crappy fixed anchor
+        bbox_to_anchor=(1.062, 0.2), # FIXME: fix this crappy fixed anchor
         fontsize='small',
         frameon=False)
 
@@ -207,7 +207,7 @@ def make_jobs_plot(experiences, area_adj=0.84):
     ysmooth = spline(years, courses, xnew)
     ax3 = ax2.twinx()
     ax3.set_yticks([-2, 5, 10, 15, 20], False)
-    ax3.plot(xnew, ysmooth, color=bar_color, alpha=0.6)
+    ax3.plot(xnew, ysmooth, color=bar_color, alpha=0.4)
 
     fig.tight_layout()
     return fig, lgd
