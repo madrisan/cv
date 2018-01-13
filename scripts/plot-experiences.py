@@ -67,7 +67,7 @@ def parser(source):
 
     return expr_types, expr_map
 
-def make_jobs_plot(experiences, area_adj=0.7):
+def make_jobs_plot(experiences, area_adj=0.74):
     """Create the jobs history plot and legend"""
 
     def textlabel(sp, x, y, text, rotation='horizontal'):
@@ -127,40 +127,41 @@ def make_jobs_plot(experiences, area_adj=0.7):
     # Add some text labels to hopefully improve the plot readability
     # fixme: the y coordinates must to be manually set
     annotations = [
-        (1995.8,   3.2, 'Maths'),
-        (1995.8,   2.6, 'Cryptography, AI'),
-        (1995.8,   2.0, 'C/C++/MatLab Programming'),
+        (1995.7,   3.1, 'Maths'),
+        (1995.7,   2.5, 'Cryptography, AI'),
+        (1995.7,   1.9, 'C/C++/MatLab Programming'),
         (1997.3,   7.0, 'TeX'),
         (1997.3,   6.4, 'Development'),
        #(1998.6,  -0.6, 'C/C++/Java Programming'),
         (2000.8,   9.6, 'Cisco WAN'),
         (2000.8,   9.0, 'Networking'),
        #(2000.3,   8.4, '@FIAT/IBM, BT'),
-        (2003.0,  12.4, 'Nagios'),
-        (2005.0,   2.0, 'Linux system Development'),
-        (2006.0,   1.4, 'QiLinux / openmamba'),
+        (2002.8,  12.3, 'Nagios'),
+        (2005.0,   1.9, 'Linux system Development'),
+        (2006.0,   1.3, 'QiLinux / openmamba'),
         (2006.4,   5.2, 'Shell scripting'),
-        (2007.4,   9.9, 'Linux SysAdmin'),
+        (2005.10, 10.7, 'Linux SysAdmin'),
        #(2007.2,   9.3, '@IBM'),
-        (2011.10, 13.3, 'System and Applications'),
-        (2011.10, 12.7, 'Monitoring'),
+        (2012.2,  13.3, 'Nagios'),
+        (2012.0,  12.7, 'Centreon'),
        #(2011.10, 12.1, '@IBM'),
-        (2015.2,  11.1, 'DevOps'),
-        (2015.8,  10.5, 'IaC'),
+        (2015.2,  10.9, 'DevOps'),
+        (2015.8,  10.3, 'IaC'),
+        (2015.2,   9.7,  'SaltStack'),
        #(2015.0,  10.1, '@Sopra-Steria'),
        #(2013.0,  8.4,  'Angular'),
        #(2013.0,  7.8,  'Node.js'),
-        (2014.9,  7.1,  'MEAN Stack'),
+        (2014.9,  7.0,  'MEAN Stack'),
         (2006.1,  7.2,  'PHP'),
        #(2013.0,  6.6,  'Web Full Stack'),
-        (2013.1,  4.4,  'Python'),
+        (2013.8,  4.7,  'Python'),
         (2014.4,  0.0,  'C'),
         (2015.2,  1.4,  'BigData/ML'),
-        (2016.4,  2.3,  'Scala'),
+        (2016.4,  2.4,  'Scala'),
         (2015.3, -0.6,  'CUDA'),
-        (2016.8, 11.9,  'Docker'),
+        (2016.7, 11.9,  'Docker'),
         (2016.0,  3.5,  'Math'),
-        (2016.2,  4.8,  'SaltStack')]
+        (2016.0, 13.3,  'Xymon')]
     for x, y, label in annotations:
         textlabel(ax, x, y, label)
 
