@@ -28,7 +28,7 @@ def die(message):
 def getcolor(index, upper):
     """Return a progressive color for an index in range(upper)."""
     assert(index in range(upper))
-    return plt.cm.Paired(np.linspace(0, 1, upper))[index]
+    return plt.cm.Spectral(np.linspace(1, 0, upper, endpoint=False))[index]
 
 def normalize(month):
     """Normalize the month number."""
@@ -155,13 +155,13 @@ def make_jobs_plot(experiences, area_adj=0.74):
         (2006.1,   7.2,  'PHP'),
        #(2013.0,   6.6,  'Web Full Stack'),
         (2013.8,   4.7,  'Python'),
-        (2014.4,   0.0,  'C'),
-        (2015.2,   1.4,  'BigData/ML'),
+        (2016.1,   0.1,  'C'),
+        (2015.3,   1.3,  'BigData/ML'),
         (2016.4,   2.4,  'Scala'),
         (2015.3,  -0.6,  'CUDA'),
         (2016.7,  11.9,  'Docker'),
         (2016.0,   3.5,  'Math'),
-        (2016.0,  13.3,  'Xymon'),
+        (2016.2,  13.4,  'Xymon'),
         (2016.2,   9.4,  'OpenStack')]
     for x, y, label in annotations:
         textlabel(ax, x, y, label)
