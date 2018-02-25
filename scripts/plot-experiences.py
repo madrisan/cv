@@ -130,7 +130,7 @@ def make_jobs_plot(experiences, area_adj=0.74):
         (1995.7,   3.1, 'Maths'),
         (1995.7,   2.5, 'Cryptography, AI'),
         (1995.7,   1.9, 'C/C++/MatLab Programming'),
-        (1997.3,   7.0, 'TeX'),
+        (1997.3,   7.0, 'T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX'),
         (1997.3,   6.4, 'Development'),
        #(1998.6,  -0.6, 'C/C++/Java Programming'),
         (2000.8,   9.6, 'Cisco WAN'),
