@@ -108,7 +108,7 @@ def make_jobs_plot(experiences, area_adj=0.74):
 
     # Add vertical dotted lines at the major steps of my working life
     xnow = now.year + normalize(now.month)
-    ytop = 14.4
+    ytop = 15.4
     vdotlines = [
         (1999.6, '$\\rightarrow$ work@it', ytop, 'horizontal'),  # Start of the working life
         (2008.6, '$\\rightarrow$ work@fr', ytop, 'horizontal'),  # Move to South of France
@@ -127,42 +127,43 @@ def make_jobs_plot(experiences, area_adj=0.74):
     # Add some text labels to hopefully improve the plot readability
     # fixme: the y coordinates must to be manually set
     annotations = [
-        (1995.7,   3.1, 'Maths'),
-        (1995.7,   2.5, 'Cryptography, AI'),
-        (1995.7,   1.9, 'C/C++/MatLab Programming'),
-        (1997.3,   7.0, 'T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX'),
-        (1997.3,   6.4, 'Development'),
+        (1995.7,   4.1, 'Maths'),
+        (1995.7,   3.5, 'Cryptography, AI'),
+        (1995.7,   2.9, 'C/C++/MatLab Programming'),
+        (1997.3,   8.0, 'T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX'),
+        (1997.3,   7.4, 'Development'),
        #(1998.6,  -0.6, 'C/C++/Java Programming'),
-        (2000.8,   9.6, 'Cisco WAN'),
-        (2000.8,   9.0, 'Networking'),
+        (2000.8,  10.0, 'Cisco WAN'),
+        (2000.8,   9.4, 'Networking'),
        #(2000.3,   8.4, '@FIAT/IBM, BT'),
-        (2002.8,  12.3, 'Nagios'),
-        (2005.0,   1.9, 'Linux system Development'),
-        (2006.0,   1.3, 'QiLinux / openmamba'),
-        (2006.4,   5.2, 'Shell scripting'),
-        (2005.10, 10.7, 'Linux SysAdmin'),
+        (2002.8,  13.3, 'Nagios'),
+        (2005.0,   2.8, 'Linux system Development'),
+        (2006.0,   2.2, 'QiLinux / openmamba'),
+        (2006.4,   6.2, 'Shell scripting'),
+        (2005.10, 11.8, 'Linux SysAdmin'),
        #(2007.2,   9.3, '@IBM'),
-        (2012.2,  13.3, 'Nagios'),
-        (2012.0,  12.7, 'Centreon'),
+        (2012.2,  14.3, 'Nagios'),
+        (2012.0,  13.7, 'Centreon'),
        #(2011.10, 12.1, '@IBM'),
-        (2014.8,  11.2, 'DevOps'),
-        (2015.4,  10.6, 'IaC'),
-        (2014.8,  10.0, 'SaltStack'),
+        (2014.8,  12.1, 'DevOps'),
+        (2015.4,  11.5, 'IaC'),
+        (2014.8,  10.9, 'SaltStack'),
        #(2015.0,  10.1, '@Sopra-Steria'),
        #(2013.0,   8.4,  'Angular'),
        #(2013.0,   7.8,  'Node.js'),
-        (2014.9,   7.0,  'MEAN Stack'),
-        (2006.1,   7.2,  'PHP'),
+        (2014.9,   7.9,  'MEAN Stack'),
+        (2006.1,   8.1,  'PHP'),
        #(2013.0,   6.6,  'Web Full Stack'),
-        (2013.8,   4.7,  'Python'),
+        (2013.8,   5.7,  'Python'),
         (2016.1,   0.1,  'C'),
-        (2015.3,   1.3,  'BigData/ML'),
-        (2016.4,   2.4,  'Scala'),
+        (2015.3,   1.4,  'BigData/ML'),
+        (2016.4,   3.4,  'Scala'),
         (2015.3,  -0.6,  'CUDA'),
-        (2016.7,  11.9,  'Docker'),
-        (2016.0,   3.5,  'Math'),
-        (2016.2,  13.4,  'Xymon'),
-        (2016.2,   9.4,  'OpenStack')]
+        (2016.7,  12.9,  'Docker'),
+        (2016.0,   4.5,  'Math'),
+        (2016.2,  14.4,  'Xymon'),
+        (2016.2,  10.3,  'OpenStack'),
+        (2018.2,   2.4,  'Go')]
     for x, y, label in annotations:
         textlabel(ax, x, y, label)
 
