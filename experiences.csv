@@ -82,8 +82,7 @@
 # Nagios PLugins for Linux
 2014,  2, 2015, 12,  Development - C/C++/Java
 # SopraSteria DevOps activities (Docker, SaltStack, Python, rpm/deb packaging: Spacewalk)
-# Qwant DevOps activities
-2014,  7, 2018,  7,  Linux System - DevOps
+2014,  7, 2017,  8,  Linux System - DevOps
 # Sopra-Steria
 2014,  9, 2015, 10,  Development - Shell Scripts
 # Base SUD Networking
@@ -115,11 +114,9 @@
 # MOOC Dynamic Systems and Chaos, Fractals, Renormalization - porting Py3
 2017,  7, 2017,  8,  Development - Math
 # SopraSteria - Python scripts, AWS boto3, Linux inventory, PyXymon, Salt backend
-# Qwant - SaltStack
-2016,  7, 2018,  9,  Development - Python
+2016,  7, 2017,  8,  Development - Python
 # SopraSteria - build infrastructure using GitLab and Docker, Qwant
-# Qwant - Docker containers for speeding up testing
-2016,  7, 2018,  9,  Linux System - Docker Containers
+2016,  7, 2017,  8,  Linux System - Docker Containers
 # SopraSteria - postinstall framework (SaltStack-based) + GitLab script refont
 2016,  6, 2017,  2,  Development - Shell Scripts
 # Nagios Plugins for Linux v19/v20 + test framework
@@ -137,7 +134,13 @@
 2017,  5, 2017,  7,  Development - Linux System
 # Nagios Plugins for Linux v21 (unit test framework) + procps-newlib (v22) + check_docker
 2017,  6, 2017, 10,  Development - C/C++/Java
+# Qwant DevOps activities
+2017,  9, 2018, 11,  Linux System - DevOps
+# Qwant - SaltStack
+2017,  9, 2018, 11,  Development - Python
+# Qwant - Docker containers for speeding up testing
+2017,  9, 2018, 11,  Linux System - Docker Containers
 # OpenStack
 2017, 11, 2018,  3,  Linux System - Administration
 # Golang start + HashiCorp Vault Monitor
-2018,  6, 2018,  9,  Development - Golang
+2018,  6, 2018, 11,  Development - Golang
