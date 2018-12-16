@@ -176,7 +176,7 @@ def make_jobs_plot(experiences, area_adj=0.74):
                     fontsize='small',
                     prop={'size': 8}, frameon=False)
 
-    # Add a bar plot for displaying courses and completed MOOCs
+    # Add a bar plot for displaying courses/books and completed MOOCs
     ax2 = ax.twinx()
     bar_color = 'lightblue'
     bar_width = .7
@@ -190,12 +190,17 @@ def make_jobs_plot(experiences, area_adj=0.74):
         # 2014: MOOCs start here, for me at least
         #       web data programming db cloud compscience math other
         # 2014        3
+        3,
         # 2015   6    8      5        -   2       -         -    2
+        23,
         # 2016  12    -      2        2   1       2         -    1
+        20,
+        # Now that MOOCs are most of the time paid courses, I started
+        # by coupling them with [e-]books...
         # 2017   -    -      -        -   3       -         2    4
-        3, 23, 20, 9,
-        # 2018
-        0]
+        9,
+        # 2018   -    -      -        -   0       -         1    0
+        1]
     ax2.bar(years, courses, width=bar_width, color=bar_color, alpha=0.2)
     ax2.set_yticks([])
     lgd2 = ax2.legend(
