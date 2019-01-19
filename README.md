@@ -1,11 +1,12 @@
 # Curriculum Vitae et Studiorum
 
-My _Curriculum Vitae et Studiorum_ written in plain [TeX] along with a compiled output in _pdf_.
+My _Curriculum Vitae et Studiorum_ written in _plain-[TeX]_ along with a compiled output in _pdf_.
 
 ### Printable Version
 
 Click [here](https://github.com/madrisan/cv/blob/master/dmadrisan_cv_en.pdf)
-to view or download the compiled *pdf document*.
+to view or download the compiled *pdf document*
+(note that the *pdf* contains interactives links that are not displayed by the GitHub viewer).
 
 ### My Job History
 

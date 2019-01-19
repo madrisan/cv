@@ -199,20 +199,22 @@ def make_jobs_plot(experiences, area_adj):
         # 2008: Moving to France... 'formation continue' :P
         0, 0, 0, 0, 0, 0,
         # 2014: MOOCs start here, for me at least
-        #       web data programming db cloud compscience math other
+        #       web data programming db cloud compscience math sciences other
         # 2014        3
         3,
-        # 2015   6    8      5        -   2       -         -    2
+        # 2015   6    8      5        -   2       -         -    -        2
         23,
-        # 2016  12    -      2        2   1       2         -    1
+        # 2016  12    -      2        2   1       2         -    -        1
         20,
         # Now that MOOCs are most of the time paid courses, I started
         # by coupling them with [e-]books...
-        # 2017   -    -      -        -   3       -         2    4
+        # 2017   -    -      -        -   3       -         2    -        4
         9,
-        # 2018   -    -      -        -   -       -         1    -
+        # 2018   -    -      -        -   -       -         1    -        -
         1,
-        # 2019   -    -      -        -   -       -         1    -
+        # 2019   -    -      -        -   -       -         1    -        -
+        1,
+        # 2020   -    -      -        -   -       -         -    -        1
         1]
     ax2.bar(years, courses, width=bar_width, color=bar_color, alpha=0.2)
     ax2.set_yticks([])
