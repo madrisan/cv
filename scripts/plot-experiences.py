@@ -199,8 +199,10 @@ def make_jobs_plot(experiences, area_adj=0.74):
         # by coupling them with [e-]books...
         # 2017   -    -      -        -   3       -         2    4
         9,
-        # 2018   -    -      -        -   0       -         1    0
-        1]
+        # 2018   -    -      -        -   -       -         1    -
+        1,
+        # 2019   -    -      -        -   -       -         -    -
+        0]
     ax2.bar(years, courses, width=bar_width, color=bar_color, alpha=0.2)
     ax2.set_yticks([])
     lgd2 = ax2.legend(
