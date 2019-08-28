@@ -6,7 +6,7 @@ WORKDIR /appl
 
 RUN apt-get --quiet update \
     && DEBIAN_FRONTEND=noninteractive \
-       apt-get install -y \
+       apt-get install -y --no-install-recommends \
           dvipng \
           python3 \
           python3-matplotlib \
@@ -15,6 +15,7 @@ RUN apt-get --quiet update \
           texlive-base \
           texlive-latex-base \
           texlive-latex-extra \
+          texlive-fonts-extra \
           texlive-fonts-recommended \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /var/cache/apt/archives/*

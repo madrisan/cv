@@ -109,6 +109,56 @@
 %\ithyph
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newif\ifpdfmode
+
+\ifx\pdfoutput\undefined
+\else
+  \ifnum\pdfoutput>0 \pdfmodetrue
+  \fi
+\fi
+
+\ifpdfmode
+
+\def\colorblack{0 g 0 G}
+\def\colorred  {1 0 0 rg 1 0 0 RG}
+\def\colorgreen{0 1 0 rg 0 1 0 RG}
+\def\colorblue {0 0 1 rg 0 0 1 RG}
+
+\def\colordarkgreen{0 0.5 0 rg 0 0.5 0 RG}
+
+\ifx\pdfcolorstack\undefined
+  \def\pdfcolorstackpush{\pdfliteral{\currentcolor}}
+  \let\pdfcolorstackpop\pdfcolorstackpush
+\else
+  \mathchardef\colorstackcnt=\pdfcolorstackinit page {\colorblack}
+  \def\pdfcolorstackpush{\pdfcolorstack\colorstackcnt push{\currentcolor}}
+  \def\pdfcolorstackpop{\pdfcolorstack\colorstackcnt pop}
+\fi
+
+\else % of \ifpdfmode
+
+\def\colorblack{gray 0}
+\def\colorred  {rgb 1 0 0}
+\def\colorgreen{rgb 0 1 0}
+\def\colorblue {rgb 0 0 1}
+
+\def\colordarkgreen{rgb 0 0.5 0}
+
+\def\pdfcolorstackpush{\special{color push \currentcolor}}
+\def\pdfcolorstackpop{\special{color pop}}
+
+\fi  % of \ifpdfmode
+
+\def\color#1{\expandafter
+  \ifx\csname color#1\endcsname \relax \def\currentcolor{#1}%
+  \else \edef\currentcolor{\csname color#1\endcsname}%
+  \fi
+  \pdfcolorstackpush
+  \aftergroup\pdfcolorstackpop
+}
+\let\currentcolor=\colorblack
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \def\personaldata#1{\hbox to\hsize{%
     \baselineskip = 14truept%
     \vtop{\halign{{\rm##}\hfil&\qquad\qquad\strut##\hfil\cr#1\crcr}}\hfill}}
@@ -116,6 +166,8 @@
 
 \def\endpoint#1{\vrule height #1pt width #1pt depth 0pt}
 \def\sendpoint{\endpoint{7}}
+\def\horizontalrule#1#2{\vrule height #1pt width #2pt depth 0pt}
+\def\sectionrule{\horizontalrule{2}{50}}
 
 \def\dateitem#1#2#3 \par {%
     \goodbreak\bigskip%
@@ -124,7 +176,7 @@
     \nobreak\vskip 0pt\noindent\ignorespaces}
 \long\def\section#1 \par {%
     \goodbreak\bigskip%
-    \leftline{\sendpoint\quad\sectionfont#1}%
+    \leftline{\color{darkgreen}\sectionrule\quad\sectionfont#1}%
     \penalty-200%
     \nobreak\vskip 0pt plus 1pt\noindent\ignorespaces}
 \long\def\subsection#1 \par {%
@@ -167,9 +219,9 @@
 \catcode`! = 12
 %
 \font\titlefont = cmss12 % cmbx12 at14pt
-\font\sectionfont = cmssbx10 % cmbx10
-
+\font\sectionfont = cmss10 % cmssbx10 % cmbx10
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \def\today{%
    \the\day\space\ifcase\month%
       \or January\or February\or March\or April\or May\or June%
