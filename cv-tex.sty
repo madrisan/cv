@@ -158,9 +158,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\personaldata#1{\hbox to\hsize{%
+    \eightpoint%
     \baselineskip = 14truept%
     \vtop{\halign{{\rm##}\hfil&\qquad\qquad\strut##\hfil\cr#1\crcr}}\hfill}}
-\def\personaldataline#1#2{\line{{\it #1}\hss#2}\cr}
+%\def\personaldataline#1#2#3{\line{{#1}\space{\it #2}\hss#3}\cr}
+\def\personaldataline#1#2#3{\line{\hss#3\space{#1}}\cr}
 
 \def\endpoint#1{\vrule height #1pt width #1pt depth 0pt}
 \def\sendpoint{\endpoint{7}}
@@ -216,8 +218,32 @@
     \scriptfont\msafam = \sevenmsa \scriptscriptfont\msafam = \fivemsa%
 \catcode`! = 12
 %
-\font\titlefont = cmss12 % cmbx12 at14pt
+\font\bigfont = cmdunh32 % cmss12 at 24pt
+\font\titlefont = cmss12 % cmbx12 at 14pt
 \font\sectionfont = cmss10 % cmssbx10 % cmbx10
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\font\fabrandszero = fa5brands0
+\font\fabrandsone  = fa5brands1
+\font\fasolidzero  = fa5free0solid
+\font\fasolidone   = fa5free1solid
+\font\fasolidtwo   = fa5free2solid
+\font\fasolidthree = fa5free3solid
+
+\def\fabrandszeroicon#1{{\fabrandszero\char"#1}}%
+\def\fabrandsoneicon#1{{\fabrandsone\char"#1}}%
+\def\fasolidzeroicon#1{{\fasolidzero\char"#1}}%
+\def\fasolidoneicon#1{{\fasolidone\char"#1}}%
+\def\fasolidtwoicon#1{{\fasolidtwo\char"#1}}%
+\def\fasolidthreeicon#1{{\fasolidthree\char"#1}}%
+
+\def\fafiveLinkedIN{{\fabrandszeroicon{2}}}
+\def\fafiveGitHub{{\fabrandszeroicon{6}}}
+\def\fafiveHome{{\fasolidzeroicon{11}}}
+\def\fafiveWeb{{\fasolidzeroicon{83}}}
+\def\fafiveFlag{{\fasolidoneicon{83}}}
+\def\fafiveMail{{\fasolidoneicon{96}}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\today{%
