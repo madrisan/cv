@@ -17,6 +17,8 @@ RUN apt-get --quiet update \
           texlive-base \
           texlive-fonts-extra \
           texlive-fonts-recommended \
+          texlive-latex-base \
+          texlive-latex-extra \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /var/cache/apt/archives/*
 
