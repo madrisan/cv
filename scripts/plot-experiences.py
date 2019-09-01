@@ -12,7 +12,7 @@ matplotlib.rc('font', family='sans-serif')
 matplotlib.rc('text', usetex=True)
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
-from scipy.interpolate import spline
+import scipy.interpolate
 
 from collections import namedtuple
 import datetime
@@ -104,7 +104,7 @@ def make_jobs_plot(experiences, area_adj=0.74):
     yticks = []
     ax.set_yticks(yticks)
     ax.set_yticklabels([''])
-    ax.grid('off')
+    ax.grid(False)
 
     # Add vertical dotted lines at the major steps of my working life
     xnow = now.year + normalize(now.month)
@@ -214,7 +214,8 @@ def make_jobs_plot(experiences, area_adj=0.74):
 
     # Add a spline that interpolates the number of completed courses
     xnew = np.linspace(years.min(), years.max(), 100)
-    ysmooth = spline(years, courses, xnew)
+    fysmooth = scipy.interpolate.interp1d(years, courses, kind="quadratic")
+    ysmooth = [fysmooth(ti) for ti in xnew]
     ax3 = ax2.twinx()
     ax3.set_yticks([-2, 5, 10, 15, 20], False)
     ax3.plot(xnew, ysmooth, color=bar_color, alpha=0.4)
