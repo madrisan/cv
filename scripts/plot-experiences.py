@@ -4,7 +4,7 @@
 # programming activities.
 # Note that Python 3 is required.
 #
-# Copyright (C) 2016-2017 Davide Madrisan <davide.madrisan.gmail.com>
+# Copyright (C) 2016-2019 Davide Madrisan <davide.madrisan.gmail.com>
 
 import matplotlib
 matplotlib.use('Agg')
@@ -86,6 +86,7 @@ def make_jobs_plot(experiences, area_adj=0.74):
         areas.append(np.pi * (area_adj * e.period)**2)
         experiences.append(e.type)
         colors.append(e.color)
+    assert(len(years) == len(experiences))
 
     fig, ax = plt.subplots()
 
@@ -208,7 +209,7 @@ def make_jobs_plot(experiences, area_adj=0.74):
     lgd2 = ax2.legend(
         ['Certifications / Courses / MOOCs'],
         loc='upper left',
-        bbox_to_anchor=(1.062, 0.2), # FIXME: fix this crappy fixed anchor
+        bbox_to_anchor=(0.998, 0.16), # FIXME: fix this crappy fixed anchor
         fontsize='small',
         frameon=False)
 
@@ -220,7 +221,6 @@ def make_jobs_plot(experiences, area_adj=0.74):
     ax3.set_yticks([-2, 5, 10, 15, 20], False)
     ax3.plot(xnew, ysmooth, color=bar_color, alpha=0.4)
 
-    fig.tight_layout()
     return fig, lgd
 
 def usage():
