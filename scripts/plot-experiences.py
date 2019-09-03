@@ -104,7 +104,7 @@ def make_jobs_plot(experiences, area_adj=0.74):
     ax.set_yticks([])
     ax.tick_params(axis=u'both', which=u'both', length=0)
     ax.grid(False)
-
+    
     # Add vertical dotted lines at the major steps of my working life
     xnow = now.year + normalize(now.month)
     ytop = 15.4
@@ -136,8 +136,8 @@ def make_jobs_plot(experiences, area_adj=0.74):
         (2000.8,   9.4, 'Networking'),
        #(2000.3,   8.4, '@FIAT/IBM, BT'),
         (2002.8,  13.3, 'Nagios'),
-        (2005.0,   2.8, 'Linux system Development'),
-        (2006.0,   2.2, 'QiLinux / openmamba'),
+        (2005.6,   2.8, 'Linux system Development'),
+        (2006.2,   2.2, 'QiLinux / openmamba'),
         (2006.4,   6.2, 'Shell scripting'),
         (2005.10, 11.8, 'Linux SysAdmin'),
        #(2007.2,   9.3, '@IBM'),
