@@ -57,7 +57,6 @@ def parser(source):
         with open(source, "r") as data:
             history = my_experiences(row_iter(data))
             expr_types = sorted(set([expr[2] for expr in history]))
-
             index = lambda e: expr_types.index(e)
             color = lambda e: getcolor(index(e), len(expr_types))
             expr_map = map(lambda e:
@@ -102,9 +101,8 @@ def make_jobs_plot(experiences, area_adj=0.74):
     ax.set_ylim([-1, len(expr_types) + 1])
 
     # Add grid - fixme: yticks[] if set must to be manually adjusted
-    yticks = []
-    ax.set_yticks(yticks)
-    ax.set_yticklabels([''])
+    ax.set_yticks([])
+    ax.tick_params(axis=u'both', which=u'both', length=0)
     ax.grid(False)
 
     # Add vertical dotted lines at the major steps of my working life
@@ -218,7 +216,7 @@ def make_jobs_plot(experiences, area_adj=0.74):
     fysmooth = scipy.interpolate.interp1d(years, courses, kind="quadratic")
     ysmooth = [fysmooth(ti) for ti in xnew]
     ax3 = ax2.twinx()
-    ax3.set_yticks([-2, 5, 10, 15, 20], False)
+    ax3.set_yticks([])
     ax3.plot(xnew, ysmooth, color=bar_color, alpha=0.4)
 
     return fig, lgd
