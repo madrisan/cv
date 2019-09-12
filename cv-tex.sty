@@ -118,11 +118,12 @@
 \ifpdfmode
 
 \def\colorblack{0 g 0 G}
-\def\colorred  {1 0 0 rg 1 0 0 RG}
-\def\colorgreen{0 1 0 rg 0 1 0 RG}
-\def\colorblue {0 0 1 rg 0 0 1 RG}
-
-\def\colordarkgreen{0 0.5 0 rg 0 0.5 0 RG}
+%\def\colorred  {1 0 0 rg 1 0 0 RG}
+%\def\colorgreen{0 1 0 rg 0 1 0 RG}
+%\def\colorblue {0 0 1 rg 0 0 1 RG}
+\def\colordarkgreen{0   0.5 0    rg 0   0.5 0   RG}
+\def\colorlightgray{0.6 0.6 0.6  rg 0.6 0.6 0.6 RG}
+\def\colordarkgray{0.3 0.3 0.3  rg 0.3 0.3 0.3 RG}
 
 \ifx\pdfcolorstack\undefined
   \def\pdfcolorstackpush{\pdfliteral{\currentcolor}}
@@ -136,11 +137,12 @@
 \else % of \ifpdfmode
 
 \def\colorblack{gray 0}
-\def\colorred  {rgb 1 0 0}
-\def\colorgreen{rgb 0 1 0}
-\def\colorblue {rgb 0 0 1}
-
-\def\colordarkgreen{rgb 0 0.5 0}
+%\def\colorred  {rgb 1 0 0}
+%\def\colorgreen{rgb 0 1 0}
+%\def\colorblue {rgb 0 0 1}
+\def\colordarkgreen{rgb 0   0.  0}
+\def\colorlightgray{rgb 0.6 0.6 0.6}
+\def\colordarkgray{rgb 0.3 0.3 0.3}
 
 \def\pdfcolorstackpush{\special{color push \currentcolor}}
 \def\pdfcolorstackpop{\special{color pop}}
@@ -158,8 +160,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\personaldata#1{\hbox to\hsize{%
-    \eightpoint%
-    \baselineskip = 14truept%
+    \eightpoint\color{darkgray}%
+    \baselineskip = 12truept%
     \vtop{\halign{{\rm##}\hfil&\qquad\qquad\strut##\hfil\cr#1\crcr}}\hfill}}
 %\def\personaldataline#1#2#3{\line{{#1}\space{\it #2}\hss#3}\cr}
 \def\personaldataline#1#2#3{\line{\hss#3\space{#1}}\cr}

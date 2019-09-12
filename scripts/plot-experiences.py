@@ -104,7 +104,7 @@ def make_jobs_plot(experiences, area_adj=0.74):
     ax.set_yticks([])
     ax.tick_params(axis=u'both', which=u'both', length=0)
     ax.grid(False)
-    
+
     # Add vertical dotted lines at the major steps of my working life
     xnow = now.year + normalize(now.month)
     ytop = 15.4
