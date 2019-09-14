@@ -176,6 +176,7 @@
     \line{\bf{#1 -- #2}\hss#3}%
     \penalty-200%
     \nobreak\vskip 0pt\noindent\ignorespaces}
+
 \long\def\section#1 \par {%
     \goodbreak\bigskip%
     \leftline{\color{darkgreen}\sectionrule\quad\sectionfont#1}%
@@ -183,8 +184,16 @@
     \nobreak\vskip 0pt plus 1pt\noindent\ignorespaces}
 \long\def\subsection#1 \par {%
     \medskip%
-    \leftline{\it#1}%
+    \leftline{\color{darkgreen}\it#1}%
     \nobreak\vskip -2pt\noindent\ignorespaces}
+
+\def\quote{%
+    \par\begingroup
+    \rightskip=\parindent
+    \leftskip=\parindent
+    \noindent\ignorespaces}
+\def\endquote{\par\endgroup}
+
 \font\smallsy = cmsy6
 \def\bitem#1{%
     \item{\raise1.2pt\hbox{$\textfont2 = \smallsy\bullet$}}{%
@@ -195,6 +204,7 @@
     \itemitem{\raise1.2pt\hbox{$\textfont2 = \smallsy\bullet$}}\ignorespaces}
 %\def\bdot{$\,\cdot\,$}
 \def\bdot{\raise1.2pt\hbox{$\textfont2 = \smallsy\bullet$}}
+
 \font\smallr = cmr6
 \font\smallsl = cmsl6
 \def\plusplus{\nobreak\raise1pt\hbox{$\textfont0 = \smallr+\kern-.06667em+$}}
@@ -245,6 +255,8 @@
 \def\fafiveWeb{{\fasolidzeroicon{83}}}
 \def\fafiveFlag{{\fasolidoneicon{83}}}
 \def\fafiveMail{{\fasolidoneicon{96}}}
+\def\fafiveHandshake{{\fasolidtwoicon{19}}}
+\def\fafiveTemple{{\fasolidthreeicon{13}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
