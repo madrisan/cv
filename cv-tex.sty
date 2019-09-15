@@ -3,17 +3,12 @@
 
 %%% Paging and style
 \magnification\magstephalf
-\hsize = 14.4truecm \vsize = 23.3truecm
+\hsize = 14.4truecm \vsize = 23.8truecm
 \hoffset = 0.6truecm \voffset = 0.5truecm
-\topskip = 0.8truecm
+\topskip = 0.6truecm
 \parindent = 0.5truecm \parskip = .3\baselineskip
 \tolerance = 400
-\headline = {%
-    \ifnum\pageno > 1
-    \hbox to \hsize{%
-        \hfil\nineit Davide Madrisan -- Curriculum vit\ae{} et studiorum\hfil}%
-    \else\hbox to \hsize{\hfill}\fi}
-%
+
 \newfam\scfam                                                     % small cap family
 \newfam\bsfam                                              % slanted boldface family
 \newfam\tbfam                                               % typewriter bold family
@@ -104,7 +99,13 @@
       \normalbaselines\rm}
 \fi
 \ninepoint % default font size
-%\ithyph
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\footline = {%
+    \ifnum\pageno > 1
+	\tenrm\folio\hss%
+	\hbox{\eightpoint\it Davide Madrisan -- Curriculum vit\ae{} et studiorum}
+    \else\relax\fi}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newif\ifpdfmode
