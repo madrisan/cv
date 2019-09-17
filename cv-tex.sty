@@ -148,16 +148,38 @@
 \def\pdfcolorstackpush{\special{color push \currentcolor}}
 \def\pdfcolorstackpop{\special{color pop}}
 
-\fi  % of \ifpdfmode
+\fi % of \ifpdfmode
 
-\def\color#1{\expandafter
+\def\color#1{\expandafter%
   \ifx\csname color#1\endcsname \relax \def\currentcolor{#1}%
   \else \edef\currentcolor{\csname color#1\endcsname}%
-  \fi
-  \pdfcolorstackpush
-  \aftergroup\pdfcolorstackpop
+  \fi%
+  \pdfcolorstackpush%
+  \aftergroup\pdfcolorstackpop%
 }
 \let\currentcolor=\colorblack
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\strutdepth{\dp\strutbox}
+\def\sidenote#1{%
+    \vtop to \strutdepth{%
+        \baselineskip\strutdepth%
+        \vss\llap{\vtop to 0pt{%
+            \leftskip=0pt plus1fill \rightskip=8pt%
+            \parfillskip=0pt \parindent=0pt%
+            \hsize=1.7in%
+            \eightpoint\it #1}}\null}}
+\def\lsidenote#1{%
+    \strut\vadjust{\kern-\strutdepth\sidenote{#1}}}
+
+\newdimen\theight
+\def \rsidenote#1{%
+    \vadjust{\setbox0=\hbox{\eightpoint\it #1}%
+    \theight=\ht0
+    \advance\theight by \dp0 \advance\theight by \lineskip
+    \kern -\theight \vbox to \theight{\rightline{\rlap{\box0}}%
+    \vss}%
+}}%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\personaldata#1{\hbox to\hsize{%
@@ -170,7 +192,6 @@
 \def\endpoint#1{\vrule height #1pt width #1pt depth 0pt}
 \def\sendpoint{\endpoint{7}}
 \def\horizontalrule#1#2{\vrule height #1pt width #2pt depth 0pt}
-\def\sectionrule{\horizontalrule{2}{50}}
 
 \def\dateitem#1#2#3 \par {%
     \goodbreak\bigskip%
@@ -178,9 +199,13 @@
     \penalty-200%
     \nobreak\vskip 0pt\noindent\ignorespaces}
 
+\def\sectionrule{\horizontalrule{8}{8}}
 \long\def\section#1 \par {%
     \goodbreak\bigskip%
-    \leftline{\color{darkgreen}\sectionrule\quad\sectionfont#1}%
+    %\leftline{\color{darkgreen}\sectionrule\quad\sectionfont#1}%
+    \leftline{\color{darkgreen}\sectionfont#1%
+    %\lsidenote{\color{darkgreen}\sectionrule\quad}}%
+    \lsidenote{\sectionrule\quad}}%
     \penalty-200%
     \nobreak\vskip 0pt plus 1pt\noindent\ignorespaces}
 \long\def\subsection#1 \par {%
@@ -188,12 +213,27 @@
     \leftline{\color{darkgreen}\it#1}%
     \nobreak\vskip -2pt\noindent\ignorespaces}
 
+\def\stress#1{{\it#1}}
+
+\newskip\tinyskipamount
+\tinyskipamount=1pt plus 1pt minus 0pt
+\def\tinyskip{\vskip\tinyskipamount}
+
+\def\software{%
+    \lsidenote{\sixit software}}
+\def\tasks{%
+    \lsidenote{\sixit main tasks}}
+\def\technologies{%
+    \lsidenote{\sixit technologies}}
+
 \def\quote{%
     \par\begingroup
     \rightskip=\parindent
     \leftskip=\parindent
     \noindent\ignorespaces}
 \def\endquote{\par\endgroup}
+
+\def\url#1{{\tt#1}}
 
 \font\smallsy = cmsy6
 \def\bitem#1{%
@@ -286,4 +326,5 @@
 
 \def\certification#1#2{%
    \par\hang\noindent\line{\rm#1 -- #2\hss}\vskip -6pt\noindent\ignorespaces}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
