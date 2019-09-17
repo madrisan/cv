@@ -108,6 +108,7 @@
     \else\relax\fi}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%% color support
 \newif\ifpdfmode
 
 \ifx\pdfoutput\undefined
@@ -127,12 +128,12 @@
 \def\colordarkgray{0.3 0.3 0.3  rg 0.3 0.3 0.3 RG}
 
 \ifx\pdfcolorstack\undefined
-  \def\pdfcolorstackpush{\pdfliteral{\currentcolor}}
-  \let\pdfcolorstackpop\pdfcolorstackpush
+    \def\pdfcolorstackpush{\pdfliteral{\currentcolor}}
+    \let\pdfcolorstackpop\pdfcolorstackpush
 \else
-  \mathchardef\colorstackcnt=\pdfcolorstackinit page {\colorblack}
-  \def\pdfcolorstackpush{\pdfcolorstack\colorstackcnt push{\currentcolor}}
-  \def\pdfcolorstackpop{\pdfcolorstack\colorstackcnt pop}
+    \mathchardef\colorstackcnt=\pdfcolorstackinit page {\colorblack}
+    \def\pdfcolorstackpush{\pdfcolorstack\colorstackcnt push{\currentcolor}}
+    \def\pdfcolorstackpop{\pdfcolorstack\colorstackcnt pop}
 \fi
 
 \else % of \ifpdfmode
@@ -151,13 +152,39 @@
 \fi % of \ifpdfmode
 
 \def\color#1{\expandafter%
-  \ifx\csname color#1\endcsname \relax \def\currentcolor{#1}%
-  \else \edef\currentcolor{\csname color#1\endcsname}%
-  \fi%
-  \pdfcolorstackpush%
-  \aftergroup\pdfcolorstackpop%
+    \ifx\csname color#1\endcsname \relax \def\currentcolor{#1}%
+    \else \edef\currentcolor{\csname color#1\endcsname}%
+    \fi%
+    \pdfcolorstackpush%
+    \aftergroup\pdfcolorstackpop%
 }
 \let\currentcolor=\colorblack
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% URL support
+\def\URLcolor{\color{blue}}
+% Turn off the special meaning of ~ inside \URL{}.
+\def\url#1{%
+    \begingroup\catcode`\~=12\catcode`\_=12\relax
+    \ifpdfmode
+        \pdfstartlink user{
+            /Subtype /Link
+            % w/o this you get an ugly box around the URL.
+            /Border [ 0 0 0 ]   % radius, radius, line thickness
+            /A <<
+                /Type /Action
+                /S /URI
+                /URI (#1)
+
+        }%
+        {\URLcolor\tt #1}%
+        \pdfendlink{}%
+    \else
+        % Should we have a special case for tth?
+        {\tt #1}%
+    \fi
+    \endgroup % Reset catcode of ~ and _
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\strutdepth{\dp\strutbox}
@@ -166,14 +193,14 @@
         \baselineskip\strutdepth%
         \vss\llap{\vtop to 0pt{%
             \leftskip=0pt plus1fill \rightskip=8pt%
-            \parfillskip=0pt \parindent=0pt%
+            \parfillskip=0pt\parindent=0pt%
             \hsize=1.7in%
             \eightpoint\it #1}}\null}}
 \def\lsidenote#1{%
     \strut\vadjust{\kern-\strutdepth\sidenote{#1}}}
 
 \newdimen\theight
-\def \rsidenote#1{%
+\def\rsidenote#1{%
     \vadjust{\setbox0=\hbox{\eightpoint\it #1}%
     \theight=\ht0
     \advance\theight by \dp0 \advance\theight by \lineskip
@@ -232,8 +259,6 @@
     \leftskip=\parindent
     \noindent\ignorespaces}
 \def\endquote{\par\endgroup}
-
-\def\url#1{{\tt#1}}
 
 \font\smallsy = cmsy6
 \def\bitem#1{%
