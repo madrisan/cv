@@ -14,11 +14,11 @@
    \personaldataline{\fafiveHandshake}{Languages}{
             Italian, French, English}
    \personaldataline{\fafiveLinkedIN}{
-            LinkedIn Profile}{\tt https://www.linkedin.com/in/madrisan}
+            LinkedIn Profile}{\url{https://www.linkedin.com/in/madrisan}}
    \personaldataline{\fafiveGitHub}{
-            GitHub Public Repositories}{\tt https://github.com/madrisan}
+            GitHub Public Repositories}{\url{https://github.com/madrisan}}
    \personaldataline{\fafiveWeb}{Personal Website}{
-            \tt https://madrisan.com}
+            \url{https://madrisan.com}}
    \personaldataline{\fafiveMail}{
             Email address}{\tt davide\kern-.0pt{.}\kern-.0pt{madrisan}%
             \lower.3ex\hbox{@}gmail\kern-.0pt{.}\kern-.0pt{com}}
@@ -27,11 +27,16 @@
 \vskip -13truemm
 
 \line{\bigfont Davide Madrisan\hfill}
-\vglue 2.0truemm
+\medskip
+
 \line{\titlefont{\color{darkgreen}Curriculum Vit\ae{} et Studiorum}%
-\footnote{\rm$^{(*)}$}{\eightit%
-The online version of this Curriculum Vit\ae{} is available at\/
-{\eighttt https://github.com/madrisan/cv}}\quad{\fiverm\today}\hfill}
+%
+\footnote{\rm$^{(*)}$}{%
+    \eightit%
+    The online version of this Curriculum Vit\ae{} is available at\/
+    {\eighttt \url{https://github.com/madrisan/cv}}}%
+%
+\space --- {\fiverm\today}\hfill}
 
 \vskip 4.0truemm
 
@@ -77,12 +82,11 @@ areas (somewhat ordered by decreasing degree of time occorded):
 
 \medskip
 
-%\smallskip\nobreak\noindent
-%I'm a serial MOOC--taker (around $\sim$$60$ completed so far).
-
-\subsection{An annotated scatter plot that should help visualizing my job and
-learning activities}
+\noindent
+An annotated scatter plot that should help visualizing my job and
+learning activities.
 % (I'm an MOOC-addict) activities}
+% I'm a serial MOOC--taker (around $\sim$$60$ completed so far).
 
 \medskip
 \centerline{%
@@ -96,7 +100,7 @@ learning activities}
 
 \dateitem{September~2017}{current}{Lead Infra DevOps~@~Qwant.com}
 
-Infra Data and IT Lead DevOps at Qwant ({\tt http://www.qwant.com}), the
+Infra Data and IT Lead DevOps at Qwant (\url{http://www.qwant.com}), the
 French startup company that develops the eponymous web search engine that respects
 the users' privacy.
 
@@ -187,47 +191,57 @@ Shell and Python scripting languages, RWD (Bootstrap, CSS3, HTML5, AngularJS).
    {Monitoring Architect and Team Leader at IBM}
 
 L3 Nagios and Centreon administrator and developer.
-Technical Leader of the Nagios monitoring team (France and Poland).
-Focal point of the monitoring technologies based on open source solutions and
+{\it Technical Leader\/} of the {\it Nagios monitoring team\/}
+(France and Poland).
+{\it Focal point\/} of the monitoring technologies based on open source solutions and
 software.
-
 This work at IBM France has given me the opportunity to setup new solutions 
 for monitoring operating systems, databases, applications, and network 
 appliances by using a wide range of opensource technologies.
 
-\subsection{Summary of my tasks as a L3 Nagios and Centreon team leader}
+\smallskip\noindent
+\tasks
+New project management
+(architecture, transition, planning, realization, and support).
 
-\item{\bdot} New project management (architecture, transition, planning, 
-   realization, and support);
-\item{\bdot} Design, implement, validate, and document new monitoring solutions,
-   by cooperating with architects, managers, system, database, and application 
-   administrators;
-\item{\bdot} Develop shell and Python scripts and C programs 
-   (mainly Linux system level programs);
-\item{\bdot} Create rpm packages and administer the yum repositories containing
-   the monitoring and system software (250\smallplus~source rpm packages and
-   2000~packages created from scratch);
-\item{\bdot} Improve the security of the core and Nagios servers, apache 
-   services and applications;
-\item{\bdot} Administer all the monitoring configuration
-   (5k\smallplus~hosts; 60k+~monitored services).
+\tinyskip\noindent
+Design, implement, validate, and document new monitoring solutions,
+by cooperating with architects, managers, system, database, and application 
+administrators.
 
-\subsection{Technologies}
+\tinyskip\noindent
+Develop shell and Python scripts and C (system level) programs.
 
-\item{\bdot} Operating Systems: AIX, HP-UX, Linux, Solaris, VMware ESX/ESXi, Windows;
-\item{\bdot} Databases: DB2, MySQL, MS SQL, Oracle, PostgreSQL;
-\item{\bdot} Network and IT security appliances: Linux, Cisco, BalaBit Log Management, 
-   QRadar;
-\item{\bdot} Development languages: bash, C, Perl, Python, HTPL, and PHP.
+\tinyskip\noindent
+Create rpm packages and administer the yum repositories containing
+the monitoring and system software (250\smallplus~source rpm packages and
+2000~packages created from scratch).
 
-\subsection{Open Source development}
+\tinyskip\noindent
+Improve the security of the core and Nagios servers, apache 
+services and applications.
 
-Open source extensions to the Nagios Plugins official software for monitoring
-Linux servers.
+\tinyskip\noindent
+Administer all the monitoring configuration
+(5k\smallplus~hosts; 60k\smallplus~monitored services).
+
+\tinyskip\noindent
+\technologies
+{\it Operating Systems\/}:
+AIX, HP-UX, Linux, Solaris, VMware ESX/ESXi, Windows;
+\par\noindent {\it Databases\/}: DB2, MySQL, MS SQL, Oracle, PostgreSQL;
+\par\noindent {\it Network and IT security appliances\/}: Linux, Cisco,
+BalaBit Log Management, QRadar;
+\par\noindent {\it Languages\/}: bash, C, Perl, Python, HTPL, and PHP.
+
+\smallskip\noindent
+\software
+Open source extensions to the {\it Nagios Plugins\/} official software for
+monitoring Linux servers.
 Porting of some of these plugins to other Unixes
 (AIX, FreeBSD, OpenBSD, Solaris, SunOS openindiana).
 Source code:
-{\tt https://github.com/madrisan/nagios-plugins-linux}.
+\url{https://github.com/madrisan/nagios-plugins-linux}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -258,7 +272,7 @@ Source code:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\dateitem{November 2008}{September 2011}{Linux System Administrator at IBM}
+\dateitem{November 2008}{September 2011}{L3 Linux System Administrator at IBM}
 
 Senior Linux system adminitrator and Nagios/Centreon Monitoring expert.
 

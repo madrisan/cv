@@ -1,13 +1,7 @@
 %%% Curriculum vitae et studiorum -- PlainTeX format
 %%% Copyright (C) 2017-2019 by Davide Madrisan <davide.madrisan@gmail.com>
 
-%%% Paging and style
-\magnification\magstephalf
-\hsize = 14.4truecm \vsize = 23.8truecm
-\hoffset = 0.6truecm \voffset = 0.5truecm
-\topskip = 0.6truecm
-\parindent = 0.5truecm \parskip = .3\baselineskip
-\tolerance = 400
+%%% Fonts
 
 \newfam\scfam                                                     % small cap family
 \newfam\bsfam                                              % slanted boldface family
@@ -57,64 +51,117 @@
 \skewchar\ninei = '177\skewchar\ninesy = '60
 \hyphenchar\ninett = -1
 
+\font\smallsy = cmsy6
+\font\smallr = cmr6
+\font\smallsl = cmsl6
+
+\font\fivemsa = msam5
+\font\tenmsa = msam10
+\font\sevenmsa = msam7
+
+\font\bigfont = cmdunh32 % cmss12 at 24pt
+\font\titlefont = cmss12 % cmbx12 at 14pt
+\font\sectionfont = cmss10 % cmssbx10 % cmbx10
+
+%%% Font awesome support
+
+\font\fabrandszero = fa5brands0
+\font\fabrandsone  = fa5brands1
+\font\fasolidzero  = fa5free0solid
+\font\fasolidone   = fa5free1solid
+\font\fasolidtwo   = fa5free2solid
+\font\fasolidthree = fa5free3solid
+
+\def\fabrandszeroicon#1{{\fabrandszero\char"#1}}%
+\def\fabrandsoneicon#1{{\fabrandsone\char"#1}}%
+\def\fasolidzeroicon#1{{\fasolidzero\char"#1}}%
+\def\fasolidoneicon#1{{\fasolidone\char"#1}}%
+\def\fasolidtwoicon#1{{\fasolidtwo\char"#1}}%
+\def\fasolidthreeicon#1{{\fasolidthree\char"#1}}%
+
+\def\fafiveLinkedIN{{\fabrandszeroicon{2}}}
+\def\fafiveGitHub{{\fabrandszeroicon{6}}}
+\def\fafiveHome{{\fasolidzeroicon{11}}}
+\def\fafiveWeb{{\fasolidzeroicon{83}}}
+\def\fafiveFlag{{\fasolidoneicon{83}}}
+\def\fafiveMail{{\fasolidoneicon{96}}}
+\def\fafiveHandshake{{\fasolidtwoicon{19}}}
+\def\fafiveTemple{{\fasolidthreeicon{13}}}
+
+%%% Font families
+
 \ifx\eightpoint\undefined
-   \def\eightpoint{%
-      \def\rm{\fam0\eightrm}%
-      \textfont0 = \eightrm\scriptfont0 = \sixrm  \scriptscriptfont0 = \fiverm%
-      \textfont1 = \eighti \scriptfont1 = \sixi   \scriptscriptfont1 = \fivei%
-      \textfont2 = \eightsy\scriptfont2 = \sixsy  \scriptscriptfont2 = \fivesy%
-      \textfont3 = \tenex  \scriptfont3 = \tenex  \scriptscriptfont3 = \tenex%
-      \def\it{\fam\itfam\eightit}\textfont\itfam = \eightit%
-      \def\sl{\fam\slfam\eightsl}\textfont\slfam = \eightsl%
-      \def\tt{\fam\ttfam\eighttt}\textfont\ttfam = \eighttt%
-      \textfont\bffam = \eightbf \scriptfont\bffam = \sixbf%
-      \scriptscriptfont\bffam = \fivebf%
-      \def\bf{\fam\bffam\eightbf}%
-      \def\sf{\fam\sffam\eightss}\textfont\sffam = \eightss%
-      \normalbaselineskip = 10pt%
-      \setbox\strutbox = \hbox{\vrule height7.5pt depth2.5pt width0pt}%
-      \normalbaselines\rm}
+    \def\eightpoint{%
+        \def\rm{\fam0\eightrm}%
+        \textfont0 = \eightrm\scriptfont0 = \sixrm  \scriptscriptfont0 = \fiverm%
+        \textfont1 = \eighti \scriptfont1 = \sixi   \scriptscriptfont1 = \fivei%
+        \textfont2 = \eightsy\scriptfont2 = \sixsy  \scriptscriptfont2 = \fivesy%
+        \textfont3 = \tenex  \scriptfont3 = \tenex  \scriptscriptfont3 = \tenex%
+        \def\it{\fam\itfam\eightit}\textfont\itfam = \eightit%
+        \def\sl{\fam\slfam\eightsl}\textfont\slfam = \eightsl%
+        \def\tt{\fam\ttfam\eighttt}\textfont\ttfam = \eighttt%
+        \textfont\bffam = \eightbf \scriptfont\bffam = \sixbf%
+        \scriptscriptfont\bffam = \fivebf%
+        \def\bf{\fam\bffam\eightbf}%
+        \def\sf{\fam\sffam\eightss}\textfont\sffam = \eightss%
+        \normalbaselineskip = 10pt%
+        \setbox\strutbox = \hbox{\vrule height7.5pt depth2.5pt width0pt}%
+        \normalbaselines\rm}
 \fi
 
 \ifx\ninepoint\undefined
-   \def\ninepoint{%
-      \def\rm{\fam0\ninerm}%
-      \textfont0 = \ninerm\scriptfont0 = \sixrm \scriptscriptfont0 = \fiverm%
-      \textfont1 = \ninei \scriptfont1 = \sixi  \scriptscriptfont1 = \fivei%
-      \textfont2 = \ninesy\scriptfont2 = \sixsy \scriptscriptfont2 = \fivesy%
-      \textfont3 = \nineex\scriptfont3 = \nineex\scriptscriptfont3 = \nineex%
-      \def\it{\fam\itfam\nineit}\textfont\itfam = \nineit%
-      \def\sl{\fam\slfam\ninesl}\textfont\slfam = \ninesl%
-      \def\tt{\fam\ttfam\ninett}\textfont\ttfam = \ninett%
-      \def\tb{\fam\tbfam\ninetb}\textfont\tbfam = \ninetb%
-      \def\bf{\fam\bffam\ninebf}\textfont\bffam = \ninebf%
-      \def\sc{\fam\scfam\ninesc}\textfont\scfam = \ninesc%
-      \def\bs{\fam\bsfam\ninebs}\textfont\bsfam = \ninebs%
-      \def\sf{\fam\sffam\niness}\textfont\sffam = \niness%
-      \def\sfb{\fam\sfbfam\ninesb}\textfont\sfbfam = \ninesb%
-      \def\sfi{\fam\sfifam\ninesi}\textfont\sfifam = \ninesi%
-      \tt\ttglue = .5em plus.25em minus.15em%
-      \normalbaselineskip = 11pt%
-      \setbox\strutbox = \hbox{\vrule height8pt depth3pt width0pt}%
-      \normalbaselines\rm}
+    \def\ninepoint{%
+        \def\rm{\fam0\ninerm}%
+        \textfont0 = \ninerm\scriptfont0 = \sixrm \scriptscriptfont0 = \fiverm%
+        \textfont1 = \ninei \scriptfont1 = \sixi  \scriptscriptfont1 = \fivei%
+        \textfont2 = \ninesy\scriptfont2 = \sixsy \scriptscriptfont2 = \fivesy%
+        \textfont3 = \nineex\scriptfont3 = \nineex\scriptscriptfont3 = \nineex%
+        \def\it{\fam\itfam\nineit}\textfont\itfam = \nineit%
+        \def\sl{\fam\slfam\ninesl}\textfont\slfam = \ninesl%
+        \def\tt{\fam\ttfam\ninett}\textfont\ttfam = \ninett%
+        \def\tb{\fam\tbfam\ninetb}\textfont\tbfam = \ninetb%
+        \def\bf{\fam\bffam\ninebf}\textfont\bffam = \ninebf%
+        \def\sc{\fam\scfam\ninesc}\textfont\scfam = \ninesc%
+        \def\bs{\fam\bsfam\ninebs}\textfont\bsfam = \ninebs%
+        \def\sf{\fam\sffam\niness}\textfont\sffam = \niness%
+        \def\sfb{\fam\sfbfam\ninesb}\textfont\sfbfam = \ninesb%
+        \def\sfi{\fam\sfifam\ninesi}\textfont\sfifam = \ninesi%
+        \tt\ttglue = .5em plus.25em minus.15em%
+        \normalbaselineskip = 11pt%
+        \setbox\strutbox = \hbox{\vrule height8pt depth3pt width0pt}%
+        \normalbaselines\rm%
+    }
 \fi
 \ninepoint % default font size
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Paging
+
+\magnification\magstephalf
+\hsize = 14.4truecm
+\hoffset = 0.6truecm
+\vsize = 23.8truecm
+\voffset = 0.5truecm
+\topskip = 0.6truecm
+\parindent = 0.5truecm \parskip = .3\baselineskip
+\tolerance = 400
 
 \footline = {%
     \ifnum\pageno > 1
-	\tenrm\folio\hss%
-	\hbox{\eightpoint\it Davide Madrisan -- Curriculum vit\ae{} et studiorum}
-    \else\relax\fi}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \ifodd\pageno
+            \hss\hbox{\eightpoint\it Davide Madrisan --- Curriculum vit\ae{} et studiorum}
+            \hss\eightrm\folio%
+	\else
+            \eightrm\folio\hss%
+            \hbox{\eightpoint\it Davide Madrisan --- Curriculum vit\ae{} et studiorum}\hss\fi
+    \else\relax\fi%
+}
 
-%%% color support
+%%% Colour support
+
 \newif\ifpdfmode
-
 \ifx\pdfoutput\undefined
 \else
-  \ifnum\pdfoutput>0 \pdfmodetrue
-  \fi
+    \ifnum\pdfoutput>0 \pdfmodetrue\fi
 \fi
 
 \ifpdfmode
@@ -152,19 +199,18 @@
 \fi % of \ifpdfmode
 
 \def\color#1{\expandafter%
-    \ifx\csname color#1\endcsname \relax \def\currentcolor{#1}%
+    \ifx\csname color#1\endcsname\relax\def\currentcolor{#1}%
     \else \edef\currentcolor{\csname color#1\endcsname}%
     \fi%
     \pdfcolorstackpush%
     \aftergroup\pdfcolorstackpop%
 }
 \let\currentcolor=\colorblack
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% URL support
-\def\URLcolor{\color{blue}}
-% Turn off the special meaning of ~ inside \URL{}.
+%%% URL support
+
 \def\url#1{%
+    % turn off the special meaning of ~ inside \url{}.
     \begingroup\catcode`\~=12\catcode`\_=12\relax
     \ifpdfmode
         \pdfstartlink user{
@@ -175,17 +221,16 @@
                 /Type /Action
                 /S /URI
                 /URI (#1)
-
         }%
-        {\URLcolor\tt #1}%
+        {\tt #1}%
         \pdfendlink{}%
     \else
-        % Should we have a special case for tth?
         {\tt #1}%
     \fi
-    \endgroup % Reset catcode of ~ and _
+    \endgroup
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Side-note macros
 
 \def\strutdepth{\dp\strutbox}
 \def\sidenote#1{%
@@ -193,9 +238,9 @@
         \baselineskip\strutdepth%
         \vss\llap{\vtop to 0pt{%
             \leftskip=0pt plus1fill \rightskip=8pt%
-            \parfillskip=0pt\parindent=0pt%
-            \hsize=1.7in%
-            \eightpoint\it #1}}\null}}
+             \parfillskip=0pt\parindent=0pt%
+             \hsize=1.7in%
+             \eightpoint\it #1}}\null}}
 \def\lsidenote#1{%
     \strut\vadjust{\kern-\strutdepth\sidenote{#1}}}
 
@@ -207,7 +252,8 @@
     \kern -\theight \vbox to \theight{\rightline{\rlap{\box0}}%
     \vss}%
 }}%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% other macros
 
 \def\personaldata#1{\hbox to\hsize{%
     \eightpoint\color{darkgray}%
@@ -222,7 +268,7 @@
 
 \def\dateitem#1#2#3 \par {%
     \goodbreak\bigskip%
-    \line{\bf{#1 -- #2}\hss#3}%
+    \line{\bf{#1 -- #2}\hss{\color{darkgreen}#3}}%
     \penalty-200%
     \nobreak\vskip 0pt\noindent\ignorespaces}
 
@@ -260,7 +306,6 @@
     \noindent\ignorespaces}
 \def\endquote{\par\endgroup}
 
-\font\smallsy = cmsy6
 \def\bitem#1{%
     \item{\raise1.2pt\hbox{$\textfont2 = \smallsy\bullet$}}{%
        {\it #1\/}:~}\nobreak\ignorespaces}
@@ -271,16 +316,11 @@
 %\def\bdot{$\,\cdot\,$}
 \def\bdot{\raise1.2pt\hbox{$\textfont2 = \smallsy\bullet$}}
 
-\font\smallr = cmr6
-\font\smallsl = cmsl6
 \def\plusplus{\nobreak\raise1pt\hbox{$\textfont0 = \smallr+\kern-.06667em+$}}
 
 %\def\smallplus{\nobreak\raise.16em\hbox{$\textfont0 = \smallr+$}}
 \def\smallplus{\nobreak\raise.16em\hbox{\fiverm+}}
 %
-\font\tenmsa = msam10
-\font\sevenmsa = msam7
-\font\fivemsa  = msam5
 \newfam\msafam
 \def\undefine#1{\let#1\undefined}
 \catcode`! = 11
@@ -295,36 +335,6 @@
     \textfont\msafam = \tenmsa%
     \scriptfont\msafam = \sevenmsa \scriptscriptfont\msafam = \fivemsa%
 \catcode`! = 12
-%
-\font\bigfont = cmdunh32 % cmss12 at 24pt
-\font\titlefont = cmss12 % cmbx12 at 14pt
-\font\sectionfont = cmss10 % cmssbx10 % cmbx10
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\font\fabrandszero = fa5brands0
-\font\fabrandsone  = fa5brands1
-\font\fasolidzero  = fa5free0solid
-\font\fasolidone   = fa5free1solid
-\font\fasolidtwo   = fa5free2solid
-\font\fasolidthree = fa5free3solid
-
-\def\fabrandszeroicon#1{{\fabrandszero\char"#1}}%
-\def\fabrandsoneicon#1{{\fabrandsone\char"#1}}%
-\def\fasolidzeroicon#1{{\fasolidzero\char"#1}}%
-\def\fasolidoneicon#1{{\fasolidone\char"#1}}%
-\def\fasolidtwoicon#1{{\fasolidtwo\char"#1}}%
-\def\fasolidthreeicon#1{{\fasolidthree\char"#1}}%
-
-\def\fafiveLinkedIN{{\fabrandszeroicon{2}}}
-\def\fafiveGitHub{{\fabrandszeroicon{6}}}
-\def\fafiveHome{{\fasolidzeroicon{11}}}
-\def\fafiveWeb{{\fasolidzeroicon{83}}}
-\def\fafiveFlag{{\fasolidoneicon{83}}}
-\def\fafiveMail{{\fasolidoneicon{96}}}
-\def\fafiveHandshake{{\fasolidtwoicon{19}}}
-\def\fafiveTemple{{\fasolidthreeicon{13}}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\today{%
    \the\day\space\ifcase\month%
@@ -352,4 +362,4 @@
 \def\certification#1#2{%
    \par\hang\noindent\line{\rm#1 -- #2\hss}\vskip -6pt\noindent\ignorespaces}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% end of macros file
