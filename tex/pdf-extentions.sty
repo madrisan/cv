@@ -47,9 +47,9 @@
     \else \edef\currentcolor{\csname color#1\endcsname}%
     \fi%
     \pdfcolorstackpush%
-    \aftergroup\pdfcolorstackpop%
-}
-\let\currentcolor=\colorblack
+    \aftergroup\pdfcolorstackpop}
+
+\let\currentcolor = \colorblack
 
 
 %%% URL support
@@ -72,5 +72,28 @@
     \else
         {\tt https\negthinspace:\negthinspace/\negthinspace/#1}%
     \fi
-    \endgroup
-}
+    \endgroup}
+
+\def\mygmailaddr{%
+   {\tt davide\kern-.0pt{.}\kern-.0pt{madrisan}%
+    \lower.3ex\hbox{@}gmail\kern-.0pt{.}\kern-.0pt{com}}}
+
+\def\email{
+    % turn off the special meaning of ~ inside \url{}.
+    \begingroup\catcode`\~=12\catcode`\_=12\relax
+    \ifpdfmode
+        \pdfstartlink user{
+            /Subtype /Link
+            % w/o this you get an ugly box around the URL.
+            /Border [ 0 0 0 ]   % radius, radius, line thickness
+            /A <<
+                /Type /Action
+                /S /URI
+                /URI (mailto:davide.madrisan@gmail.com)
+        }%
+        {\mygmailaddr}%
+        \pdfendlink{}%
+    \else
+        {\mygmailaddr}%
+    \fi
+    \endgroup}
