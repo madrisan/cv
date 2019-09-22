@@ -63,31 +63,6 @@
 \font\titlefont = cmss12 % cmbx12 at 14pt
 \font\sectionfont = cmss10 % cmssbx10 % cmbx10
 
-%%% Font awesome support
-
-\font\fabrandszero = fa5brands0
-\font\fabrandsone  = fa5brands1
-\font\fasolidzero  = fa5free0solid
-\font\fasolidone   = fa5free1solid
-\font\fasolidtwo   = fa5free2solid
-\font\fasolidthree = fa5free3solid
-
-\def\fabrandszeroicon#1{{\fabrandszero\char"#1}}%
-\def\fabrandsoneicon#1{{\fabrandsone\char"#1}}%
-\def\fasolidzeroicon#1{{\fasolidzero\char"#1}}%
-\def\fasolidoneicon#1{{\fasolidone\char"#1}}%
-\def\fasolidtwoicon#1{{\fasolidtwo\char"#1}}%
-\def\fasolidthreeicon#1{{\fasolidthree\char"#1}}%
-
-\def\fafiveLinkedIN{{\fabrandszeroicon{2}}}
-\def\fafiveGitHub{{\fabrandszeroicon{6}}}
-\def\fafiveHome{{\fasolidzeroicon{11}}}
-\def\fafiveWeb{{\fasolidzeroicon{83}}}
-\def\fafiveFlag{{\fasolidoneicon{83}}}
-\def\fafiveMail{{\fasolidoneicon{96}}}
-\def\fafiveHandshake{{\fasolidtwoicon{19}}}
-\def\fafiveTemple{{\fasolidthreeicon{13}}}
-
 %%% Font families
 
 \ifx\eightpoint\undefined
@@ -156,80 +131,6 @@
     \else\relax\fi%
 }
 
-%%% Colour support
-
-\newif\ifpdfmode
-\ifx\pdfoutput\undefined
-\else
-    \ifnum\pdfoutput>0 \pdfmodetrue\fi
-\fi
-
-\ifpdfmode
-
-\def\colorblack{0 g 0 G}
-%\def\colorred  {1 0 0 rg 1 0 0 RG}
-%\def\colorgreen{0 1 0 rg 0 1 0 RG}
-%\def\colorblue {0 0 1 rg 0 0 1 RG}
-\def\colordarkgreen{0   0.5 0    rg 0   0.5 0   RG}
-\def\colorlightgray{0.6 0.6 0.6  rg 0.6 0.6 0.6 RG}
-\def\colordarkgray{0.3 0.3 0.3  rg 0.3 0.3 0.3 RG}
-
-\ifx\pdfcolorstack\undefined
-    \def\pdfcolorstackpush{\pdfliteral{\currentcolor}}
-    \let\pdfcolorstackpop\pdfcolorstackpush
-\else
-    \mathchardef\colorstackcnt=\pdfcolorstackinit page {\colorblack}
-    \def\pdfcolorstackpush{\pdfcolorstack\colorstackcnt push{\currentcolor}}
-    \def\pdfcolorstackpop{\pdfcolorstack\colorstackcnt pop}
-\fi
-
-\else % of \ifpdfmode
-
-\def\colorblack{gray 0}
-%\def\colorred  {rgb 1 0 0}
-%\def\colorgreen{rgb 0 1 0}
-%\def\colorblue {rgb 0 0 1}
-\def\colordarkgreen{rgb 0   0.  0}
-\def\colorlightgray{rgb 0.6 0.6 0.6}
-\def\colordarkgray{rgb 0.3 0.3 0.3}
-
-\def\pdfcolorstackpush{\special{color push \currentcolor}}
-\def\pdfcolorstackpop{\special{color pop}}
-
-\fi % of \ifpdfmode
-
-\def\color#1{\expandafter%
-    \ifx\csname color#1\endcsname\relax\def\currentcolor{#1}%
-    \else \edef\currentcolor{\csname color#1\endcsname}%
-    \fi%
-    \pdfcolorstackpush%
-    \aftergroup\pdfcolorstackpop%
-}
-\let\currentcolor=\colorblack
-
-%%% URL support
-
-\def\url#1{%
-    % turn off the special meaning of ~ inside \url{}.
-    \begingroup\catcode`\~=12\catcode`\_=12\relax
-    \ifpdfmode
-        \pdfstartlink user{
-            /Subtype /Link
-            % w/o this you get an ugly box around the URL.
-            /Border [ 0 0 0 ]   % radius, radius, line thickness
-            /A <<
-                /Type /Action
-                /S /URI
-                /URI (https://#1)
-        }%
-        {\tt https\negthinspace:\negthinspace/\negthinspace/#1}%
-        \pdfendlink{}%
-    \else
-        {\tt https\negthinspace:\negthinspace/\negthinspace/#1}%
-    \fi
-    \endgroup
-}
-
 %%% Side-note macros
 
 \def\strutdepth{\dp\strutbox}
@@ -253,7 +154,7 @@
     \vss}%
 }}%
 
-%%% other macros
+%%% pages elements
 
 \def\personaldata#1{\hbox to\hsize{%
     \eightpoint\color{darkgray}%
@@ -261,10 +162,6 @@
     \vtop{\halign{{\rm##}\hfil&\qquad\qquad\strut##\hfil\cr#1\crcr}}\hfill}}
 %\def\personaldataline#1#2#3{\line{{#1}\space{\it #2}\hss#3}\cr}
 \def\personaldataline#1#2#3{\line{\hss#3\space\hbox to 12pt{{\hss#1}}}\cr}
-
-\def\mygmailaddr{%
-   {\tt davide\kern-.0pt{.}\kern-.0pt{madrisan}%
-    \lower.3ex\hbox{@}gmail\kern-.0pt{.}\kern-.0pt{com}}}
 
 \def\endpoint#1{\vrule height #1pt width #1pt depth 0pt}
 \def\sendpoint{\endpoint{7}}
@@ -279,7 +176,6 @@
 \def\sectionrule{\horizontalrule{8}{8}}
 \long\def\section#1 \par {%
     \goodbreak\bigskip%
-    %\leftline{\color{darkgreen}\sectionrule\quad\sectionfont#1}%
     \leftline{\color{darkgreen}\sectionfont#1%
     %\lsidenote{\color{darkgreen}\sectionrule\quad}}%
     \lsidenote{\sectionrule\quad}}%
@@ -289,19 +185,6 @@
     \medskip%
     \leftline{\color{darkgreen}\sf#1}%
     \nobreak\noindent\ignorespaces}
-
-\def\stress#1{{\it#1}}
-
-\newskip\tinyskipamount
-\tinyskipamount=1pt plus 1pt minus 0pt
-\def\tinyskip{\vskip\tinyskipamount}
-
-\def\software{%
-    \lsidenote{\sixit software}}
-\def\tasks{%
-    \lsidenote{\sixit main tasks}}
-\def\technologies{%
-    \lsidenote{\sixit technologies}}
 
 \def\quote{%
     \par\begingroup
@@ -319,34 +202,6 @@
     \itemitem{\raise1.2pt\hbox{$\textfont2 = \smallsy\bullet$}}\ignorespaces}
 %\def\bdot{$\,\cdot\,$}
 \def\bdot{\raise1.2pt\hbox{$\textfont2 = \smallsy\bullet$}}
-
-\def\plusplus{\nobreak\raise1pt\hbox{$\textfont0 = \smallr+\kern-.06667em+$}}
-
-%\def\smallplus{\nobreak\raise.16em\hbox{$\textfont0 = \smallr+$}}
-\def\smallplus{\nobreak\raise.16em\hbox{\fiverm+}}
-%
-\newfam\msafam
-\def\undefine#1{\let#1\undefined}
-\catcode`! = 11
-\def\!hexnumber#1{%
-    \ifcase#1 0\or 1\or 2\or 3\or 4\or 5\or 6\or 7\or 8\or9
-        \or A\or B\or C\or D\or E\or F\fi}
-\def\newsymbol#1#2#3#4{%
-    \mathchardef#1 = "#2\!msafam#3#4}
-\edef\!msafam{\!hexnumber\msafam}    % hex number of the font family
-\mathchardef\leq = "3\!msafam36
-\def\ams{\fam\msafam = \tenmsa}%
-    \textfont\msafam = \tenmsa%
-    \scriptfont\msafam = \sevenmsa \scriptscriptfont\msafam = \fivemsa%
-\catcode`! = 12
-
-\def\today{%
-   \the\day\space\ifcase\month%
-      \or January\or February\or March\or April\or May\or June%
-      \or July\or August\or September\or October\or November\or December\fi%
-   \space\number\year}
-
-\def\OS2{OS\lower.4ex\hbox{2}}
 
 \def\certgroup#1{%
    \goodbreak\par\hang\noindent\line{\bf#1\hss}%
@@ -366,6 +221,34 @@
 \def\certification#1#2{%
    \par\hang\noindent\line{\rm#1 -- #2\hss}\vskip -6pt\noindent\ignorespaces}
 
+%%% other macros
+
+\def\stress#1{{\it#1}}
+
+\newskip\tinyskipamount
+\tinyskipamount=1pt plus 1pt minus 0pt
+\def\tinyskip{\vskip\tinyskipamount}
+
+\def\software{\lsidenote{\sixit software}}
+\def\tasks{\lsidenote{\sixit main tasks}}
+\def\technologies{\lsidenote{\sixit technologies}}
+
+\def\plusplus{\nobreak\raise1pt\hbox{$\textfont0 = \smallr+\kern-.06667em+$}}
+
+%\def\smallplus{\nobreak\raise.16em\hbox{$\textfont0 = \smallr+$}}
+\def\smallplus{\nobreak\raise.16em\hbox{\fiverm+}}
+
+\def\today{%
+   \the\day\space\ifcase\month%
+      \or January\or February\or March\or April\or May\or June%
+      \or July\or August\or September\or October\or November\or December\fi%
+   \space\number\year}
+
+\def\mygmailaddr{%
+   {\tt davide\kern-.0pt{.}\kern-.0pt{madrisan}%
+    \lower.3ex\hbox{@}gmail\kern-.0pt{.}\kern-.0pt{com}}}
+
+\def\OS2{OS\lower.4ex\hbox{2}}
 \def\plainTeX{{\it plain\/}\TeX}
 
 %%% end of macros file

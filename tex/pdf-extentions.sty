@@ -1,0 +1,76 @@
+%%% PDF (pdfTeX) extensions
+
+\newif\ifpdfmode
+\ifx\pdfoutput\undefined
+\else
+    \ifnum\pdfoutput>0 \pdfmodetrue\fi
+\fi
+
+%%% Colour support
+
+\ifpdfmode
+
+\def\colorblack{0 g 0 G}
+%\def\colorred  {1 0 0 rg 1 0 0 RG}
+%\def\colorgreen{0 1 0 rg 0 1 0 RG}
+%\def\colorblue {0 0 1 rg 0 0 1 RG}
+\def\colordarkgreen{0   0.5 0    rg 0   0.5 0   RG}
+\def\colorlightgray{0.6 0.6 0.6  rg 0.6 0.6 0.6 RG}
+\def\colordarkgray{0.3 0.3 0.3  rg 0.3 0.3 0.3 RG}
+
+\ifx\pdfcolorstack\undefined
+    \def\pdfcolorstackpush{\pdfliteral{\currentcolor}}
+    \let\pdfcolorstackpop\pdfcolorstackpush
+\else
+    \mathchardef\colorstackcnt=\pdfcolorstackinit page {\colorblack}
+    \def\pdfcolorstackpush{\pdfcolorstack\colorstackcnt push{\currentcolor}}
+    \def\pdfcolorstackpop{\pdfcolorstack\colorstackcnt pop}
+\fi
+
+\else % of \ifpdfmode
+
+\def\colorblack{gray 0}
+%\def\colorred  {rgb 1 0 0}
+%\def\colorgreen{rgb 0 1 0}
+%\def\colorblue {rgb 0 0 1}
+\def\colordarkgreen{rgb 0   0.  0}
+\def\colorlightgray{rgb 0.6 0.6 0.6}
+\def\colordarkgray{rgb 0.3 0.3 0.3}
+
+\def\pdfcolorstackpush{\special{color push \currentcolor}}
+\def\pdfcolorstackpop{\special{color pop}}
+
+\fi % of \ifpdfmode
+
+\def\color#1{\expandafter%
+    \ifx\csname color#1\endcsname\relax\def\currentcolor{#1}%
+    \else \edef\currentcolor{\csname color#1\endcsname}%
+    \fi%
+    \pdfcolorstackpush%
+    \aftergroup\pdfcolorstackpop%
+}
+\let\currentcolor=\colorblack
+
+
+%%% URL support
+
+\def\url#1{%
+    % turn off the special meaning of ~ inside \url{}.
+    \begingroup\catcode`\~=12\catcode`\_=12\relax
+    \ifpdfmode
+        \pdfstartlink user{
+            /Subtype /Link
+            % w/o this you get an ugly box around the URL.
+            /Border [ 0 0 0 ]   % radius, radius, line thickness
+            /A <<
+                /Type /Action
+                /S /URI
+                /URI (https://#1)
+        }%
+        {\tt https\negthinspace:\negthinspace/\negthinspace/#1}%
+        \pdfendlink{}%
+    \else
+        {\tt https\negthinspace:\negthinspace/\negthinspace/#1}%
+    \fi
+    \endgroup
+}
