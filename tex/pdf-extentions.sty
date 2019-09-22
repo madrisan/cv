@@ -67,10 +67,12 @@
                 /S /URI
                 /URI (https://#1)
         }%
-        {\tt https\negthinspace:\negthinspace/\negthinspace/#1}%
+        %{\tt https\negthinspace:\negthinspace/\negthinspace/#1}%
+        {\tt#1}%
         \pdfendlink{}%
     \else
-        {\tt https\negthinspace:\negthinspace/\negthinspace/#1}%
+        %{\tt https\negthinspace:\negthinspace/\negthinspace/#1}%
+        {\tt#1}%
     \fi
     \endgroup}
 
