@@ -59,9 +59,10 @@
 \font\tenmsa = msam10
 \font\sevenmsa = msam7
 
-\font\bigfont = cmdunh32 % cmss12 at 24pt
-\font\titlefont = cmss12 % cmbx12 at 14pt
-\font\sectionfont = cmss10 % cmssbx10 % cmbx10
+\font\bigfont = cmdunh26 % cmss12 at 24pt
+\font\titlefont = cmcsc11 % cmss12 % cmbx12 at 14pt
+\font\sectionfont = cmcsc11 % cmss10 % cmssbx10 % cmbx10
+\font\subsectionfont = cmcsc9
 
 %%% Font families
 
@@ -176,14 +177,14 @@
 \def\sectionrule{\horizontalrule{8}{8}}
 \long\def\section#1 \par {%
     \goodbreak\bigskip%
-    \leftline{\color{darkgreen}\sectionfont#1%
+    \leftline{\color{darkgreen}\sectionfont#1\quad\hrulefill%
     %\lsidenote{\color{darkgreen}\sectionrule\quad}}%
     \lsidenote{\sectionrule\quad}}%
     \penalty-200%
     \nobreak\vskip 0pt plus 1pt\noindent\ignorespaces}
 \long\def\subsection#1 \par {%
     \medskip%
-    \leftline{\color{darkgreen}\sf#1}%
+    \leftline{\color{darkgreen}\subsectionfont#1}%
     \nobreak\noindent\ignorespaces}
 
 \def\quote{%
