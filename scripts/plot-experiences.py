@@ -66,7 +66,7 @@ def parser(source):
 
     return expr_types, expr_map
 
-def make_jobs_plot(experiences, area_adj=0.65):
+def make_jobs_plot(experiences, area_adj):
     """Create the jobs history plot and legend"""
 
     def textlabel(sp, x, y, text, rotation='horizontal'):
@@ -167,9 +167,19 @@ def make_jobs_plot(experiences, area_adj=0.65):
         textlabel(ax, x, y, label)
 
     # Add a legend
-    handles = \
-        list(mpatches.Patch(color=getcolor(expr_types.index(e), len(expr_types)),
-             label=e, alpha=0.8) for e in expr_types)
+
+    # prepend and extra entry for certifications, courses, and moocs
+    # with a fixed color 'lightblue'
+    expr_types = ['Certifications / Courses / MOOCs'] + expr_types
+    legend_color = lambda i, size: getcolor(i, size) if i > 0 else 'lightblue'
+
+    handles = list((
+        mpatches.Patch(
+            color=legend_color(expr_types.index(e), len(expr_types)),
+            label=e,
+            alpha=0.8)
+        for e in expr_types))
+
     lgd = ax.legend(handles[::-1], expr_types[::-1],
                     bbox_to_anchor=(1.5, 0.8),
                     fontsize='small',
@@ -204,12 +214,6 @@ def make_jobs_plot(experiences, area_adj=0.65):
         0]
     ax2.bar(years, courses, width=bar_width, color=bar_color, alpha=0.2)
     ax2.set_yticks([])
-    lgd2 = ax2.legend(
-        ['Certifications / Courses / MOOCs'],
-        loc='upper left',
-        bbox_to_anchor=(0.998, 0.16), # FIXME: fix this crappy fixed anchor
-        fontsize='small',
-        frameon=False)
 
     # Add a spline that interpolates the number of completed courses
     xnew = np.linspace(years.min(), years.max(), 100)
@@ -242,7 +246,10 @@ def main():
         elif o in ('-i', '--image'):
             image = a
 
-    fig, legend = make_jobs_plot(parser(source))
+    # area adjustment factor for plot circles
+    area_adj = 0.65
+
+    fig, legend = make_jobs_plot(parser(source), area_adj)
     try:
         fig.savefig(image, bbox_extra_artists=(legend,), bbox_inches='tight')
         print('The image has been saved as', image)
