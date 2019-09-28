@@ -162,7 +162,7 @@ def make_jobs_plot(experiences, area_adj):
         (2016.0,   4.5,  'Math'),
         (2016.2,  14.4,  'Xymon'),
         (2016.2,  10.3,  'OpenStack'),
-        (2018.2,   2.4,  'Go')]
+        (2018.2,   2.1,  'Go')]
     for x, y, label in annotations:
         textlabel(ax, x, y, label)
 
