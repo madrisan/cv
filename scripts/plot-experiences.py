@@ -66,7 +66,7 @@ def parser(source):
 
     return expr_types, expr_map
 
-def make_jobs_plot(experiences, area_adj=0.74):
+def make_jobs_plot(experiences, area_adj=0.65):
     """Create the jobs history plot and legend"""
 
     def textlabel(sp, x, y, text, rotation='horizontal'):
@@ -124,7 +124,7 @@ def make_jobs_plot(experiences, area_adj=0.74):
         textlabel(ax, x+.1, ylabel, label, rotation=label_rotation)
 
     # Add some text labels to hopefully improve the plot readability
-    # fixme: the y coordinates must to be manually set
+    # fixme: the y coordinates should not be manually set
     annotations = [
         (1995.7,   4.1, 'Maths'),
         (1995.7,   3.5, 'Cryptography, AI'),
