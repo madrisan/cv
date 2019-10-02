@@ -205,22 +205,22 @@
 \def\bdot{\raise1.2pt\hbox{$\textfont2 = \smallsy\bullet$}}
 
 \def\certgroup#1{%
-   \goodbreak\par\hang\noindent\line{\bf#1\hss}%
-   \noindent\ignorespaces\nobreak}
+    \goodbreak\par\hang\noindent\line{\bf#1\hss}%
+    \noindent\ignorespaces\nobreak}
 \def\certauthority#1#2{%
-   %\par\hang\noindent\line{\it#1 on #2\hss}%
-   \par\hang\noindent\line{\it#1\hss}%
-   \noindent\ignorespaces\nobreak}
+    %\par\hang\noindent\line{\it#1 on #2\hss}%
+    \par\hang\noindent\line{\it#1\hss}%
+    \noindent\ignorespaces\nobreak}
 \def\certspecialization#1{%
-   \vskip -3pt\noindent\ignorespaces\hskip\parindent{\rm#1}}
+    \vskip -3pt\noindent\ignorespaces\hskip\parindent{\rm#1}}
 \def\certitembullet#1{{%
-   \bitemitemunamed{\rm#1}}}
+    \bitemitemunamed{\rm#1}}}
 
 \def\certitemoneline#1#2#3{%
-   \par\hang\noindent\line{\hbox{\it#1 on #2} -- {\rm#3}\hfill}}
+    \par\hang\noindent\line{\hbox{\it#1 on #2} -- {\rm#3}\hfill}}
 
 \def\certification#1#2{%
-   \par\hang\noindent\line{\rm#1 -- #2\hss}\vskip -6pt\noindent\ignorespaces}
+    \par\hang\noindent\line{\rm#1 -- #2\hss}\vskip -6pt\noindent\ignorespaces}
 
 %%% other macros
 
@@ -240,11 +240,13 @@
 \def\smallplus{\nobreak\raise.16em\hbox{\fiverm+}}
 
 \def\today{%
-   \the\day\space\ifcase\month%
-      \or January\or February\or March\or April\or May\or June%
-      \or July\or August\or September\or October\or November\or December\fi%
-   \space\number\year}
+    \the\day\space\ifcase\month%
+        \or January\or February\or March\or April\or May\or June%
+        \or July\or August\or September\or October\or November\or December\fi%
+    \space\number\year}
 
+\def\ASTmacros{%
+	A\kern-.4pt\lower2pt\hbox{S}\kern-1pt T\kern-.8pt--\kern0pt{$\cal MACROS$}}
 \def\OS2{OS\lower.4ex\hbox{2}}
 \def\phpIPAM{$\{$php$\}$IPAM}
 \def\plainTeX{{\it plain\/}\TeX}
