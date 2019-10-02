@@ -115,7 +115,7 @@ def make_jobs_plot(experiences, area_adj):
         (2013.4, 'OS2', ytop, 'horizontal'),
         # Start of the amazing MOOCs experience :)
         (2014.10, 'MOOCs', ytop-.5, 'horizontal'),
-        (xnow, '{0}.{1}'.format(now.year, now.month), .4, 75)]
+        (xnow, '{0}.{1}'.format(now.year, now.month), .6, 75)]
     ymin, ymax, linewidth, linecolor = 0.02, 0.98, 0.8, '0.75'
 
     for (x, label, ylabel, label_rotation) in vdotlines:
