@@ -124,13 +124,18 @@
 \footline = {%
     \ifnum\pageno > 1
         \ifodd\pageno
-            \hss\hbox{\eightpoint\it Davide Madrisan --- Curriculum vit\ae{} et studiorum}
-            \hss\eightrm\folio%
-	\else
-            \eightrm\folio\hss%
+            \hss\hbox{\eightpoint\it Davide Madrisan --- Curriculum vit\ae{} et studiorum}%
+            \hss{\boxit{\hbox{\eightpoint\folio}}}%
+        \else
+            {\boxit{\hbox{\eightpoint\folio}}}\hss%
             \hbox{\eightpoint\it Davide Madrisan --- Curriculum vit\ae{} et studiorum}\hss\fi
     \else\relax\fi%
 }
+
+%%% Boxes
+
+\long\def\boxit#1{\color{darkgreen}\vbox{\hrule\hbox{\vrule\kern3pt
+    \vbox{\kern3pt\vskip 1pt#1\vskip 1pt\kern3pt}\kern3pt\vrule}\hrule}}
 
 %%% Side-note macros
 
