@@ -125,9 +125,9 @@
     \ifnum\pageno > 1
         \ifodd\pageno
             \hss\hbox{\eightpoint\it Davide Madrisan --- Curriculum vit\ae{} et studiorum}%
-            \hss{\boxit{\hbox{\eightpoint\folio}}}%
+            \hss\raise-4pt\vbox{\boxit{\hbox{\eightpoint\folio}}}%
         \else
-            {\boxit{\hbox{\eightpoint\folio}}}\hss%
+            \raise-4pt\vbox{\boxit{\hbox{\eightpoint\folio}}}\hss%
             \hbox{\eightpoint\it Davide Madrisan --- Curriculum vit\ae{} et studiorum}\hss\fi
     \else\relax\fi%
 }
