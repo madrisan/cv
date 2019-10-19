@@ -183,9 +183,9 @@ def make_jobs_plot(experiences, area_adj):
         for e in expr_types))
 
     lgd = ax.legend(handles[::-1], expr_types[::-1],
-                    bbox_to_anchor=(1.5, 0.8),
+                    bbox_to_anchor=(1.55, 0.9),
                     fontsize='small',
-                    prop={'size': 8}, frameon=False)
+                    prop={'size': 9}, frameon=False)
 
     # Add a bar plot for displaying courses/books and completed MOOCs
     ax2 = ax.twinx()
