@@ -1,5 +1,7 @@
 # Makefile for generating the curriculum vitae in pdf format
-# Copyright (C) 2017 by Davide Madrisan <davide.madrisan@gmail.com>
+# Copyright (C) 2017-2019 by Davide Madrisan <davide.madrisan@gmail.com>
+
+# Works with docker-ce and podman + podman-docker
 
 srcdir = .
 
@@ -11,12 +13,12 @@ FONTAWESOME = fontawesome.tex
 
 DOCKER = $(shell command -v docker 2>/dev/null)
 ifndef DOCKER
-        $(error "please install docker-ce or adjust the PATH environment")
+        $(error "please install docker-ce/podman-docker or adjust the PATH environment")
 endif
 
 IMAGE = cv
 PWD = $(shell pwd)
-VOLUMES = -v $(PWD):/appl
+VOLUMES = -v $(PWD):/appl:Z
 
 ifdef QUIET
         DOCKER_OPTS += --quiet
