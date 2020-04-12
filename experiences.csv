@@ -151,4 +151,6 @@
 # Zabbix Monitoring
 2019,  2, 2019, 10,  Monitoring
 # HashiCorp Vault Monitor
-2020,  2, 2020,  3,  Development - Golang
+2020,  2, 2020,  4,  Development - Golang
+# Nagios Plugins for Linux v26
+2020,  1, 2020,  4,  Development - C/C++/Java
