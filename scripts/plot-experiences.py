@@ -87,16 +87,16 @@ def make_jobs_plot(experiences, area_adj):
         colors.append(e.color)
     assert(len(years) == len(experiences))
 
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(frameon=False)
 
     # Create a scatter plot with the job experiences
-    ax.scatter(x=years, y=experiences, s=areas, c=colors, alpha=0.6)
+    ax.scatter(x=years, y=experiences, s=areas, c=colors, alpha=0.65)
 
     # Add axis labels
     xmin, xmax = 1995, now.year + 3
-    ax.set_xlabel('Year')
-    ax.set_ylabel('Experiences')
-    ax.set_title('Job and Lifelong Learning History')
+    #ax.set_xlabel('Year')
+    #ax.set_ylabel('Experiences')
+    #ax.set_title('Job and Lifelong Learning History')
     ax.set_xlim([xmin, xmax])
     ax.set_ylim([-1, len(expr_types) + 1])
 
@@ -104,6 +104,11 @@ def make_jobs_plot(experiences, area_adj):
     ax.set_yticks([])
     ax.tick_params(axis=u'both', which=u'both', length=0)
     ax.grid(False)
+
+    # Remove the frame
+    _ = [s.set_visible(False) for s in ax.spines.values()]
+    #_ = [s.set_color("None") for s in ax.spines.values()]
+    #ax.spines["top"].set_linewidth(1)
 
     # Add vertical dotted lines at the major steps of my working life
     xnow = now.year + normalize(now.month)
@@ -144,8 +149,8 @@ def make_jobs_plot(experiences, area_adj):
         (2012.2,  14.3, 'Nagios'),
         (2012.0,  13.7, 'Centreon'),
        #(2011.10, 12.1, '@IBM'),
-        (2014.9,  12.0, 'DevOps'),
-        (2015.8,  11.5, 'SaltStack'),
+        (2014.9,  12.2, 'DevOps'),
+        (2017.4,  11.8, 'SaltStack'),
         (2015.6,  10.9, 'IaC'),
        #(2015.0,  10.1, '@Sopra-Steria'),
        #(2013.0,   8.4, 'Angular'),
