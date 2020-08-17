@@ -150,7 +150,7 @@ def make_jobs_plot(experiences, area_adj):
         (2012.0,  13.7, 'Centreon'),
        #(2011.10, 12.1, '@IBM'),
         (2014.9,  12.2, 'DevOps'),
-        (2017.4,  11.8, 'SaltStack'),
+        (2017.6,  11.6, 'SaltStack'),
         (2015.6,  10.9, 'IaC'),
        #(2015.0,  10.1, '@Sopra-Steria'),
        #(2013.0,   8.4, 'Angular'),
@@ -163,12 +163,13 @@ def make_jobs_plot(experiences, area_adj):
         (2015.3,   1.4, 'BigData/ML'),
         (2016.4,   3.4, 'Scala'),
         (2015.3,  -0.6, 'CUDA'),
-        (2016.7,  12.9, 'Docker/Podman'),
+        (2015.5,  12.9, 'Docker/Podman'),
         (2016.0,   4.5, 'Math'),
         (2016.0,  14.4, 'Xymon'),
         (2016.4,  10.3, 'OpenStack'),
         (2018.2,   2.1, 'Go'),
         (2018.3,  14.4, 'Zabbix'),
+        (2019.2,  12.1, 'k8s'),
     ]
     for x, y, label in annotations:
         textlabel(ax, x, y, label)
