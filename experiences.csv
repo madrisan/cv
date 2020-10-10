@@ -135,13 +135,13 @@
 # Nagios Plugins for Linux v21 (unit test framework) + procps-newlib (v22) + check_docker
 2017,  6, 2017, 10,  Development - C/C++/Java
 # Qwant DevOps activities
-2017,  9, 2020,  8,  Linux System - DevOps
+2017,  9, 2020,  9,  Linux System - DevOps
 # Qwant - SaltStack
 2017,  9, 2020,  8,  Development - Python
 # Qwant - Docker containers for speeding up testing
 2017,  9, 2018, 11,  Linux System - Containers
 # Qwant - Docker/Podman containers for building packages
-2018, 11, 2020,  8,  Linux System - Containers
+2018, 11, 2020,  9,  Linux System - Containers
 # OpenStack
 2017, 11, 2018,  3,  Linux System - Administration
 # Golang start + HashiCorp Vault Monitor
@@ -154,3 +154,5 @@
 2020,  2, 2020,  5,  Development - Golang
 # Nagios Plugins for Linux v26-v27
 2020,  1, 2020,  8,  Development - C/C++/Java
+# DevOps GitLab
+2020,  5, 2020, 10,  Linux System - DevOps
