@@ -137,7 +137,7 @@
 # Qwant DevOps activities
 2017,  9, 2020,  9,  Linux System - DevOps
 # Qwant - SaltStack
-2017,  9, 2020,  8,  Development - Python
+2017,  9, 2020, 10,  Development - Python
 # Qwant - Docker containers for speeding up testing
 2017,  9, 2018, 11,  Linux System - Containers
 # Qwant - Docker/Podman containers for building packages
@@ -155,6 +155,6 @@
 # Nagios Plugins for Linux v26-v27
 2020,  1, 2020, 11,  Development - C/C++/Java
 # DevOps GitLab
-2020,  5, 2020, 12,  Linux System - DevOps
+2020,  5, 2021,  1,  Linux System - DevOps
 # Jekyll/GitHub, CSS, JS
-2020, 11, 2020, 12,  Development - Web
+2020, 11, 2021,  1,  Development - Web
