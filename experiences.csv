@@ -136,8 +136,8 @@
 2017,  6, 2017, 10,  Development - C/C++/Java
 # Qwant DevOps activities
 2017,  9, 2020,  9,  Linux System - DevOps
-# Qwant - SaltStack
-2017,  9, 2020, 10,  Development - Python
+# Qwant - SaltStack + Python GitHub projects
+2017,  9, 2021,  2,  Development - Python
 # Qwant - Docker containers for speeding up testing
 2017,  9, 2018, 11,  Linux System - Containers
 # Qwant - Docker/Podman containers for building packages
@@ -152,9 +152,11 @@
 2019,  2, 2019, 10,  Monitoring
 # HashiCorp Vault Monitor
 2020,  2, 2020,  5,  Development - Golang
-# Nagios Plugins for Linux v26-v27
-2020,  1, 2020, 11,  Development - C/C++/Java
+# Nagios Plugins for Linux v26-v28
+2020,  1, 2020, 12,  Development - C/C++/Java
 # DevOps GitLab
-2020,  5, 2021,  1,  Linux System - DevOps
+2020,  5, 2021,  3,  Linux System - DevOps
 # Jekyll/GitHub, CSS, JS
-2020, 11, 2021,  1,  Development - Web
+2020, 11, 2021,  3,  Development - Web
+# go-mattermost-notify
+2021,  0, 2021,  2,  Development - Golang
