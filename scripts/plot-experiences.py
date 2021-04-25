@@ -74,6 +74,9 @@ def make_jobs_plot(experiences, area_adj):
         sp.text(x, y, text, style='italic', color='gray', fontsize=9,
                 rotation=rotation)
 
+    # A text color suitable for both light and dark modes
+    text_color = "green" # "#FF4500"
+
     # Get the current date
     now = datetime.datetime.now()
 
@@ -88,9 +91,11 @@ def make_jobs_plot(experiences, area_adj):
     assert(len(years) == len(experiences))
 
     fig, ax = plt.subplots(frameon=False)
+    fig.patch.set_visible(False)
 
     # Create a scatter plot with the job experiences
     ax.scatter(x=years, y=experiences, s=areas, c=colors, alpha=0.65)
+    ax.tick_params(axis='x', colors=text_color, width='bold')
 
     # Add axis labels
     xmin, xmax = 1995, now.year + 3
@@ -192,7 +197,9 @@ def make_jobs_plot(experiences, area_adj):
     lgd = ax.legend(handles[::-1], expr_types[::-1],
                     bbox_to_anchor=(1.55, 0.9),
                     fontsize='small',
-                    prop={'size': 9}, frameon=False)
+                    prop={'size': 9}, fontweight='bold', frameon=False)
+    for text in lgd.get_texts():
+        text.set_color(text_color)
 
     # Add a bar plot for displaying courses/books and completed MOOCs
     ax2 = ax.twinx()
