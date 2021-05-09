@@ -117,7 +117,7 @@ def make_jobs_plot(experiences, area_adj):
 
     # Add vertical dotted lines at the major steps of my working life
     xnow = now.year + normalize(now.month)
-    ytop = 15.4
+    ytop = 16.4
     vdotlines = [
         (1999.6, '$\\rightarrow$ work@it', ytop, 'horizontal'),  # Start of the working life
         (2008.6, '$\\rightarrow$ work@fr', ytop, 'horizontal'),  # Move to South of France
@@ -136,46 +136,46 @@ def make_jobs_plot(experiences, area_adj):
     # Add some text labels to hopefully improve the plot readability
     # fixme: the y coordinates should not be manually set
     annotations = [
-        (1995.7,   4.1, 'Maths'),
-        (1995.7,   3.5, 'Cryptography, AI'),
-        (1995.7,   2.9, 'C/C++/MatLab'),
-        (1997.3,   8.0, 'T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX'),
-        (1997.3,   7.4, 'Development'),
+        (1995.7,   5.1, 'Maths'),
+        (1995.7,   4.5, 'Cryptography, AI'),
+        (1995.7,   3.9, 'C/C++/MatLab'),
+        (1997.3,   9.0, 'T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX'),
+        (1997.3,   8.4, 'Development'),
        #(1998.6,  -0.6, 'C/C++/Java Programming'),
-        (2000.8,  10.0, 'Cisco WAN'),
-        (2000.8,   9.4, 'Networking'),
-       #(2000.3,   8.4, '@FIAT/IBM, BT'),
-        (2002.8,  13.3, 'Nagios'),
-        (2005.6,   2.8, 'Linux system Development'),
-        (2006.2,   2.2, 'QiLinux / openmamba'),
-        (2006.4,   6.2, 'Shell scripting'),
-        (2005.10, 11.8, 'Linux SysAdmin'),
-       #(2007.2,   9.3, '@IBM'),
-        (2012.2,  14.3, 'Nagios'),
-        (2012.0,  13.7, 'Centreon'),
-       #(2011.10, 12.1, '@IBM'),
-        (2014.9,  12.2, 'DevOps'),
-        (2017.6,  11.7, 'SaltStack'),
-        (2015.6,  10.9, 'IaC'),
+        (2000.7,  11.0, 'Cisco WAN'),
+        (2000.7,  10.4, 'Networking'),
+       #(2000.3,  10.4, '@FIAT/IBM, BT'),
+        (2002.8,  14.1, 'Nagios'),
+        (2005.10,  3.8, 'Linux system Development'),
+        (2006.2,   3.2, 'QiLinux / openmamba'),
+        (2006.5,   7.2, 'Shell scripting'),
+        (2006.2,  10.9, 'Linux SysAdmin'),
+       #(2007.2,  10.3, '@IBM'),
+        (2009.4,  15.3, 'Nagios'),
+        (2008.7,  14.7, 'Centreon'),
+       #(2011.10, 13.1, '@IBM'),
+        (2014.9,  14.2, 'DevOps'),
+        (2018.0,  14.2, 'Salt'),
+        (2013.4,  12.9, 'IaC'),
        #(2015.0,  10.1, '@Sopra-Steria'),
        #(2013.0,   8.4, 'Angular'),
        #(2013.0,   7.8, 'Node.js'),
-        (2014.9,   7.9, 'MEAN Stack'),
-        (2006.1,   8.1, 'PHP'),
+        (2014.9,   8.9, 'MEAN Stack'),
+        (2006.1,   9.1, 'PHP'),
        #(2013.0,   6.6, 'Web Full Stack'),
-        (2013.8,   5.7, 'Python'),
-        (2016.1,   0.1, 'C'),
+        (2013.8,   6.4, 'Python'),
+        (2016.1,   0.3, 'C'),
         (2015.3,   1.4, 'BigData/ML'),
         (2016.4,   3.4, 'Scala'),
-        (2015.3,  -0.6, 'CUDA'),
-        (2015.5,  13.2, 'Docker/Podman'),
-        (2016.0,   4.5, 'Math'),
-        (2016.0,  14.4, 'Xymon'),
-        (2016.4,  10.3, 'OpenStack'),
-        (2018.2,   2.1, 'Go'),
-        (2018.3,  14.4, 'Zabbix'),
-        (2019.2,  12.2, 'k8s'),
-        (2017.7,  12.7, 'GitLab CI'),
+        (2015.3,  -0.7, 'CUDA'),
+        (2015.8,  12.8, 'Docker/Podman'),
+        (2016.0,   5.4, 'Math'),
+        (2016.8,  15.5, 'Xymon'),
+        (2016.4,  11.3, 'OpenStack'),
+        (2019.6,   3.3, 'Go'),
+        (2019.1,  15.5, 'Zabbix'),
+        (2020.4,  11.3, 'k8s'),
+        (2019.3,   1.7, 'GitLab CI'),
     ]
     for x, y, label in annotations:
         textlabel(ax, x, y, label)
@@ -195,9 +195,9 @@ def make_jobs_plot(experiences, area_adj):
         for e in expr_types))
 
     lgd = ax.legend(handles[::-1], expr_types[::-1],
-                    bbox_to_anchor=(1.55, 0.9),
+                    bbox_to_anchor=(1.55, 0.95),
                     fontsize='small',
-                    prop={'size': 9}, fontweight='bold', frameon=False)
+                    prop={'size': 9}, frameon=False)
     for text in lgd.get_texts():
         text.set_color(text_color)
 
@@ -230,8 +230,8 @@ def make_jobs_plot(experiences, area_adj):
         1,
         # 2020   -    -      -        -   -       -         -    1        -    3
         4,
-        # 2020   -    -      -        -   -       -         -    -        -    1       1                   1
-        3]
+        # 2021   -    -      -        -   -       -         -    -        -    1       2                   1
+        4]
     ax2.bar(years, courses, width=bar_width, color=bar_color, alpha=0.2)
     ax2.set_yticks([])
 

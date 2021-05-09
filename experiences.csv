@@ -1,6 +1,7 @@
 # Job categories:
 #
 #  - Development - C/C++/Java
+#  - Development - CI/CD
 #  - Development - Data Analysis
 #  - Development - Golang
 #  - Development - Linux System
@@ -141,7 +142,7 @@
 # Qwant - Docker containers for speeding up testing
 2017,  9, 2018, 11,  Linux System - Containers
 # Qwant - Docker/Podman containers for building packages
-2018, 11, 2020, 12,  Linux System - Containers
+2018, 11, 2021,  5,  Linux System - Containers
 # OpenStack
 2017, 11, 2018,  3,  Linux System - Administration
 # Golang start + HashiCorp Vault Monitor
@@ -155,8 +156,10 @@
 # Nagios Plugins for Linux v26-v28
 2020,  1, 2020, 12,  Development - C/C++/Java
 # DevOps GitLab
-2020,  5, 2021,  3,  Linux System - DevOps
+2020,  5, 2021,  5,  Linux System - DevOps
 # Jekyll/GitHub, CSS, JS
-2020, 11, 2021,  3,  Development - Web
+2020, 11, 2021,  4,  Development - Web
 # go-mattermost-notify
-2021,  0, 2021,  2,  Development - Golang
+2021,  0, 2021,  3,  Development - Golang
+# Qwant Software Engeneer
+2020,  5, 2021,  5,  Development - CI/CD
