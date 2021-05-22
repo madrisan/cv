@@ -4,7 +4,7 @@
 # programming activities.
 # Note that Python 3 is required.
 #
-# Copyright (C) 2016-2019 Davide Madrisan <davide.madrisan.gmail.com>
+# Copyright (C) 2016-2021 Davide Madrisan <davide.madrisan.gmail.com>
 
 import matplotlib
 matplotlib.use('Agg')
@@ -230,8 +230,8 @@ def make_jobs_plot(experiences, area_adj):
         1,
         # 2020   -    -      -        -   -       -         -    1        -    3
         4,
-        # 2021   -    -      -        -   -       -         -    -        -    1       2                   1
-        4]
+        # 2021   -    -      -        -   -       -         -    -        -    1       3                   1
+        5]
     ax2.bar(years, courses, width=bar_width, color=bar_color, alpha=0.2)
     ax2.set_yticks([])
 
