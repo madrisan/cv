@@ -176,6 +176,7 @@ def make_jobs_plot(experiences, area_adj):
         (2019.1,  15.5, 'Zabbix'),
         (2020.4,  11.3, 'k8s'),
         (2019.3,   1.7, 'GitLab CI'),
+        (2019.6,   1.0, 'ArgoCD'),
     ]
     for x, y, label in annotations:
         textlabel(ax, x, y, label)
