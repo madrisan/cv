@@ -4,7 +4,7 @@
 # programming activities.
 # Note that Python 3 is required.
 #
-# Copyright (C) 2016-2021 Davide Madrisan <davide.madrisan.gmail.com>
+# Copyright (C) 2016-2022 Davide Madrisan <davide.madrisan.gmail.com>
 
 import matplotlib
 matplotlib.use('Agg')
@@ -90,8 +90,8 @@ def make_jobs_plot(experiences, area_adj):
         colors.append(e.color)
     assert(len(years) == len(experiences))
 
-    fig, ax = plt.subplots(frameon=False)
-    fig.patch.set_visible(False)
+    fig, ax = plt.subplots(frameon=True)
+    fig.patch.set_visible(True)
 
     # Create a scatter plot with the job experiences
     ax.scatter(x=years, y=experiences, s=areas, c=colors, alpha=0.65)
@@ -232,7 +232,9 @@ def make_jobs_plot(experiences, area_adj):
         # 2020   -    -      -        -   -       -         -    1        -    3
         4,
         # 2021   -    -      -        -   1       -         -    -        -    1       4          1
-        7]
+        7,
+        # 2022   -    -      -        -   -       -         -    -        -    -       -          -
+        0]
     ax2.bar(years, courses, width=bar_width, color=bar_color, alpha=0.2)
     ax2.set_yticks([])
 
