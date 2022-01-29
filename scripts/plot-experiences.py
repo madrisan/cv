@@ -71,7 +71,7 @@ def make_jobs_plot(experiences, area_adj):
 
     def textlabel(sp, x, y, text, rotation='horizontal'):
         """Add a floating text to a subplot 'sp'"""
-        sp.text(x, y, text, style='italic', color='gray', fontsize=9,
+        sp.text(x, y, text, style='italic', color='dimgray', fontsize=9,
                 rotation=rotation)
 
     # A text color suitable for both light and dark modes
@@ -90,7 +90,7 @@ def make_jobs_plot(experiences, area_adj):
         colors.append(e.color)
     assert(len(years) == len(experiences))
 
-    fig, ax = plt.subplots(frameon=True)
+    fig, ax = plt.subplots(frameon=False)
     fig.patch.set_visible(True)
 
     # Create a scatter plot with the job experiences
@@ -98,7 +98,7 @@ def make_jobs_plot(experiences, area_adj):
     ax.tick_params(axis='x', colors=text_color, width='bold')
 
     # Add axis labels
-    xmin, xmax = 1995, now.year + 3
+    xmin, xmax = 1995, now.year + 2
     #ax.set_xlabel('Year')
     #ax.set_ylabel('Experiences')
     #ax.set_title('Job and Lifelong Learning History')
@@ -243,6 +243,7 @@ def make_jobs_plot(experiences, area_adj):
     fysmooth = scipy.interpolate.interp1d(years, courses, kind="quadratic")
     ysmooth = [fysmooth(ti) for ti in xnew]
     ax3 = ax2.twinx()
+    ax3.set_frame_on(False)
     ax3.set_yticks([])
     ax3.plot(xnew, ysmooth, color=bar_color, alpha=0.4)
 
