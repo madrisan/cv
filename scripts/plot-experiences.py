@@ -91,7 +91,7 @@ def make_jobs_plot(experiences, area_adj):
     assert(len(years) == len(experiences))
 
     # Change the color of the image frame
-    matplotlib.rc('axes', edgecolor='white')
+    matplotlib.rc('axes', edgecolor='lightgray')
 
     fig, ax = plt.subplots()
 
