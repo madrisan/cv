@@ -142,7 +142,7 @@
 # Qwant - Docker containers for speeding up testing
 2017,  9, 2018, 11,  Linux System - Containers
 # Qwant - Docker/Podman containers for building packages
-2018, 11, 2021, 10,  Linux System - Containers
+2018, 11, 2022,  2,  Linux System - Containers
 # OpenStack
 2017, 11, 2018,  3,  Linux System - Administration
 # Golang start + HashiCorp Vault Monitor
@@ -156,12 +156,12 @@
 # Nagios Plugins for Linux v26-v28
 2020,  1, 2020, 12,  Development - C/C++/Java
 # DevOps GitLab
-2020,  5, 2021, 12,  Linux System - DevOps
+2020,  5, 2022,  2,  Linux System - DevOps
 # Jekyll/GitHub, CSS, JS
 2020, 11, 2021,  4,  Development - Web
 # go-mattermost-notify
 2021,  0, 2021,  6,  Development - Golang
 # Qwant Software Engeneer
-2020,  5, 2021, 12,  Development - CI/CD
+2020,  5, 2022,  2,  Development - CI/CD
 # Python GitHub projects
-2021,  2, 2021, 12,  Development - Python
+2021,  2, 2022,  2,  Development - Python
