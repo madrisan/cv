@@ -90,12 +90,13 @@ def make_jobs_plot(experiences, area_adj):
         colors.append(e.color)
     assert(len(years) == len(experiences))
 
-    fig, ax = plt.subplots(frameon=False)
-    fig.patch.set_visible(True)
+    # Change the color of the image frame
+    matplotlib.rc('axes',edgecolor='lightgray')
+
+    fig, ax = plt.subplots()
 
     # Create a scatter plot with the job experiences
     ax.scatter(x=years, y=experiences, s=areas, c=colors, alpha=0.65)
-    ax.tick_params(axis='x', colors=text_color, width='bold')
 
     # Add axis labels
     xmin, xmax = 1995, now.year + 2
@@ -107,13 +108,7 @@ def make_jobs_plot(experiences, area_adj):
 
     # Add grid - fixme: yticks[] if set must to be manually adjusted
     ax.set_yticks([])
-    ax.tick_params(axis=u'both', which=u'both', length=0)
-    ax.grid(False)
-
-    # Remove the frame
-    _ = [s.set_visible(False) for s in ax.spines.values()]
-    #_ = [s.set_color("None") for s in ax.spines.values()]
-    #ax.spines["top"].set_linewidth(1)
+    ax.tick_params(labelcolor=text_color, length=0)
 
     # Add vertical dotted lines at the major steps of my working life
     xnow = now.year + normalize(now.month)
