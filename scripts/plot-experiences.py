@@ -228,8 +228,8 @@ def make_jobs_plot(experiences, area_adj):
         4,
         # 2021   -    -      -        -   1       -         -    -        -    1       4          1
         7,
-        # 2022   -    -      -        -   -       -         -    -        -    -       -          -
-        0]
+        # 2022   -    -      1        -   -       -         -    -        -    -       -          -
+        1]
     ax2.bar(years, courses, width=bar_width, color=bar_color, alpha=0.2)
     ax2.set_yticks([])
 
