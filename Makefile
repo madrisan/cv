@@ -1,5 +1,5 @@
 # Makefile for generating the curriculum vitae in pdf format
-# Copyright (C) 2017-2019 by Davide Madrisan <davide.madrisan@gmail.com>
+# Copyright (C) 2017-2019 by Davide Madrisan <d.madrisan@proton.me>
 
 # Works with docker-ce and podman with or without podman-docker
 

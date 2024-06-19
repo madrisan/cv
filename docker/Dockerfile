@@ -1,6 +1,6 @@
 FROM debian:buster-slim
 
-MAINTAINER "Davide Madrisan" <d.madrisan@gmail.com>
+MAINTAINER "Davide Madrisan" <d.madrisan@proton.me>
 
 WORKDIR /appl
 

@@ -4,7 +4,7 @@
 # programming activities.
 # Note that Python 3 is required.
 #
-# Copyright (C) 2016-2022 Davide Madrisan <davide.madrisan.gmail.com>
+# Copyright (C) 2016-2024 Davide Madrisan <d.madrisan.proton.me>
 
 import matplotlib
 matplotlib.use('Agg')
@@ -134,20 +134,20 @@ def make_jobs_plot(experiences, area_adj):
         (1995.7,   5.1, 'Maths'),
         (1995.7,   4.5, 'Cryptography, AI'),
         (1995.7,   3.9, 'C/C++/MatLab'),
-        (1997.3,   9.0, 'T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX'),
-        (1997.3,   8.4, 'Development'),
+        (1997.0,   9.0, 'T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX'),
+        (1997.0,   8.4, 'Development'),
        #(1998.6,  -0.6, 'C/C++/Java Programming'),
-        (2000.7,  11.0, 'Cisco WAN'),
-        (2000.7,  10.4, 'Networking'),
+        (2000.3,  11.0, 'Cisco WAN'),
+        (2000.4,  10.4, 'Networking'),
        #(2000.3,  10.4, '@FIAT/IBM, BT'),
         (2002.8,  14.1, 'Nagios'),
-        (2005.10,  3.8, 'Linux system Development'),
-        (2006.2,   3.2, 'QiLinux / openmamba'),
+        (2004.2,   3.8, 'Linux system Development'),
+        (2004.8,   3.2, 'QiLinux / openmamba'),
         (2006.5,   7.2, 'Shell scripting'),
-        (2006.2,  10.9, 'Linux SysAdmin'),
+        (2006.5,  10.9, 'Linux SysAdmin'),
        #(2007.2,  10.3, '@IBM'),
-        (2009.4,  15.3, 'Nagios'),
-        (2008.7,  14.7, 'Centreon'),
+        (2010.3,  15.3, 'Nagios'),
+        (2009.8,  14.7, 'Centreon'),
        #(2011.10, 13.1, '@IBM'),
         (2014.9,  14.2, 'DevOps'),
         (2018.0,  14.2, 'Salt'),
@@ -156,22 +156,22 @@ def make_jobs_plot(experiences, area_adj):
        #(2013.0,   8.4, 'Angular'),
        #(2013.0,   7.8, 'Node.js'),
         (2014.9,   8.9, 'MEAN Stack'),
-        (2006.1,   9.1, 'PHP'),
+        (2006.0,   9.1, 'PHP'),
        #(2013.0,   6.6, 'Web Full Stack'),
         (2013.8,   6.4, 'Python'),
         (2016.1,   0.3, 'C'),
-        (2015.3,   1.4, 'BigData/ML'),
+        (2014.10,  1.4, 'BigData/ML'),
         (2016.4,   3.4, 'Scala'),
-        (2015.3,  -0.7, 'CUDA'),
-        (2015.8,  12.8, 'Docker/Podman'),
+        (2016.0,  -0.7, 'CUDA'),
+        (2016.7,  12.8, 'Docker/Podman'),
         (2016.0,   5.4, 'Math'),
         (2016.8,  15.5, 'Xymon'),
         (2016.4,  11.3, 'OpenStack'),
-        (2019.6,   3.3, 'Go'),
-        (2019.1,  15.5, 'Zabbix'),
-        (2020.4,  11.3, 'k8s'),
-        (2019.3,   1.7, 'GitLab CI'),
-        (2019.6,   1.0, 'ArgoCD'),
+        (2019.8,   3.3, 'Go'),
+        (2019.2,  15.5, 'Zabbix'),
+        (2020.4,  11.8, 'k8s'),
+        (2020.6,   1.7, 'GitLab CI'),
+        (2020.8,   1.0, 'ArgoCD'),
     ]
     for x, y, label in annotations:
         textlabel(ax, x, y, label)
@@ -229,7 +229,11 @@ def make_jobs_plot(experiences, area_adj):
         # 2021   -    -      -        -   1       -         -    -        -    1       4          1
         7,
         # 2022   -    -      1        -   -       -         -    -        -    -       -          -
-        1]
+        1,
+        # 2023
+        0,
+        # 2024
+        0]
     ax2.bar(years, courses, width=bar_width, color=bar_color, alpha=0.2)
     ax2.set_yticks([])
 
