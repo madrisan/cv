@@ -1,10 +1,19 @@
 #!/usr/bin/python3
 
-# Create a scatter plot for visualizing all my job experences and
-# programming activities.
-# Note that Python 3 is required.
-#
-# Copyright (C) 2016-2024 Davide Madrisan <d.madrisan.proton.me>
+"""
+Create a scatter plot for visualizing all my job experences and
+programming activities. Python 3 is required.
+
+Copyright (C) 2016-2024 Davide Madrisan <d.madrisan.proton.me>
+"""
+
+from collections import namedtuple
+import datetime
+import getopt
+import sys
+
+import numpy as np
+import scipy.interpolate
 
 import matplotlib
 
@@ -14,19 +23,12 @@ matplotlib.rc("text", usetex=True)
 
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
-import scipy.interpolate
-
-from collections import namedtuple
-import datetime
-import numpy as np
-import getopt
-import sys
 
 Experience = namedtuple("Experience", ["date", "period", "type", "color"])
 
 
 def die(message):
-    sys.exit("{}: {}".format(__file__, message))
+    sys.exit(f"{__file__}: {message}")
 
 
 def getcolor(index, upper):
@@ -68,9 +70,9 @@ def parser(source):
         )
 
     try:
-        with open(source, "r") as data:
+        with open(source, "r", encoding="utf-8") as data:
             history = my_experiences(row_iter(data))
-            expr_types = sorted(set([expr[2] for expr in history]))
+            expr_types = sorted({expr[2] for expr in history})
             index = lambda e: expr_types.index(e)
             color = lambda e: getcolor(index(e), len(expr_types))
             expr_map = map(
@@ -147,7 +149,7 @@ def make_jobs_plot(experiences, area_adj):
         (2013.4, "OS2", ytop, "horizontal"),
         # Start of the amazing MOOCs experience :)
         (2014.10, "MOOCs", ytop - 0.5, "horizontal"),
-        (xnow, "{0}.{1}".format(now.year, now.month), 0.6, 75),
+        (xnow, f"{now.year}.{now.month}", 0.6, 75),
     ]
     ymin, ymax, linewidth, linecolor = 0.02, 0.98, 0.8, "0.75"
 
@@ -168,7 +170,7 @@ def make_jobs_plot(experiences, area_adj):
         (1995.7, 5.1, "Maths"),
         (1995.7, 4.5, "Cryptography, AI"),
         (1995.7, 3.9, "C/C++/MatLab"),
-        (1997.0, 9.0, "T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX"),
+        (1997.0, 9.0, "T\\kern -.1667em\\lower .5ex\\hbox {E}\\kern -.125emX"),
         (1997.0, 8.4, "Development"),
         # (1998.6,  -0.6, 'C/C++/Java Programming'),
         (2000.3, 11.0, "Cisco WAN"),
@@ -310,12 +312,12 @@ def make_jobs_plot(experiences, area_adj):
 
 def usage():
     progname = sys.argv[0]
-    print("Usage: {0} csv=<input-file> image=<out-file>".format(progname))
+    print(f"Usage: {progname} csv=<input-file> image=<out-file>")
 
 
 def main():
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "c:i:h", ["csv=", "image=", "help"])
+        opts, _ = getopt.getopt(sys.argv[1:], "c:i:h", ["csv=", "image=", "help"])
     except getopt.GetoptError:
         usage()
         sys.exit(2)
@@ -337,7 +339,7 @@ def main():
         fig.savefig(image, bbox_extra_artists=(legend,), bbox_inches="tight")
         print("The image has been saved as", image)
     except OSError as err:
-        die("Cannot create the plot: {}".format(err))
+        die(f"Cannot create the plot: {err}")
 
 
 if __name__ == "__main__":

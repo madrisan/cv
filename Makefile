@@ -47,7 +47,7 @@ pdf-only: image
 plot: image
 	@echo "Generating the plot png image..."
 	sudo $(CONTAINER_ENGINE) run $(VOLUMES) --rm $(IMAGE) \
-	    /usr/bin/python3 /appl/scripts/plot-experiences.py \
+	    /usr/bin/python3 /appl/scripts/plot_experiences.py \
 	        --csv=$(srcdir)/$(EXPERIENCES) \
 	        --image=$(srcdir)/$(PLOT)
 
