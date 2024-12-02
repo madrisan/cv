@@ -11,6 +11,7 @@ RUN apt-get --quiet update \
          -o APT::Install-Recommends=0 \
           dvipng \
           python3 \
+          python3-click \
           python3-matplotlib \
           python3-numpy \
           python3-scipy \

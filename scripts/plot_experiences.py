@@ -9,9 +9,10 @@ Copyright (C) 2016-2024 Davide Madrisan <d.madrisan.proton.me>
 
 from collections import namedtuple
 import datetime
-import getopt
 import sys
+from typing import Dict, List, Tuple
 
+import click
 import numpy as np
 import scipy.interpolate
 
@@ -27,26 +28,37 @@ import matplotlib.pyplot as plt
 Experience = namedtuple("Experience", ["date", "period", "type", "color"])
 
 
-def die(message):
+def die(message: str):
+    """
+    Print an error message and abort the script.
+
+    Args:
+        message (str): The error message.
+    """
     sys.exit(f"{__file__}: {message}")
 
 
-def getcolor(index, upper):
-    """Return a progressive color for an index in range(upper)."""
+def getcolor(index: int, upper: int):
+    """
+    Return a progressive color for an index in range(upper).
+    """
     assert index in range(upper)
     return plt.cm.Spectral(np.linspace(1, 0, upper, endpoint=False))[index]
 
 
-def normalize(month):
-    """Normalize the month number."""
+def normalize(month: int) -> float:
+    """
+    Normalize the month number.
+    """
     assert month in range(13)
     return (month - 1) / 12.0
 
 
-def parser(source):
-    """Parse the history file and returns a list containing the
-    experience labels and a map of all the Experience's."""
-
+def parser(csv: str) -> Tuple[List[int], Dict[str, str]]:
+    """
+    Parse the history file and returns a list containing the
+    experience labels and a map of all the Experience's.
+    """
     skip_line = lambda line: line.startswith("#") or not line.strip()
     date = (
         lambda sy, sm, ey, em: (
@@ -70,7 +82,7 @@ def parser(source):
         )
 
     try:
-        with open(source, "r", encoding="utf-8") as data:
+        with open(csv, "r", encoding="utf-8") as data:
             history = my_experiences(row_iter(data))
             expr_types = sorted({expr[2] for expr in history})
             index = lambda e: expr_types.index(e)
@@ -310,31 +322,23 @@ def make_jobs_plot(experiences, area_adj):
     return fig, lgd
 
 
-def usage():
-    progname = sys.argv[0]
-    print(f"Usage: {progname} csv=<input-file> image=<out-file>")
-
-
-def main():
-    try:
-        opts, _ = getopt.getopt(sys.argv[1:], "c:i:h", ["csv=", "image=", "help"])
-    except getopt.GetoptError:
-        usage()
-        sys.exit(2)
-
-    for o, a in opts:
-        if o in ("-h", "--help"):
-            usage()
-            sys.exit()
-        elif o in ("-c", "--csv"):
-            source = a
-        elif o in ("-i", "--image"):
-            image = a
-
+@click.command()
+@click.option(
+    "--csv",
+    help="Path of the CSV file containing the list of job experiences.",
+    type=click.Path(exists=True, dir_okay=False),
+)
+@click.option(
+    "--image",
+    help="Path of the output PNG image.",
+    type=click.Path(exists=True, dir_okay=False),
+)
+def main(csv, image):
+    """Plots an IMAGE according to a CSV with a list of job experiences."""
     # area adjustment factor for plot circles
     area_adj = 0.65
 
-    fig, legend = make_jobs_plot(parser(source), area_adj)
+    fig, legend = make_jobs_plot(parser(csv), area_adj)
     try:
         fig.savefig(image, bbox_extra_artists=(legend,), bbox_inches="tight")
         print("The image has been saved as", image)
