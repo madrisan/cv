@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:bookworm-slim
 
 MAINTAINER "Davide Madrisan" <d.madrisan@proton.me>
 
@@ -9,6 +9,8 @@ RUN apt-get --quiet update \
        apt-get install -y \
          -o APT::Install-Suggests=0 \
          -o APT::Install-Recommends=0 \
+          cm-super \
+          fonts-font-awesome \
           dvipng \
           python3 \
           python3-click \
@@ -20,6 +22,7 @@ RUN apt-get --quiet update \
           texlive-fonts-recommended \
           texlive-latex-base \
           texlive-latex-extra \
+          texlive-fonts-recommended \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /var/cache/apt/archives/*
 
