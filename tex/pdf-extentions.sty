@@ -51,17 +51,16 @@
 
 \let\currentcolor = \colorblack
 
+%%% URLs support
 
-%%% URL support
-
-\def\url#1{%
+\def\pdfurl#1{%
     % turn off the special meaning of ~ inside \url{}.
     \begingroup\catcode`\~=12\catcode`\_=12\relax
     \ifpdfmode
         \pdfstartlink user{
             /Subtype /Link
             % w/o this you get an ugly box around the URL.
-            /Border [ 0 0 0 ]   % radius, radius, line thickness
+            /Border [0 0 0]   % radius, radius, line thickness
             /A <<
                 /Type /Action
                 /S /URI
@@ -76,6 +75,81 @@
         {\tt#1}%
     \fi
     \endgroup}
+
+%%% Xref macros
+
+\def\pdfxref[#1]#2{%
+    % turn off the special meaning of ~ and _ inside \pdfxref{}.
+    \begingroup\catcode`\~=12\catcode`\_=12\relax%
+    \ifpdfmode%
+        \pdfstartlink user{
+            /Subtype /Link
+            % w/o this you get an ugly box around the URL.
+            /Border [ 0 0 0 ]  % radius, radius, line thickness
+            /A <<
+                /Type /Action
+                /S /Named
+                /N #1
+            >>
+        }%
+        {#2}%
+        \pdfendlink{}
+    \else%
+        {#2}%
+    \fi%
+    \endgroup}
+
+%\newtoks\toksC
+%\pdflink{\the\toksC}{\romannumeral\the\toksC}
+
+%\def\pdflink#1#2{%
+%    \hbox{\pdfstartlink attr{/Border [0 0 0]} goto num #2 #1\pdfendlink}%
+%}
+
+%\newcommand{%
+%    \pdfhyperlink}[1]{%
+%        \hyperlink{#1}{\csname #1\endcsname}%
+%}
+
+% \newlabel
+
+\def\pdflink#1#2{%
+    \begingroup\catcode`\~=12\catcode`\_=12\relax%
+    \ifpdfmode%
+        \hbox{%
+            \pdfstartlink attr{
+                << /Type /Annot /Subtype /Link /Border [0 0 0] /A
+                    << /S /GoTo /D (#2) >>
+                >>
+                #1
+            }%
+	    {#2}%
+            \pdfendlink{}%
+	}%
+    \else%
+        {#2}%
+    \fi%
+    \endgroup}
+
+%\def\pdfgotopage[#1]#2{%
+%    \pdfstartlink attr{
+%    <<
+%        /Type /Annot
+%	 /Subtype /Link
+%	 /Border [ 0 0 0 ]
+%        /A <<
+%	     /S /GoTo /D (#1)
+%	 >>
+%    >>
+%    }%
+%    {#2}%
+%    \pdfendlink{}%
+%}
+
+\def\pdfnextpage#1{\pdfxref[/NextPage]{#1}}
+\def\pdfpreviouspage#1{\pdfxref[/PrevPage]{#1}}
+
+%%% mail link macros
 
 \def\mymailaddr{%
    {\tt d\kern-.0pt{.}\kern-.0pt{madrisan}%
